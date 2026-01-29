@@ -1,0 +1,44 @@
+# Dependencies
+/vendor/
+/node_modules/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Configuration (contains secrets)
+/classes/config.php
+
+# Cache and temp files
+/cache/
+/tmp/
+*.cache
+.phpunit.cache/
+
+# Coverage reports
+/coverage/
+
+# Logs
+*.log
+
+# Torrent storage (configured in config.php)
+/torrents/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Composer lock (optional - uncomment if you want reproducible builds)
+# composer.lock
+
+# PHPStan cache
+/phpstan/
+
+# Build artifacts
+/build/
+/dist/

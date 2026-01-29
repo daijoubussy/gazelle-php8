@@ -1,0 +1,222 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * Gazelle Configuration Template
+ *
+ * Copy this file to config.php and edit the values below.
+ * Make sure config.php is not publicly accessible!
+ */
+
+// PHP Version Check
+if (version_compare(PHP_VERSION, '8.5.0', '<')) {
+    die('Gazelle requires PHP 8.5 or later to function properly. Current version: ' . PHP_VERSION);
+}
+
+// Timezone configuration
+date_default_timezone_set('UTC');
+
+// Main settings
+define('SITE_NAME', 'Oppaitime');          // The name of your site
+define('SITE_DOMAIN', 'oppaiti.me');       // The FQDN of your site
+define('IMAGE_DOMAIN', 'img.oppaiti.me');  // The FQDN of your image host
+define('SERVER_ROOT', '/var/www/oppaiti.me');  // The root of the server, used for includes
+define('TORRENT_STORE', '/var/torrents/');     // Where torrent files are stored
+
+// Tracker urls to be added to torrent files ala bittorrent.org/beps/bep_0012.html
+define('ANNOUNCE_URLS', [[
+    'https://tracker.' . SITE_DOMAIN . ':34001',
+    'https://tracker2.' . SITE_DOMAIN . ':34001',
+    'https://tracker3.' . SITE_DOMAIN . ':34001',
+    'https://tracker4.' . SITE_DOMAIN . ':34001'
+]]);
+
+// Name for bonus points currency
+define('BONUS_POINTS', 'Nips');
+
+// API keys for external services - DO NOT hard code production keys
+define('API_KEYS', ['ANIDB' => 'AAAAAAAAAAAAAAAA']);
+
+// Static content server path
+define('STATIC_SERVER', '/static/');
+
+// Subresource Integrity hash algorithm
+define('INTEGRITY_ALGO', 'sha256');
+
+// Cryptographic keys - GENERATE UNIQUE RANDOM KEYS FOR PRODUCTION
+define('ENCKEY', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');       // 32 char encryption key
+define('IMAGE_PSK', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');    // Pre-shared key for image proxy
+define('SCHEDULE_KEY', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');  // 64 char schedule key
+define('RSS_HASH', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');      // 64 char RSS auth key
+
+// MySQL database configuration
+define('SQLHOST', 'localhost');
+define('SQLLOGIN', 'gazelle');
+define('SQLPASS', 'password');
+define('SQLDB', 'gazelle');
+define('SQLPORT', 3306);
+define('SQLSOCK', '/var/run/mysqld/mysqld.sock');
+
+// Memcached configuration (use Memcached extension, not Memcache)
+define('MEMCACHED_SERVERS', [
+    ['host' => 'unix:///var/run/memcached.sock', 'port' => 0, 'buckets' => 1]
+]);
+
+// Sphinx search configuration
+define('SPHINX_HOST', 'localhost');
+define('SPHINX_PORT', 9312);
+define('SPHINXQL_HOST', '127.0.0.1');
+define('SPHINXQL_PORT', 9306);
+define('SPHINXQL_SOCK', false);
+define('SPHINX_MIN_MAX_MATCHES', 2000);
+define('SPHINX_INDEX', 'torrents');
+
+// Ocelot tracker configuration
+define('TRACKER_HOST', '127.0.0.1');
+define('TRACKER_PORT', 34000);
+define('TRACKER_SECRET', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');     // Must match site_password in Ocelot
+define('TRACKER_REPORTKEY', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');  // Must match report_password in Ocelot
+
+// Site behavior settings
+define('DEBUG_MODE', false);        // Enable debug info for everyone
+define('DEBUG_WARNINGS', true);     // Show PHP warnings in footer
+define('OPEN_REGISTRATION', false); // Allow public registration
+define('USER_LIMIT', 0);            // Max users (0 = unlimited)
+define('STARTING_INVITES', 0);      // Invites for new users
+define('BLOCK_TOR', false);         // Block Tor exit nodes
+define('BLOCK_OPERA_MINI', false);  // Block Opera Mini proxy
+define('DONOR_INVITES', 2);         // Bonus invites for donors
+
+// Features
+define('FEATURE_EMAIL_REENABLE', true);
+
+// User class IDs (from permissions table)
+define('ADMIN', '1');
+define('USER', '2');
+define('MEMBER', '3');
+define('POWER', '4');
+define('ELITE', '5');
+define('LEGEND', '8');
+define('MOD', '11');
+define('SYSOP', '15');
+define('ARTIST', '19');
+define('DONOR', '20');
+define('VIP', '21');
+define('TORRENT_MASTER', '23');
+define('POWER_TM', '24');
+define('FLS_TEAM', '9000');
+define('FORUM_MOD', '9001');
+
+// Forum IDs
+define('STAFF_FORUM', 7);
+define('DONOR_FORUM', 9);
+define('TRASH_FORUM_ID', 4);
+define('ANNOUNCEMENT_FORUM_ID', 10);
+
+// Pagination settings
+define('TORRENT_COMMENTS_PER_PAGE', 10);
+define('POSTS_PER_PAGE', 25);
+define('TOPICS_PER_PAGE', 50);
+define('TORRENTS_PER_PAGE', 50);
+define('REQUESTS_PER_PAGE', 25);
+define('MESSAGES_PER_PAGE', 25);
+define('LOG_ENTRIES_PER_PAGE', 50);
+
+// Cache settings
+define('THREAD_CATALOGUE', 500);
+
+// IRC bot settings
+define('BOT_NICK', 'bot');
+define('BOT_SERVER', 'irc.' . SITE_DOMAIN);
+define('BOT_PORT', 6667);
+define('BOT_CHAN', '#bot');
+define('BOT_ANNOUNCE_CHAN', '#announce');
+define('BOT_REQUEST_CHAN', '#requests');
+define('BOT_STAFF_CHAN', '#staff');
+define('BOT_DISABLED_CHAN', '#disabled');
+define('BOT_HELP_CHAN', '#help');
+define('BOT_DEBUG_CHAN', '#debug');
+define('BOT_REPORT_CHAN', '#report');
+define('BOT_NICKSERV_PASS', '');
+define('BOT_INVITE_CHAN', '#invites');
+define('BOT_INTERVIEW_CHAN', '#interview');
+define('BOT_INTERVIEW_NUM', 5);
+define('BOT_INTERVIEW_STAFF', '#interview-staff');
+define('SOCKET_LISTEN_PORT', 51010);
+define('SOCKET_LISTEN_ADDRESS', '127.0.0.1');
+define('ADMIN_CHAN', '#admin');
+define('LAB_CHAN', '#lab');
+define('STATUS_CHAN', '#status');
+
+// Donor rank costs
+define('RANK_ONE_COST', 5);
+define('RANK_TWO_COST', 10);
+define('RANK_THREE_COST', 15);
+define('RANK_FOUR_COST', 20);
+define('RANK_FIVE_COST', 30);
+define('MAX_RANK', 6);
+define('MAX_EXTRA_RANK', 8);
+define('DONOR_FORUM_RANK', 6);
+define('MAX_SPECIAL_RANK', 3);
+
+// Forum settings
+define('FORUMS_TO_REVEAL_VOTERS', []);
+define('FORUMS_TO_ALLOW_DOUBLE_POST', []);
+
+// Content categories
+$Categories = ['Movies', 'Anime', 'Manga', 'Games', 'Other'];
+$GroupedCategories = $Categories;
+$CategoryIcons = ['music.png', 'apps.png', 'ebook.png', 'audiobook.png', 'elearning.png', 'comedy.png', 'comics.png'];
+
+// Media types
+$Media = ['TV', 'DVD', 'Bluray', 'HD DVD', 'VHS', 'VCD', 'LD', 'Web'];
+$MediaManga = ['Scan', 'Web'];
+$Platform = ['Windows', 'OS X', 'Linux', 'BSD', 'Flash', 'Java', 'Android', 'iOS'];
+$Containers = ['AVI', 'MKV', 'MP4', 'OGM', 'WMV', 'ISO', 'VOB IFO', 'TS', 'M2TS'];
+$ContainersGames = ['ISO', 'BIN-CUE', 'Installer', 'Loose'];
+$Codecs = ['h264', '10-bit h264', 'XviD', 'DivX', 'WMV', 'DVD5', 'DVD9', 'HEVC', 'MPEG-2'];
+$Resolutions = ['SD', '480p', '720p', '1080i', '1080p', '4K', 'Other'];
+$AudioFormats = ['MP3', 'OGG', 'OGG 5.1', 'AAC', 'AAC 5.1', 'AC3', 'AC3 5.1', 'DTS 2.0', 'DTS 5.1', 'DTS-ES 6.1', 'FLAC 2.0', 'FLAC 5.1', 'FLAC 6.1', 'PCM 2.0', 'PCM 5.1', 'PCM 6.1', 'WMA', 'Real Audio', 'DTS-HD', 'DTS-HD MA'];
+$Subbing = ['Softsubs', 'Hardsubs', 'RAW'];
+$Languages = ['English', 'Japanese', 'Dual Language'];
+$Archives = ['7z', 'zip', 'rar'];
+$ArchivesManga = ['cbz', 'cbr', 'cb7'];
+
+$Formats = ['MP3', 'FLAC', 'Ogg Vorbis', 'AAC', 'AC3', 'DTS'];
+$Bitrates = ['192', 'APS (VBR)', 'V2 (VBR)', 'V1 (VBR)', '256', 'APX (VBR)', 'V0 (VBR)', 'q8.x (VBR)', '320', 'Lossless', '24bit Lossless', 'Other'];
+
+$CollageCats = [0 => 'Personal', 1 => 'Theme', 2 => 'Staff picks', 3 => 'Artists'];
+
+$ReleaseTypes = [1 => 'Album', 3 => 'Soundtrack', 5 => 'EP', 6 => 'Anthology', 7 => 'Compilation', 9 => 'Single', 11 => 'Live album', 13 => 'Remix', 14 => 'Bootleg', 15 => 'Interview', 16 => 'Mixtape', 21 => 'Unknown'];
+
+// Ratio requirements (download amount, min ratio 0% seeded, min ratio 100% seeded)
+define('RATIO_REQUIREMENTS', [
+    [200 * 1024 ** 3, 0.60, 0.60],
+    [160 * 1024 ** 3, 0.60, 0.50],
+    [120 * 1024 ** 3, 0.50, 0.40],
+    [100 * 1024 ** 3, 0.40, 0.30],
+    [80 * 1024 ** 3, 0.30, 0.20],
+    [60 * 1024 ** 3, 0.20, 0.10],
+    [40 * 1024 ** 3, 0.15, 0.00],
+    [20 * 1024 ** 3, 0.10, 0.00],
+    [10 * 1024 ** 3, 0.05, 0.00],
+]);
+
+define('TAG_NAMESPACES', ['male', 'female', 'parody', 'character']);
+
+// Automated badge IDs
+define('AUTOMATED_BADGE_IDS', [
+    'DL' => [
+        '8' => 10, '16' => 11, '32' => 12, '64' => 13, '128' => 14,
+        '256' => 15, '512' => 16, '1024' => 17, '2048' => 18
+    ],
+    'UL' => [
+        '16' => 30, '32' => 31, '64' => 32, '128' => 33, '256' => 34,
+        '512' => 35, '1024' => 36, '2048' => 37, '4096' => 38
+    ],
+    'Posts' => [
+        '25' => 60, '50' => 61, '100' => 62, '250' => 63, '500' => 64,
+        '1000' => 65, '2500' => 66, '5000' => 67, '10000' => 68
+    ]
+]);
