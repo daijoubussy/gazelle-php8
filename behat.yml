@@ -1,0 +1,59 @@
+# Behat BDD Configuration for Gazelle
+# Run: composer test:acceptance
+
+default:
+  autoload:
+    '': '%paths.base%/tests/Acceptance/Bootstrap'
+
+  suites:
+    authentication:
+      paths:
+        - '%paths.base%/tests/Acceptance/Features/Authentication'
+      contexts:
+        - Gazelle\Tests\Acceptance\Bootstrap\FeatureContext
+        - Gazelle\Tests\Acceptance\Bootstrap\AuthenticationContext
+
+    torrents:
+      paths:
+        - '%paths.base%/tests/Acceptance/Features/Torrents'
+      contexts:
+        - Gazelle\Tests\Acceptance\Bootstrap\FeatureContext
+        - Gazelle\Tests\Acceptance\Bootstrap\TorrentContext
+
+    user:
+      paths:
+        - '%paths.base%/tests/Acceptance/Features/User'
+      contexts:
+        - Gazelle\Tests\Acceptance\Bootstrap\FeatureContext
+        - Gazelle\Tests\Acceptance\Bootstrap\UserContext
+
+    forums:
+      paths:
+        - '%paths.base%/tests/Acceptance/Features/Forums'
+      contexts:
+        - Gazelle\Tests\Acceptance\Bootstrap\FeatureContext
+        - Gazelle\Tests\Acceptance\Bootstrap\ForumContext
+
+  formatters:
+    pretty:
+      verbose: true
+      paths: false
+      snippets: true
+
+  extensions:
+    # Add browser extension when needed for full E2E
+    # DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension: ~
+
+# CI configuration - faster, less verbose
+ci:
+  formatters:
+    progress: ~
+    junit:
+      output_path: reports/behat
+
+# Development configuration - more verbose
+dev:
+  formatters:
+    pretty:
+      verbose: true
+      paths: true
