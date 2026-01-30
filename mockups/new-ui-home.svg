@@ -1,253 +1,342 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
   <defs>
     <style>
-      .new-bg { fill: #f4f5f7; }
-      .new-sidebar { fill: #1a1f36; }
-      .new-header { fill: #ffffff; }
-      .new-card { fill: #ffffff; }
-      .new-text { fill: #3c4257; font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; }
-      .new-text-muted { fill: #6b7280; font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; }
-      .new-text-small { fill: #9ca3af; font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; }
-      .new-link { fill: #0070d2; font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; }
-      .new-title { fill: #1a1f36; font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px; font-weight: 600; }
-      .new-subtitle { fill: #1a1f36; font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; font-weight: 600; }
-      .new-nav-text { fill: #a0aec0; font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; }
-      .new-nav-active { fill: #ffffff; font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; }
-      .new-shadow { filter: drop-shadow(0 1px 3px rgba(0,0,0,0.1)); }
-      .new-green { fill: #10b981; }
-      .new-red { fill: #ef4444; }
-      .new-blue { fill: #3b82f6; }
-      .new-purple { fill: #8b5cf6; }
-      .new-orange { fill: #f59e0b; }
-      .new-border { stroke: #e5e7eb; stroke-width: 1; fill: none; }
-      .new-accent { fill: #0070d2; }
-      .label { fill: #374151; font-family: 'Segoe UI', Arial, sans-serif; font-size: 24px; font-weight: bold; }
-      .stat-value { fill: #1a1f36; font-family: 'Segoe UI', Arial, sans-serif; font-size: 28px; font-weight: 700; }
-      .badge { font-family: 'Segoe UI', Arial, sans-serif; font-size: 10px; fill: white; }
+      .bg { fill: #1a1a2e; }
+      .header-bg { fill: #0f0f1a; }
+      .card-bg { fill: #16213e; }
+      .card-border { stroke: #2d3a5a; stroke-width: 1; fill: none; }
+      .text { fill: #c9d1d9; font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 13px; }
+      .text-muted { fill: #8b949e; font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 12px; }
+      .text-small { fill: #6e7681; font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 11px; }
+      .link { fill: #58a6ff; font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 13px; }
+      .link-hover { fill: #79c0ff; }
+      .title { fill: #f0f6fc; font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 16px; font-weight: 600; }
+      .nav-link { fill: #c9d1d9; font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 13px; }
+      .nav-active { fill: #58a6ff; font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 13px; font-weight: 500; }
+      .green { fill: #3fb950; }
+      .red { fill: #f85149; }
+      .orange { fill: #d29922; }
+      .purple { fill: #a371f7; }
+      .gold { fill: #f0c14b; }
+      .ratio-good { fill: #3fb950; }
+      .ratio-mid { fill: #d29922; }
+      .ratio-bad { fill: #f85149; }
+      .tag { fill: #388bfd26; stroke: #388bfd; stroke-width: 1; }
+      .tag-text { fill: #58a6ff; font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 10px; }
+      .table-header { fill: #21262d; }
+      .table-row { fill: #161b22; }
+      .table-row-alt { fill: #0d1117; }
+      .table-border { stroke: #30363d; stroke-width: 1; }
+      .input-bg { fill: #0d1117; stroke: #30363d; }
+      .btn-primary { fill: #238636; }
+      .btn-secondary { fill: #21262d; stroke: #30363d; }
+      .label { fill: #8b949e; font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 20px; font-weight: 600; }
     </style>
   </defs>
 
   <!-- Background -->
-  <rect width="1200" height="800" class="new-bg"/>
+  <rect width="1200" height="800" class="bg"/>
 
   <!-- Label -->
-  <text x="600" y="40" text-anchor="middle" class="label">NEW SPLUNK UI - Home Page</text>
-
-  <!-- Sidebar -->
-  <rect x="0" y="60" width="220" height="740" class="new-sidebar"/>
-
-  <!-- Sidebar Logo -->
-  <rect x="20" y="80" width="180" height="40" rx="4" fill="#2d3748"/>
-  <text x="60" y="107" fill="white" font-family="'Segoe UI', Arial" font-size="16" font-weight="bold">GAZELLE</text>
-
-  <!-- Sidebar Nav -->
-  <rect x="10" y="140" width="200" height="36" rx="4" fill="#0070d2"/>
-  <circle cx="35" cy="158" r="8" fill="none" stroke="white" stroke-width="1.5"/>
-  <text x="55" y="163" class="new-nav-active">Dashboard</text>
-
-  <circle cx="35" cy="198" r="8" fill="none" stroke="#a0aec0" stroke-width="1.5"/>
-  <text x="55" y="203" class="new-nav-text">Torrents</text>
-
-  <circle cx="35" cy="238" r="8" fill="none" stroke="#a0aec0" stroke-width="1.5"/>
-  <text x="55" y="243" class="new-nav-text">Requests</text>
-
-  <circle cx="35" cy="278" r="8" fill="none" stroke="#a0aec0" stroke-width="1.5"/>
-  <text x="55" y="283" class="new-nav-text">Forums</text>
-
-  <circle cx="35" cy="318" r="8" fill="none" stroke="#a0aec0" stroke-width="1.5"/>
-  <text x="55" y="323" class="new-nav-text">Collages</text>
-
-  <circle cx="35" cy="358" r="8" fill="none" stroke="#a0aec0" stroke-width="1.5"/>
-  <text x="55" y="363" class="new-nav-text">Top 10</text>
-
-  <line x1="20" y1="400" x2="200" y2="400" stroke="#4a5568" stroke-width="1"/>
-
-  <circle cx="35" cy="430" r="8" fill="none" stroke="#a0aec0" stroke-width="1.5"/>
-  <text x="55" y="435" class="new-nav-text">Rules</text>
-
-  <circle cx="35" cy="470" r="8" fill="none" stroke="#a0aec0" stroke-width="1.5"/>
-  <text x="55" y="475" class="new-nav-text">Wiki</text>
-
-  <circle cx="35" cy="510" r="8" fill="none" stroke="#a0aec0" stroke-width="1.5"/>
-  <text x="55" y="515" class="new-nav-text">Upload</text>
-
-  <!-- User section at bottom of sidebar -->
-  <rect x="10" y="720" width="200" height="60" rx="4" fill="#2d3748"/>
-  <circle cx="40" cy="750" r="18" fill="#4a5568"/>
-  <text x="40" y="755" text-anchor="middle" fill="white" font-size="14">U</text>
-  <text x="70" y="745" class="new-nav-active">username</text>
-  <text x="70" y="762" class="new-nav-text">Power User</text>
+  <text x="600" y="35" text-anchor="middle" class="label">NEW GAZELLE UI - Home (Dark Community Theme)</text>
 
   <!-- Header Bar -->
-  <rect x="220" y="60" width="980" height="60" class="new-header new-shadow"/>
-  <rect x="220" y="60" width="980" height="60" class="new-border"/>
+  <rect x="0" y="50" width="1200" height="50" class="header-bg"/>
+
+  <!-- Logo -->
+  <text x="30" y="82" fill="#58a6ff" font-family="'Segoe UI'" font-size="20" font-weight="bold">GAZELLE</text>
+
+  <!-- Main Nav -->
+  <text x="140" y="80" class="nav-active">Home</text>
+  <text x="195" y="80" class="nav-link">Torrents</text>
+  <text x="270" y="80" class="nav-link">Requests</text>
+  <text x="350" y="80" class="nav-link">Forums</text>
+  <text x="420" y="80" class="nav-link">Collages</text>
+  <text x="495" y="80" class="nav-link">Top 10</text>
+  <text x="555" y="80" class="nav-link">Rules</text>
+  <text x="605" y="80" class="nav-link">Wiki</text>
+  <text x="655" y="80" class="nav-link">Upload</text>
 
   <!-- Search Box -->
-  <rect x="240" y="75" width="300" height="36" rx="4" fill="#f4f5f7" stroke="#d1d5db"/>
-  <text x="260" y="98" class="new-text-muted">Search torrents, artists, users...</text>
+  <rect x="720" y="62" width="220" height="28" rx="4" class="input-bg"/>
+  <text x="735" y="81" class="text-muted">Search torrents, artists...</text>
 
-  <!-- Header Stats -->
-  <text x="700" y="88" class="new-text">Upload</text>
-  <text x="700" y="105" class="new-subtitle">524.32 GB</text>
+  <!-- User Stats Bar -->
+  <text x="960" y="72" class="text-small">↑</text>
+  <text x="970" y="72" class="green" font-size="11">524.32 GB</text>
+  <text x="960" y="88" class="text-small">↓</text>
+  <text x="970" y="88" class="text" font-size="11">128.45 GB</text>
+  <text x="1040" y="80" class="ratio-good" font-size="13" font-weight="600">4.08</text>
 
-  <text x="820" y="88" class="new-text">Download</text>
-  <text x="820" y="105" class="new-subtitle">128.45 GB</text>
+  <!-- User Menu -->
+  <circle cx="1100" cy="75" r="14" fill="#2d3a5a"/>
+  <text x="1100" y="80" text-anchor="middle" class="link" font-size="12">U</text>
+  <text x="1125" y="75" class="link" font-size="12">▾</text>
 
-  <text x="940" y="88" class="new-text">Ratio</text>
-  <text x="940" y="105" font-family="'Segoe UI'" font-size="14" font-weight="600" fill="#10b981">4.08</text>
+  <!-- Notifications -->
+  <circle cx="1160" cy="75" r="12" fill="#2d3a5a"/>
+  <circle cx="1167" cy="68" r="6" fill="#f85149"/>
+  <text x="1167" y="71" text-anchor="middle" fill="white" font-size="8">3</text>
 
-  <!-- Notification Bell -->
-  <circle cx="1040" cy="90" r="16" fill="#f4f5f7" stroke="#d1d5db"/>
-  <circle cx="1048" cy="82" r="8" fill="#ef4444"/>
-  <text x="1048" y="86" text-anchor="middle" class="badge">3</text>
+  <!-- Main Content Grid -->
+  <!-- Left Column - Stats & News -->
 
-  <!-- Inbox -->
-  <circle cx="1090" cy="90" r="16" fill="#f4f5f7" stroke="#d1d5db"/>
+  <!-- Welcome Box -->
+  <rect x="20" y="115" width="280" height="90" rx="6" class="card-bg"/>
+  <rect x="20" y="115" width="280" height="90" rx="6" class="card-border"/>
+  <text x="35" y="140" class="title">Welcome back, username</text>
+  <text x="35" y="162" class="text-muted">Power User · Member since Mar 2024</text>
+  <rect x="35" y="175" width="70" height="22" rx="4" class="btn-secondary"/>
+  <text x="55" y="190" class="text" font-size="11">Profile</text>
+  <rect x="115" y="175" width="70" height="22" rx="4" class="btn-secondary"/>
+  <text x="130" y="190" class="text" font-size="11">Settings</text>
+  <rect x="195" y="175" width="90" height="22" rx="4" class="btn-primary"/>
+  <text x="215" y="190" fill="white" font-size="11">Inbox (3)</text>
 
-  <!-- User Avatar -->
-  <circle cx="1150" cy="90" r="18" fill="#0070d2"/>
-  <text x="1150" y="95" text-anchor="middle" fill="white" font-size="14">U</text>
+  <!-- Stats Box -->
+  <rect x="20" y="215" width="280" height="140" rx="6" class="card-bg"/>
+  <rect x="20" y="215" width="280" height="140" rx="6" class="card-border"/>
+  <text x="35" y="240" class="title">Your Stats</text>
 
-  <!-- Main Content Area -->
-  <!-- Stats Cards Row -->
-  <rect x="240" y="140" width="220" height="100" rx="8" class="new-card new-shadow"/>
-  <text x="260" y="165" class="new-text-muted">Total Uploaded</text>
-  <text x="260" y="200" class="stat-value">524.32</text>
-  <text x="370" y="200" class="new-text-muted">GB</text>
-  <rect x="400" y="160" width="40" height="60" rx="4" fill="#dcfce7"/>
-  <text x="420" y="195" text-anchor="middle" class="new-green" font-size="20">↑</text>
+  <text x="35" y="270" class="text-muted">Uploaded</text>
+  <text x="170" y="270" class="green" text-anchor="end">524.32 GB</text>
 
-  <rect x="480" y="140" width="220" height="100" rx="8" class="new-card new-shadow"/>
-  <text x="500" y="165" class="new-text-muted">Total Downloaded</text>
-  <text x="500" y="200" class="stat-value">128.45</text>
-  <text x="610" y="200" class="new-text-muted">GB</text>
-  <rect x="640" y="160" width="40" height="60" rx="4" fill="#fef3c7"/>
-  <text x="660" y="195" text-anchor="middle" class="new-orange" font-size="20">↓</text>
+  <text x="35" y="292" class="text-muted">Downloaded</text>
+  <text x="170" y="292" class="text" text-anchor="end">128.45 GB</text>
 
-  <rect x="720" y="140" width="220" height="100" rx="8" class="new-card new-shadow"/>
-  <text x="740" y="165" class="new-text-muted">Bonus Points</text>
-  <text x="740" y="200" class="stat-value">15,432</text>
-  <rect x="880" y="160" width="40" height="60" rx="4" fill="#dbeafe"/>
-  <text x="900" y="195" text-anchor="middle" class="new-blue" font-size="18">★</text>
+  <text x="35" y="314" class="text-muted">Ratio</text>
+  <text x="170" y="314" class="ratio-good" text-anchor="end" font-weight="600">4.08</text>
 
-  <rect x="960" y="140" width="220" height="100" rx="8" class="new-card new-shadow"/>
-  <text x="980" y="165" class="new-text-muted">FL Tokens</text>
-  <text x="980" y="200" class="stat-value">8</text>
-  <rect x="1120" y="160" width="40" height="60" rx="4" fill="#ede9fe"/>
-  <text x="1140" y="195" text-anchor="middle" class="new-purple" font-size="18">◆</text>
+  <text x="35" y="336" class="text-muted">Bonus Points</text>
+  <text x="170" y="336" class="gold" text-anchor="end">15,432</text>
 
-  <!-- Recent Uploads Card -->
-  <rect x="240" y="260" width="700" height="320" rx="8" class="new-card new-shadow"/>
-  <text x="260" y="290" class="new-title">Recent Uploads</text>
-  <text x="260" y="310" class="new-text-muted">Latest torrents added to the site</text>
+  <text x="195" y="270" class="text-muted">Seeding</text>
+  <text x="285" y="270" class="text" text-anchor="end">156</text>
+
+  <text x="195" y="292" class="text-muted">Leeching</text>
+  <text x="285" y="292" class="text" text-anchor="end">2</text>
+
+  <text x="195" y="314" class="text-muted">Snatched</text>
+  <text x="285" y="314" class="text" text-anchor="end">1,234</text>
+
+  <text x="195" y="336" class="text-muted">Uploads</text>
+  <text x="285" y="336" class="text" text-anchor="end">89</text>
+
+  <!-- Site Stats -->
+  <rect x="20" y="365" width="280" height="120" rx="6" class="card-bg"/>
+  <rect x="20" y="365" width="280" height="120" rx="6" class="card-border"/>
+  <text x="35" y="390" class="title">Site Stats</text>
+
+  <text x="35" y="418" class="text-muted">Users</text>
+  <text x="150" y="418" class="text" text-anchor="end">12,456</text>
+  <text x="160" y="418" class="text-small">(2,341 online)</text>
+
+  <text x="35" y="440" class="text-muted">Torrents</text>
+  <text x="150" y="440" class="text" text-anchor="end">89,234</text>
+
+  <text x="35" y="462" class="text-muted">Peers</text>
+  <text x="150" y="462" class="text" text-anchor="end">45,678</text>
+  <text x="160" y="462" class="green" font-size="11">38,901 S</text>
+  <text x="220" y="462" class="red" font-size="11">6,777 L</text>
+
+  <!-- News Box -->
+  <rect x="20" y="495" width="280" height="150" rx="6" class="card-bg"/>
+  <rect x="20" y="495" width="280" height="150" rx="6" class="card-border"/>
+  <text x="35" y="520" class="title">News</text>
+
+  <circle cx="42" cy="545" r="4" fill="#58a6ff"/>
+  <text x="55" y="540" class="link" font-size="12">Site maintenance Saturday</text>
+  <text x="55" y="555" class="text-small">by Staff · 2 days ago</text>
+
+  <circle cx="42" cy="585" r="4" fill="#3fb950"/>
+  <text x="55" y="580" class="link" font-size="12">Freeleech event this Friday!</text>
+  <text x="55" y="595" class="text-small">by Admin · 5 days ago</text>
+
+  <circle cx="42" cy="625" r="4" fill="#a371f7"/>
+  <text x="55" y="620" class="link" font-size="12">New upload rules in effect</text>
+  <text x="55" y="635" class="text-small">by Mod · 1 week ago</text>
+
+  <!-- Center Column - Recent Uploads -->
+  <rect x="315" y="115" width="560" height="530" rx="6" class="card-bg"/>
+  <rect x="315" y="115" width="560" height="530" rx="6" class="card-border"/>
+  <text x="330" y="142" class="title">Recent Uploads</text>
+  <text x="830" y="142" class="link" font-size="12" text-anchor="end">View All →</text>
 
   <!-- Table Header -->
-  <rect x="255" y="325" width="670" height="30" rx="4" fill="#f9fafb"/>
-  <text x="270" y="345" class="new-text-muted">Release</text>
-  <text x="570" y="345" class="new-text-muted">Size</text>
-  <text x="650" y="345" class="new-text-muted">S/L</text>
-  <text x="730" y="345" class="new-text-muted">Age</text>
+  <rect x="325" y="155" width="540" height="28" rx="4" class="table-header"/>
+  <text x="340" y="174" class="text-small">Release</text>
+  <text x="660" y="174" class="text-small">Size</text>
+  <text x="720" y="174" class="text-small">S</text>
+  <text x="755" y="174" class="text-small">L</text>
+  <text x="790" y="174" class="text-small">Sn</text>
+  <text x="835" y="174" class="text-small">Time</text>
 
-  <!-- Table Rows -->
-  <line x1="255" y1="360" x2="925" y2="360" stroke="#e5e7eb"/>
-  <rect x="270" y="368" width="24" height="24" rx="4" fill="#dbeafe"/>
-  <text x="282" y="385" text-anchor="middle" class="new-blue" font-size="11">♪</text>
-  <text x="305" y="378" class="new-link">Artist Name - Album Title (2025)</text>
-  <text x="305" y="393" class="new-text-small">FLAC / Lossless / Log (100%)</text>
-  <text x="570" y="385" class="new-text">485 MB</text>
-  <text x="650" y="385" class="new-green">24</text>
-  <text x="670" y="385" class="new-text-muted">/</text>
-  <text x="680" y="385" class="new-red">3</text>
-  <text x="730" y="385" class="new-text-muted">2h ago</text>
+  <!-- Torrent Row 1 -->
+  <rect x="325" y="188" width="540" height="55" class="table-row"/>
+  <rect x="335" y="196" width="36" height="36" rx="4" fill="#2d3a5a"/>
+  <text x="353" y="220" text-anchor="middle" class="text" font-size="16">♪</text>
+  <text x="385" y="210" class="link">Artist Name - Album Title (2025)</text>
+  <rect x="385" y="218" width="40" height="16" rx="3" class="tag"/>
+  <text x="405" y="229" text-anchor="middle" class="tag-text">FLAC</text>
+  <rect x="430" y="218" width="70" height="16" rx="3" fill="#3fb95033" stroke="#3fb950"/>
+  <text x="465" y="229" text-anchor="middle" fill="#3fb950" font-size="10">Log 100%</text>
+  <rect x="505" y="218" width="30" height="16" rx="3" fill="#d2992233" stroke="#d29922"/>
+  <text x="520" y="229" text-anchor="middle" fill="#d29922" font-size="10">FL</text>
+  <text x="660" y="220" class="text">485 MB</text>
+  <text x="720" y="220" class="green">24</text>
+  <text x="755" y="220" class="red">3</text>
+  <text x="790" y="220" class="text">156</text>
+  <text x="835" y="220" class="text-muted">2h</text>
 
-  <line x1="255" y1="405" x2="925" y2="405" stroke="#e5e7eb"/>
-  <rect x="270" y="413" width="24" height="24" rx="4" fill="#dbeafe"/>
-  <text x="282" y="430" text-anchor="middle" class="new-blue" font-size="11">♪</text>
-  <text x="305" y="423" class="new-link">Band Name - EP Title (2024)</text>
-  <text x="305" y="438" class="new-text-small">MP3 / 320kbps</text>
-  <text x="570" y="430" class="new-text">89 MB</text>
-  <text x="650" y="430" class="new-green">18</text>
-  <text x="670" y="430" class="new-text-muted">/</text>
-  <text x="680" y="430" class="new-red">1</text>
-  <text x="730" y="430" class="new-text-muted">4h ago</text>
+  <!-- Torrent Row 2 -->
+  <rect x="325" y="245" width="540" height="55" class="table-row-alt"/>
+  <rect x="335" y="253" width="36" height="36" rx="4" fill="#2d3a5a"/>
+  <text x="353" y="277" text-anchor="middle" class="text" font-size="16">♪</text>
+  <text x="385" y="267" class="link">Band Name - Greatest Hits (2020)</text>
+  <rect x="385" y="275" width="35" height="16" rx="3" class="tag"/>
+  <text x="402" y="286" text-anchor="middle" class="tag-text">MP3</text>
+  <rect x="425" y="275" width="30" height="16" rx="3" class="tag"/>
+  <text x="440" y="286" text-anchor="middle" class="tag-text">320</text>
+  <text x="660" y="277" class="text">128 MB</text>
+  <text x="720" y="277" class="green">18</text>
+  <text x="755" y="277" class="red">2</text>
+  <text x="790" y="277" class="text">89</text>
+  <text x="835" y="277" class="text-muted">5h</text>
 
-  <line x1="255" y1="450" x2="925" y2="450" stroke="#e5e7eb"/>
-  <rect x="270" y="458" width="24" height="24" rx="4" fill="#ede9fe"/>
-  <text x="282" y="475" text-anchor="middle" class="new-purple" font-size="11">⚙</text>
-  <text x="305" y="468" class="new-link">Software Name v2.5.1</text>
-  <text x="305" y="483" class="new-text-small">Windows x64</text>
-  <text x="570" y="475" class="new-text">1.24 GB</text>
-  <text x="650" y="475" class="new-green">45</text>
-  <text x="670" y="475" class="new-text-muted">/</text>
-  <text x="680" y="475" class="new-red">8</text>
-  <text x="730" y="475" class="new-text-muted">6h ago</text>
+  <!-- Torrent Row 3 -->
+  <rect x="325" y="302" width="540" height="55" class="table-row"/>
+  <rect x="335" y="310" width="36" height="36" rx="4" fill="#2d3a5a"/>
+  <text x="353" y="334" text-anchor="middle" class="text" font-size="14">⚙</text>
+  <text x="385" y="324" class="link">Software Name v2.5.1</text>
+  <rect x="385" y="332" width="55" height="16" rx="3" fill="#a371f726" stroke="#a371f7"/>
+  <text x="412" y="343" text-anchor="middle" fill="#a371f7" font-size="10">Win64</text>
+  <text x="660" y="334" class="text">1.24 GB</text>
+  <text x="720" y="334" class="green">45</text>
+  <text x="755" y="334" class="red">8</text>
+  <text x="790" y="334" class="text">234</text>
+  <text x="835" y="334" class="text-muted">6h</text>
 
-  <line x1="255" y1="495" x2="925" y2="495" stroke="#e5e7eb"/>
-  <rect x="270" y="503" width="24" height="24" rx="4" fill="#dbeafe"/>
-  <text x="282" y="520" text-anchor="middle" class="new-blue" font-size="11">♪</text>
-  <text x="305" y="513" class="new-link">Various Artists - Compilation (2025)</text>
-  <text x="305" y="528" class="new-text-small">FLAC / Lossless</text>
-  <text x="570" y="520" class="new-text">2.15 GB</text>
-  <text x="650" y="520" class="new-green">12</text>
-  <text x="670" y="520" class="new-text-muted">/</text>
-  <text x="680" y="520" class="new-red">5</text>
-  <text x="730" y="520" class="new-text-muted">8h ago</text>
+  <!-- Torrent Row 4 -->
+  <rect x="325" y="359" width="540" height="55" class="table-row-alt"/>
+  <rect x="335" y="367" width="36" height="36" rx="4" fill="#2d3a5a"/>
+  <text x="353" y="391" text-anchor="middle" class="text" font-size="16">♪</text>
+  <text x="385" y="381" class="link">Various Artists - Compilation (2025)</text>
+  <rect x="385" y="389" width="40" height="16" rx="3" class="tag"/>
+  <text x="405" y="400" text-anchor="middle" class="tag-text">FLAC</text>
+  <text x="660" y="391" class="text">2.15 GB</text>
+  <text x="720" y="391" class="green">12</text>
+  <text x="755" y="391" class="red">5</text>
+  <text x="790" y="391" class="text">67</text>
+  <text x="835" y="391" class="text-muted">8h</text>
 
-  <!-- View All Button -->
-  <rect x="790" y="545" width="120" height="32" rx="4" fill="#0070d2"/>
-  <text x="850" y="566" text-anchor="middle" fill="white" font-family="'Segoe UI'" font-size="13">View All →</text>
+  <!-- Torrent Row 5 -->
+  <rect x="325" y="416" width="540" height="55" class="table-row"/>
+  <rect x="335" y="424" width="36" height="36" rx="4" fill="#2d3a5a"/>
+  <text x="353" y="448" text-anchor="middle" class="text" font-size="16">♪</text>
+  <text x="385" y="438" class="link">Solo Artist - Debut Album (2025)</text>
+  <rect x="385" y="446" width="40" height="16" rx="3" class="tag"/>
+  <text x="405" y="457" text-anchor="middle" class="tag-text">FLAC</text>
+  <rect x="430" y="446" width="40" height="16" rx="3" fill="#3fb95033" stroke="#3fb950"/>
+  <text x="450" y="457" text-anchor="middle" fill="#3fb950" font-size="10">24bit</text>
+  <text x="660" y="448" class="text">2.15 GB</text>
+  <text x="720" y="448" class="green">12</text>
+  <text x="755" y="448" class="red">1</text>
+  <text x="790" y="448" class="text">67</text>
+  <text x="835" y="448" class="text-muted">12h</text>
 
-  <!-- News Card -->
-  <rect x="960" y="260" width="220" height="150" rx="8" class="new-card new-shadow"/>
-  <text x="980" y="290" class="new-subtitle">Latest News</text>
+  <!-- Torrent Row 6 -->
+  <rect x="325" y="473" width="540" height="55" class="table-row-alt"/>
+  <rect x="335" y="481" width="36" height="36" rx="4" fill="#2d3a5a"/>
+  <text x="353" y="505" text-anchor="middle" class="text" font-size="16">📚</text>
+  <text x="385" y="495" class="link">Author Name - Book Title</text>
+  <rect x="385" y="503" width="45" height="16" rx="3" fill="#d2992233" stroke="#d29922"/>
+  <text x="407" y="514" text-anchor="middle" fill="#d29922" font-size="10">EPUB</text>
+  <text x="660" y="505" class="text">2.45 MB</text>
+  <text x="720" y="505" class="green">8</text>
+  <text x="755" y="505" class="text-muted">0</text>
+  <text x="790" y="505" class="text">45</text>
+  <text x="835" y="505" class="text-muted">1d</text>
 
-  <circle cx="990" cy="320" r="6" fill="#3b82f6"/>
-  <text x="1010" y="315" class="new-link" font-size="12">Site maintenance</text>
-  <text x="1010" y="330" class="new-text-small">scheduled Saturday</text>
+  <!-- Torrent Row 7 -->
+  <rect x="325" y="530" width="540" height="55" class="table-row"/>
+  <rect x="335" y="538" width="36" height="36" rx="4" fill="#2d3a5a"/>
+  <text x="353" y="562" text-anchor="middle" class="text" font-size="16">♪</text>
+  <text x="385" y="552" class="link">Orchestra - Symphony No. 9 (1972)</text>
+  <rect x="385" y="560" width="40" height="16" rx="3" class="tag"/>
+  <text x="405" y="571" text-anchor="middle" class="tag-text">FLAC</text>
+  <rect x="430" y="560" width="45" height="16" rx="3" fill="#f8514933" stroke="#f85149"/>
+  <text x="452" y="571" text-anchor="middle" fill="#f85149" font-size="10">Scene</text>
+  <text x="660" y="562" class="text">892 MB</text>
+  <text x="720" y="562" class="green">34</text>
+  <text x="755" y="562" class="text-muted">0</text>
+  <text x="790" y="562" class="text">189</text>
+  <text x="835" y="562" class="text-muted">5d</text>
 
-  <circle cx="990" cy="365" r="6" fill="#10b981"/>
-  <text x="1010" y="360" class="new-link" font-size="12">Freeleech event</text>
-  <text x="1010" y="375" class="new-text-small">starting Friday!</text>
+  <!-- Pagination -->
+  <text x="480" y="625" class="text-muted">‹</text>
+  <text x="510" y="625" class="link">1</text>
+  <text x="540" y="625" class="text-muted">2</text>
+  <text x="570" y="625" class="text-muted">3</text>
+  <text x="600" y="625" class="text-muted">...</text>
+  <text x="640" y="625" class="text-muted">›</text>
 
-  <!-- Site Stats Card -->
-  <rect x="960" y="420" width="220" height="160" rx="8" class="new-card new-shadow"/>
-  <text x="980" y="450" class="new-subtitle">Site Statistics</text>
+  <!-- Right Column - Community -->
+  <!-- Forum Activity -->
+  <rect x="890" y="115" width="290" height="200" rx="6" class="card-bg"/>
+  <rect x="890" y="115" width="290" height="200" rx="6" class="card-border"/>
+  <text x="905" y="142" class="title">Forum Activity</text>
 
-  <text x="980" y="480" class="new-text-muted">Users</text>
-  <text x="1120" y="480" class="new-text" text-anchor="end">12,456</text>
+  <text x="905" y="170" class="link" font-size="12">Help with upload issues</text>
+  <text x="905" y="185" class="text-small">by user123 · 10 min ago · 12 replies</text>
 
-  <text x="980" y="505" class="new-text-muted">Torrents</text>
-  <text x="1120" y="505" class="new-text" text-anchor="end">89,234</text>
+  <text x="905" y="210" class="link" font-size="12">Best FLAC releases of 2025?</text>
+  <text x="905" y="225" class="text-small">by music_fan · 25 min ago · 34 replies</text>
 
-  <text x="980" y="530" class="new-text-muted">Requests</text>
-  <text x="1120" y="530" class="new-text" text-anchor="end">4,521</text>
+  <text x="905" y="250" class="link" font-size="12">Ratio problems after new tracker</text>
+  <text x="905" y="265" class="text-small">by newbie42 · 1 hour ago · 8 replies</text>
 
-  <text x="980" y="555" class="new-text-muted">Peers</text>
-  <text x="1120" y="555" class="new-text" text-anchor="end">45,678</text>
+  <text x="905" y="290" class="link" font-size="12">Feature request: Dark mode</text>
+  <text x="905" y="305" class="text-small">by dev_user · 2 hours ago · 56 replies</text>
 
-  <!-- Recent Forum Posts Card -->
-  <rect x="240" y="600" width="460" height="180" rx="8" class="new-card new-shadow"/>
-  <text x="260" y="630" class="new-subtitle">Recent Forum Posts</text>
+  <!-- Hot Requests -->
+  <rect x="890" y="325" width="290" height="170" rx="6" class="card-bg"/>
+  <rect x="890" y="325" width="290" height="170" rx="6" class="card-border"/>
+  <text x="905" y="352" class="title">Hot Requests</text>
 
-  <rect x="260" y="650" width="420" height="40" rx="4" fill="#f9fafb"/>
-  <text x="280" y="670" class="new-link">Help with upload issues</text>
-  <text x="280" y="685" class="new-text-small">by user123 · 10 minutes ago</text>
+  <text x="905" y="380" class="link" font-size="12">Artist - Rare Album (1992)</text>
+  <rect x="1090" y="368" width="70" height="18" rx="9" fill="#f0c14b33"/>
+  <text x="1125" y="381" text-anchor="middle" class="gold" font-size="10">5,000 BP</text>
 
-  <rect x="260" y="700" width="420" height="40" rx="4" fill="white"/>
-  <text x="280" y="720" class="new-link">Best FLAC releases of 2025?</text>
-  <text x="280" y="735" class="new-text-small">by music_fan · 25 minutes ago</text>
+  <text x="905" y="410" class="link" font-size="12">Band - Live Recording (2020)</text>
+  <rect x="1090" y="398" width="70" height="18" rx="9" fill="#f0c14b33"/>
+  <text x="1125" y="411" text-anchor="middle" class="gold" font-size="10">2,500 BP</text>
 
-  <!-- Active Requests Card -->
-  <rect x="720" y="600" width="460" height="180" rx="8" class="new-card new-shadow"/>
-  <text x="740" y="630" class="new-subtitle">Hot Requests</text>
+  <text x="905" y="440" class="link" font-size="12">Various - Soundtrack OST</text>
+  <rect x="1090" y="428" width="70" height="18" rx="9" fill="#f0c14b33"/>
+  <text x="1125" y="441" text-anchor="middle" class="gold" font-size="10">1,000 BP</text>
 
-  <rect x="740" y="650" width="420" height="40" rx="4" fill="#f9fafb"/>
-  <text x="760" y="670" class="new-link">Artist - Rare Album (1992)</text>
-  <rect x="1060" y="655" width="80" height="24" rx="12" fill="#fef3c7"/>
-  <text x="1100" y="672" text-anchor="middle" class="new-orange" font-size="11">5,000 BP</text>
+  <text x="905" y="470" class="link" font-size="12">Producer - Instrumental Album</text>
+  <rect x="1090" y="458" width="70" height="18" rx="9" fill="#f0c14b33"/>
+  <text x="1125" y="471" text-anchor="middle" class="gold" font-size="10">3,000 BP</text>
 
-  <rect x="740" y="700" width="420" height="40" rx="4" fill="white"/>
-  <text x="760" y="720" class="new-link">Band - Live Recording (2020)</text>
-  <rect x="1060" y="705" width="80" height="24" rx="12" fill="#fef3c7"/>
-  <text x="1100" y="722" text-anchor="middle" class="new-orange" font-size="11">2,500 BP</text>
+  <!-- Staff Picks -->
+  <rect x="890" y="505" width="290" height="140" rx="6" class="card-bg"/>
+  <rect x="890" y="505" width="290" height="140" rx="6" class="card-border"/>
+  <text x="905" y="532" class="title">Staff Picks</text>
+  <rect x="1040" y="518" width="55" height="18" rx="9" fill="#a371f733"/>
+  <text x="1067" y="531" text-anchor="middle" class="purple" font-size="10">Curated</text>
+
+  <rect x="905" y="548" width="40" height="40" rx="4" fill="#2d3a5a"/>
+  <text x="925" y="574" text-anchor="middle" class="text" font-size="18">♪</text>
+  <text x="955" y="565" class="link" font-size="12">Artist - Masterpiece (2024)</text>
+  <text x="955" y="580" class="text-small">FLAC / 24bit / Log 100%</text>
+
+  <rect x="905" y="600" width="40" height="40" rx="4" fill="#2d3a5a"/>
+  <text x="925" y="626" text-anchor="middle" class="text" font-size="18">♪</text>
+  <text x="955" y="617" class="link" font-size="12">Band - Rare Live Set (1985)</text>
+  <text x="955" y="632" class="text-small">FLAC / Vinyl Rip</text>
+
+  <!-- Footer -->
+  <rect x="0" y="660" width="1200" height="40" class="header-bg"/>
+  <text x="600" y="685" text-anchor="middle" class="text-small">Gazelle Tracker © 2026 · Powered by Modern Gazelle · 45,678 peers online</text>
 </svg>

@@ -1,30 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
   <defs>
     <style>
-      .title { fill: #1a1f36; font-family: 'Segoe UI', Arial, sans-serif; font-size: 28px; font-weight: bold; }
-      .subtitle { fill: #6b7280; font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; }
-      .section-title { fill: #374151; font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px; font-weight: 600; }
-      .label { fill: #9ca3af; font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
-      .feature-text { fill: #3c4257; font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; }
+      .title { fill: #f0f6fc; font-family: 'Segoe UI', Arial, sans-serif; font-size: 28px; font-weight: bold; }
+      .subtitle { fill: #8b949e; font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; }
+      .section-title { fill: #f0f6fc; font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px; font-weight: 600; }
+      .label { fill: #8b949e; font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+      .feature-text { fill: #c9d1d9; font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; }
+      .feature-highlight { fill: #58a6ff; font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; }
       .old-box { fill: #1a1a2e; }
-      .new-box { fill: #ffffff; }
-      .border { stroke: #e5e7eb; stroke-width: 1; fill: none; }
+      .new-box { fill: #16213e; }
+      .border { stroke: #30363d; stroke-width: 1; fill: none; }
       .old-text { fill: #e0e0e0; font-family: Verdana, sans-serif; font-size: 10px; }
       .old-link { fill: #5dade2; font-family: Verdana, sans-serif; font-size: 10px; }
-      .new-text { fill: #3c4257; font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; }
-      .new-link { fill: #0070d2; font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; }
-      .check { fill: #10b981; font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; }
-      .cross { fill: #ef4444; font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; }
-      .arrow { fill: #0070d2; font-family: 'Segoe UI', Arial, sans-serif; font-size: 40px; }
+      .new-text { fill: #c9d1d9; font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 11px; }
+      .new-link { fill: #58a6ff; font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 11px; }
+      .check { fill: #3fb950; font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; }
+      .neutral { fill: #d29922; font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; }
+      .arrow { fill: #58a6ff; font-family: 'Segoe UI', Arial, sans-serif; font-size: 40px; }
+      .bg { fill: #0d1117; }
+      .card-bg { fill: #161b22; }
     </style>
   </defs>
 
   <!-- Background -->
-  <rect width="1200" height="900" fill="#f8fafc"/>
+  <rect width="1200" height="900" class="bg"/>
 
   <!-- Title -->
-  <text x="600" y="50" text-anchor="middle" class="title">Gazelle UI Modernization</text>
-  <text x="600" y="80" text-anchor="middle" class="subtitle">Comparison: Legacy PHP vs Modern Splunk UI Toolkit</text>
+  <text x="600" y="50" text-anchor="middle" class="title">Gazelle UI Evolution</text>
+  <text x="600" y="80" text-anchor="middle" class="subtitle">Modernizing the community experience while preserving the Gazelle identity</text>
 
   <!-- OLD UI Section -->
   <text x="300" y="120" text-anchor="middle" class="label">BEFORE (Legacy PHP)</text>
@@ -65,118 +68,105 @@
   <text x="585" y="310" text-anchor="middle" class="arrow">→</text>
 
   <!-- NEW UI Section -->
-  <text x="900" y="120" text-anchor="middle" class="label">AFTER (Splunk UI Toolkit)</text>
+  <text x="900" y="120" text-anchor="middle" class="label">AFTER (Modern Components)</text>
 
   <!-- New UI Preview Box -->
   <rect x="650" y="140" width="500" height="300" rx="8" class="new-box"/>
   <rect x="650" y="140" width="500" height="300" rx="8" class="border"/>
 
-  <!-- Mini New UI -->
-  <rect x="650" y="140" width="50" height="300" fill="#1a1f36" rx="8 0 0 8"/>
-  <circle cx="675" cy="165" r="12" fill="#2d3748"/>
-  <text x="675" y="170" text-anchor="middle" fill="#fff" font-size="10">G</text>
-  <circle cx="675" cy="205" r="8" fill="#0070d2"/>
-  <circle cx="675" cy="235" r="8" fill="none" stroke="#a0aec0"/>
-  <circle cx="675" cy="265" r="8" fill="none" stroke="#a0aec0"/>
-
-  <rect x="710" y="150" width="430" height="35" fill="#fff"/>
-  <rect x="720" y="158" width="150" height="20" rx="4" fill="#f4f5f7" stroke="#d1d5db"/>
-  <text x="730" y="172" fill="#9ca3af" font-family="'Segoe UI'" font-size="9">Search...</text>
+  <!-- Mini New UI - Same dark theme! -->
+  <rect x="660" y="150" width="480" height="35" fill="#0f0f1a"/>
+  <text x="680" y="174" fill="#58a6ff" font-family="'Segoe UI'" font-size="14" font-weight="bold">GAZELLE</text>
+  <text x="780" y="172" class="new-link" font-size="11">Home</text>
+  <text x="820" y="172" class="new-link" font-size="11">Torrents</text>
+  <text x="880" y="172" class="new-link" font-size="11">Forums</text>
+  <rect x="1040" y="158" width="80" height="20" rx="4" fill="#0d1117" stroke="#30363d"/>
 
   <!-- Stats Cards -->
-  <rect x="710" y="195" width="100" height="55" rx="4" fill="#fff" stroke="#e5e7eb"/>
-  <text x="720" y="212" fill="#6b7280" font-family="'Segoe UI'" font-size="8">Uploaded</text>
-  <text x="720" y="235" fill="#1a1f36" font-family="'Segoe UI'" font-size="16" font-weight="bold">524 GB</text>
+  <rect x="670" y="195" width="110" height="55" rx="6" fill="#161b22" stroke="#30363d"/>
+  <text x="680" y="215" fill="#8b949e" font-family="'Segoe UI'" font-size="9">Uploaded</text>
+  <text x="680" y="238" fill="#3fb950" font-family="'Segoe UI'" font-size="14" font-weight="600">524 GB</text>
 
-  <rect x="820" y="195" width="100" height="55" rx="4" fill="#fff" stroke="#e5e7eb"/>
-  <text x="830" y="212" fill="#6b7280" font-family="'Segoe UI'" font-size="8">Downloaded</text>
-  <text x="830" y="235" fill="#1a1f36" font-family="'Segoe UI'" font-size="16" font-weight="bold">128 GB</text>
+  <rect x="790" y="195" width="110" height="55" rx="6" fill="#161b22" stroke="#30363d"/>
+  <text x="800" y="215" fill="#8b949e" font-family="'Segoe UI'" font-size="9">Ratio</text>
+  <text x="800" y="238" fill="#3fb950" font-family="'Segoe UI'" font-size="14" font-weight="600">4.08</text>
 
-  <rect x="930" y="195" width="100" height="55" rx="4" fill="#fff" stroke="#e5e7eb"/>
-  <text x="940" y="212" fill="#6b7280" font-family="'Segoe UI'" font-size="8">Ratio</text>
-  <text x="940" y="235" fill="#10b981" font-family="'Segoe UI'" font-size="16" font-weight="bold">4.08</text>
-
-  <rect x="1040" y="195" width="90" height="55" rx="4" fill="#fff" stroke="#e5e7eb"/>
-  <text x="1050" y="212" fill="#6b7280" font-family="'Segoe UI'" font-size="8">Points</text>
-  <text x="1050" y="235" fill="#1a1f36" font-family="'Segoe UI'" font-size="16" font-weight="bold">15,432</text>
+  <rect x="910" y="195" width="110" height="55" rx="6" fill="#161b22" stroke="#30363d"/>
+  <text x="920" y="215" fill="#8b949e" font-family="'Segoe UI'" font-size="9">Points</text>
+  <text x="920" y="238" fill="#f0c14b" font-family="'Segoe UI'" font-size="14" font-weight="600">15,432</text>
 
   <!-- Data Card -->
-  <rect x="710" y="260" width="420" height="170" rx="4" fill="#fff" stroke="#e5e7eb"/>
-  <text x="725" y="282" fill="#1a1f36" font-family="'Segoe UI'" font-size="12" font-weight="600">Recent Uploads</text>
+  <rect x="670" y="260" width="470" height="170" rx="6" fill="#161b22" stroke="#30363d"/>
+  <text x="685" y="282" fill="#f0f6fc" font-family="'Segoe UI'" font-size="12" font-weight="600">Recent Uploads</text>
+  <text x="1105" y="282" fill="#58a6ff" font-family="'Segoe UI'" font-size="10" text-anchor="end">View All →</text>
 
-  <rect x="720" y="295" width="400" height="20" rx="4" fill="#f9fafb"/>
-  <text x="730" y="309" fill="#6b7280" font-family="'Segoe UI'" font-size="8">Release</text>
-  <text x="930" y="309" fill="#6b7280" font-family="'Segoe UI'" font-size="8">Size</text>
-  <text x="1000" y="309" fill="#6b7280" font-family="'Segoe UI'" font-size="8">S/L</text>
+  <rect x="680" y="295" width="450" height="22" rx="4" fill="#21262d"/>
+  <text x="690" y="311" fill="#6e7681" font-family="'Segoe UI'" font-size="9">Release</text>
+  <text x="960" y="311" fill="#6e7681" font-family="'Segoe UI'" font-size="9">S</text>
+  <text x="1000" y="311" fill="#6e7681" font-family="'Segoe UI'" font-size="9">L</text>
 
-  <rect x="730" y="325" width="20" height="20" rx="2" fill="#dbeafe"/>
-  <text x="755" y="338" fill="#0070d2" font-family="'Segoe UI'" font-size="9">Artist - Album Title (2025)</text>
-  <text x="930" y="338" fill="#3c4257" font-family="'Segoe UI'" font-size="9">485 MB</text>
-  <text x="1000" y="338" fill="#10b981" font-family="'Segoe UI'" font-size="9">24</text>
-  <text x="1020" y="338" fill="#ef4444" font-family="'Segoe UI'" font-size="9">/3</text>
+  <rect x="690" y="325" width="24" height="24" rx="4" fill="#2d3a5a"/>
+  <text x="720" y="340" fill="#58a6ff" font-family="'Segoe UI'" font-size="10">Artist - Album Title (2025)</text>
+  <rect x="880" y="330" width="35" height="14" rx="3" fill="#388bfd26" stroke="#388bfd"/>
+  <text x="897" y="340" text-anchor="middle" fill="#58a6ff" font-size="8">FLAC</text>
+  <text x="960" y="340" fill="#3fb950" font-family="'Segoe UI'" font-size="10">24</text>
+  <text x="1000" y="340" fill="#f85149" font-family="'Segoe UI'" font-size="10">3</text>
 
-  <rect x="730" y="355" width="20" height="20" rx="2" fill="#dbeafe"/>
-  <text x="755" y="368" fill="#0070d2" font-family="'Segoe UI'" font-size="9">Band - Greatest Hits</text>
-  <text x="930" y="368" fill="#3c4257" font-family="'Segoe UI'" font-size="9">128 MB</text>
-  <text x="1000" y="368" fill="#10b981" font-family="'Segoe UI'" font-size="9">18</text>
-  <text x="1020" y="368" fill="#ef4444" font-family="'Segoe UI'" font-size="9">/2</text>
+  <rect x="690" y="360" width="24" height="24" rx="4" fill="#2d3a5a"/>
+  <text x="720" y="375" fill="#58a6ff" font-family="'Segoe UI'" font-size="10">Band - Greatest Hits</text>
+  <rect x="840" y="365" width="35" height="14" rx="3" fill="#388bfd26" stroke="#388bfd"/>
+  <text x="857" y="375" text-anchor="middle" fill="#58a6ff" font-size="8">MP3</text>
+  <text x="960" y="375" fill="#3fb950" font-family="'Segoe UI'" font-size="10">18</text>
+  <text x="1000" y="375" fill="#f85149" font-family="'Segoe UI'" font-size="10">2</text>
 
-  <!-- Feature Comparison -->
-  <text x="600" y="490" text-anchor="middle" class="section-title">Feature Comparison</text>
+  <!-- Key Principles -->
+  <text x="600" y="490" text-anchor="middle" class="section-title">Design Principles</text>
 
-  <!-- Feature Table -->
-  <rect x="100" y="510" width="1000" height="350" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <!-- Principle Cards -->
+  <rect x="50" y="510" width="350" height="100" rx="8" class="card-bg"/>
+  <rect x="50" y="510" width="350" height="100" rx="8" class="border"/>
+  <text x="70" y="540" class="feature-highlight" font-weight="600">Preserve Dark Theme</text>
+  <text x="70" y="565" class="feature-text">Keep the signature dark color scheme</text>
+  <text x="70" y="585" class="feature-text">that Gazelle communities love.</text>
+
+  <rect x="425" y="510" width="350" height="100" rx="8" class="card-bg"/>
+  <rect x="425" y="510" width="350" height="100" rx="8" class="border"/>
+  <text x="445" y="540" class="feature-highlight" font-weight="600">Information Density</text>
+  <text x="445" y="565" class="feature-text">Maintain the data-rich layouts that</text>
+  <text x="445" y="585" class="feature-text">power users expect and need.</text>
+
+  <rect x="800" y="510" width="350" height="100" rx="8" class="card-bg"/>
+  <rect x="800" y="510" width="350" height="100" rx="8" class="border"/>
+  <text x="820" y="540" class="feature-highlight" font-weight="600">Community Focus</text>
+  <text x="820" y="565" class="feature-text">Forums, requests, and social features</text>
+  <text x="820" y="585" class="feature-text">remain front and center.</text>
+
+  <!-- Improvements Table -->
+  <text x="600" y="650" text-anchor="middle" class="section-title">What's Improved</text>
+
+  <rect x="100" y="670" width="1000" height="200" rx="8" class="card-bg"/>
+  <rect x="100" y="670" width="1000" height="200" rx="8" class="border"/>
 
   <!-- Table Header -->
-  <rect x="100" y="510" width="1000" height="40" rx="8 8 0 0" fill="#f9fafb"/>
-  <text x="300" y="535" text-anchor="middle" class="label">Feature</text>
-  <text x="550" y="535" text-anchor="middle" class="label">Legacy Gazelle</text>
-  <text x="850" y="535" text-anchor="middle" class="label">Splunk UI Toolkit</text>
+  <rect x="100" y="670" width="1000" height="35" rx="8 8 0 0" fill="#21262d"/>
+  <text x="300" y="693" text-anchor="middle" class="label">Improvement</text>
+  <text x="700" y="693" text-anchor="middle" class="label">Benefit</text>
 
   <!-- Row 1 -->
-  <line x1="100" y1="560" x2="1100" y2="560" stroke="#e5e7eb"/>
-  <text x="300" y="580" text-anchor="middle" class="feature-text">Design System</text>
-  <text x="550" y="580" text-anchor="middle" class="feature-text">Custom CSS, inconsistent</text>
-  <text x="850" y="580" text-anchor="middle" class="feature-text">Unified Splunk components</text>
-  <text x="550" y="598" text-anchor="middle" class="cross">✗</text>
-  <text x="850" y="598" text-anchor="middle" class="check">✓</text>
+  <line x1="100" y1="710" x2="1100" y2="710" stroke="#30363d"/>
+  <text x="130" y="732" class="feature-text">Modern component library (Splunk UI)</text>
+  <text x="520" y="732" class="feature-text">Consistent, accessible UI patterns</text>
+  <text x="520" y="750" class="check">✓ Works with dark themes</text>
 
   <!-- Row 2 -->
-  <line x1="100" y1="615" x2="1100" y2="615" stroke="#e5e7eb"/>
-  <text x="300" y="635" text-anchor="middle" class="feature-text">Responsive Layout</text>
-  <text x="550" y="635" text-anchor="middle" class="feature-text">Fixed width tables</text>
-  <text x="850" y="635" text-anchor="middle" class="feature-text">Fully responsive grid</text>
-  <text x="550" y="653" text-anchor="middle" class="cross">✗</text>
-  <text x="850" y="653" text-anchor="middle" class="check">✓</text>
+  <line x1="100" y1="765" x2="1100" y2="765" stroke="#30363d"/>
+  <text x="130" y="787" class="feature-text">TypeScript + React architecture</text>
+  <text x="520" y="787" class="feature-text">Type safety, better developer experience</text>
+  <text x="520" y="805" class="check">✓ Easier to maintain and extend</text>
 
   <!-- Row 3 -->
-  <line x1="100" y1="670" x2="1100" y2="670" stroke="#e5e7eb"/>
-  <text x="300" y="690" text-anchor="middle" class="feature-text">Theming</text>
-  <text x="550" y="690" text-anchor="middle" class="feature-text">Hard-coded colors</text>
-  <text x="850" y="690" text-anchor="middle" class="feature-text">Theme provider + variables</text>
-  <text x="550" y="708" text-anchor="middle" class="cross">✗</text>
-  <text x="850" y="708" text-anchor="middle" class="check">✓</text>
-
-  <!-- Row 4 -->
-  <line x1="100" y1="725" x2="1100" y2="725" stroke="#e5e7eb"/>
-  <text x="300" y="745" text-anchor="middle" class="feature-text">Icons</text>
-  <text x="550" y="745" text-anchor="middle" class="feature-text">PNG images / Unicode</text>
-  <text x="850" y="745" text-anchor="middle" class="feature-text">@splunk/react-icons SVG</text>
-  <text x="550" y="763" text-anchor="middle" class="cross">✗</text>
-  <text x="850" y="763" text-anchor="middle" class="check">✓</text>
-
-  <!-- Row 5 -->
-  <line x1="100" y1="780" x2="1100" y2="780" stroke="#e5e7eb"/>
-  <text x="300" y="800" text-anchor="middle" class="feature-text">Accessibility</text>
-  <text x="550" y="800" text-anchor="middle" class="feature-text">Limited ARIA support</text>
-  <text x="850" y="800" text-anchor="middle" class="feature-text">WCAG 2.1 compliant</text>
-  <text x="550" y="818" text-anchor="middle" class="cross">✗</text>
-  <text x="850" y="818" text-anchor="middle" class="check">✓</text>
-
-  <!-- Row 6 -->
-  <text x="300" y="845" text-anchor="middle" class="feature-text">Type Safety</text>
-  <text x="550" y="845" text-anchor="middle" class="feature-text">PHP templates</text>
-  <text x="850" y="845" text-anchor="middle" class="feature-text">TypeScript + React</text>
-  <text x="550" y="863" text-anchor="middle" class="cross">✗</text>
-  <text x="850" y="863" text-anchor="middle" class="check">✓</text>
+  <line x1="100" y1="820" x2="1100" y2="820" stroke="#30363d"/>
+  <text x="130" y="842" class="feature-text">Improved visual hierarchy</text>
+  <text x="520" y="842" class="feature-text">Clearer tags, badges, and status indicators</text>
+  <text x="520" y="860" class="check">✓ Same info, easier to scan</text>
 </svg>
