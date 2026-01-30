@@ -42,6 +42,83 @@
   --gz-focus: #58a6ff;
 }
 
+/* ============================================
+   CLIFFORD THE BIG RED DOG THEME
+   Warm, friendly colors inspired by Birdwell Island
+   ============================================ */
+[data-theme="clifford"] {
+  /* Backgrounds - sunny Birdwell Island */
+  --gz-bg-page: #FFF8E7;
+  --gz-bg-header: #D42A2A;
+  --gz-bg-card: #FFFFFF;
+  --gz-bg-table-header: #FFECB3;
+  --gz-bg-table-row: #FFFAF0;
+  --gz-bg-table-row-alt: #FFF3E0;
+  --gz-bg-input: #FFFFFF;
+  --gz-bg-hover: #FFEBEE;
+
+  /* Text colors - warm browns */
+  --gz-text-primary: #3E2723;
+  --gz-text-secondary: #5D4037;
+  --gz-text-muted: #8D6E63;
+  --gz-text-disabled: #BCAAA4;
+  --gz-text-on-primary: #FFFFFF;
+
+  /* Link colors - BIG RED! */
+  --gz-link: #D42A2A;
+  --gz-link-hover: #B71C1C;
+  --gz-link-visited: #7B1FA2;
+
+  /* Status colors */
+  --gz-seeders: #7CB342;
+  --gz-leechers: #D42A2A;
+  --gz-freeleech: #FFD54F;
+  --gz-snatched: #5C6BC0;
+
+  /* Borders - warm peach */
+  --gz-border: #FFCCBC;
+  --gz-border-light: #FFE0B2;
+
+  /* Focus */
+  --gz-focus: #D42A2A;
+
+  /* Clifford's friends colors */
+  --clifford-red: #D42A2A;
+  --clifford-red-dark: #B71C1C;
+  --clifford-red-light: #EF5350;
+  --emily-blue: #5C6BC0;
+  --tbone-yellow: #FDD835;
+  --cleo-purple: #9C27B0;
+  --mac-blue: #2196F3;
+  --sky-blue: #87CEEB;
+  --grass-green: #7CB342;
+  --sunflower-yellow: #FFD54F;
+}
+
+/* Clifford theme body styles */
+[data-theme="clifford"] body {
+  background-color: var(--gz-bg-page);
+  color: var(--gz-text-secondary);
+}
+
+/* Clifford selection color */
+[data-theme="clifford"] ::selection {
+  background-color: rgba(212, 42, 42, 0.3);
+}
+
+/* Clifford scrollbar */
+[data-theme="clifford"] ::-webkit-scrollbar-track {
+  background: #FFF3E0;
+}
+
+[data-theme="clifford"] ::-webkit-scrollbar-thumb {
+  background-color: #FFCCBC;
+}
+
+[data-theme="clifford"] ::-webkit-scrollbar-thumb:hover {
+  background-color: #D42A2A;
+}
+
 /* CSS Reset */
 *,
 *::before,
@@ -331,4 +408,94 @@ table {
 .gz-nav-link--active {
   color: var(--gz-text-primary);
   font-weight: 600;
+}
+
+/* ============================================
+   CLIFFORD THEME SPECIFIC CLASSES
+   ============================================ */
+
+/* Clifford character color utilities */
+.clifford-red { color: var(--clifford-red, #D42A2A); }
+.clifford-red-bg { background-color: var(--clifford-red, #D42A2A); }
+.emily-blue { color: var(--emily-blue, #5C6BC0); }
+.emily-blue-bg { background-color: var(--emily-blue, #5C6BC0); }
+.tbone-yellow { color: var(--tbone-yellow, #FDD835); }
+.tbone-yellow-bg { background-color: var(--tbone-yellow, #FDD835); }
+.cleo-purple { color: var(--cleo-purple, #9C27B0); }
+.cleo-purple-bg { background-color: var(--cleo-purple, #9C27B0); }
+.mac-blue { color: var(--mac-blue, #2196F3); }
+.mac-blue-bg { background-color: var(--mac-blue, #2196F3); }
+
+/* Clifford themed badge */
+[data-theme="clifford"] .gz-badge {
+  background: rgba(212, 42, 42, 0.1);
+  border: 1px solid #D42A2A;
+  color: #B71C1C;
+}
+
+[data-theme="clifford"] .gz-badge--freeleech {
+  background: rgba(255, 213, 79, 0.3);
+  border-color: #FFD54F;
+  color: #5D4037;
+}
+
+[data-theme="clifford"] .gz-badge--scene {
+  background: rgba(156, 39, 176, 0.1);
+  border-color: #9C27B0;
+  color: #7B1FA2;
+}
+
+/* Clifford header style - big red! */
+[data-theme="clifford"] .gz-header {
+  background: var(--clifford-red);
+  border-bottom: 3px solid var(--clifford-red-dark, #B71C1C);
+}
+
+[data-theme="clifford"] .gz-header,
+[data-theme="clifford"] .gz-header a,
+[data-theme="clifford"] .gz-header .gz-nav-link {
+  color: #FFFFFF;
+}
+
+[data-theme="clifford"] .gz-nav-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Clifford card with warm shadow */
+[data-theme="clifford"] .gz-card {
+  background: #FFFFFF;
+  border: 1px solid #FFCCBC;
+  box-shadow: 0 2px 8px rgba(212, 42, 42, 0.1);
+}
+
+/* Clifford table with warm colors */
+[data-theme="clifford"] .gz-table th {
+  background: #FFECB3;
+  color: #5D4037;
+}
+
+[data-theme="clifford"] .gz-table tr:nth-child(even) {
+  background: #FFF3E0;
+}
+
+[data-theme="clifford"] .gz-table tr:nth-child(odd) {
+  background: #FFFAF0;
+}
+
+[data-theme="clifford"] .gz-table tr:hover {
+  background: #FFEBEE;
+}
+
+/* Paw print decorative element */
+.paw-print {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cellipse cx='50' cy='65' rx='20' ry='18' fill='%233E2723'/%3E%3Ccircle cx='30' cy='40' r='10' fill='%233E2723'/%3E%3Ccircle cx='50' cy='32' r='10' fill='%233E2723'/%3E%3Ccircle cx='70' cy='40' r='10' fill='%233E2723'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+[data-theme="clifford"] .paw-print {
+  opacity: 0.3;
 }

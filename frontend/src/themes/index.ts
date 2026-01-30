@@ -18,7 +18,7 @@ export type ColorScheme = 'light' | 'dark';
 export type ThemeDensity = 'comfortable' | 'compact';
 
 // Gazelle theme names mapped to Splunk themes
-export type GazelleTheme = 'oppai' | 'beluga' | 'genaviv' | 'kuro';
+export type GazelleTheme = 'oppai' | 'beluga' | 'genaviv' | 'kuro' | 'clifford';
 
 // Map Gazelle themes to Splunk theme configurations
 export const THEME_CONFIG: Record<GazelleTheme, {
@@ -46,6 +46,11 @@ export const THEME_CONFIG: Record<GazelleTheme, {
     colorScheme: 'dark',
     density: 'comfortable',
   },
+  clifford: {
+    family: 'enterprise',
+    colorScheme: 'light',
+    density: 'comfortable',
+  },
 };
 
 // Default theme configuration - dark by default to match Gazelle's community identity
@@ -53,6 +58,73 @@ export const DEFAULT_THEME: GazelleTheme = 'oppai';
 export const DEFAULT_FAMILY: ThemeFamily = 'prisma';
 export const DEFAULT_COLOR_SCHEME: ColorScheme = 'dark';
 export const DEFAULT_DENSITY: ThemeDensity = 'comfortable';
+
+// Clifford the Big Red Dog themed palette
+// Inspired by the warm, friendly aesthetic of Birdwell Island
+export const cliffordPalette = {
+  // The Big Red Dog himself - primary reds
+  cliffordRed: '#D42A2A',           // Clifford's iconic red fur
+  cliffordRedDark: '#B71C1C',       // Darker shade for depth
+  cliffordRedLight: '#EF5350',      // Lighter red for highlights
+  cliffordNose: '#1A1A1A',          // His big black nose
+
+  // Birdwell Island - warm sunny backgrounds
+  bgPage: '#FFF8E7',                // Warm cream (sunny day)
+  bgHeader: '#D42A2A',              // Clifford red header!
+  bgCard: '#FFFFFF',                // Clean white cards
+  bgTableHeader: '#FFECB3',         // Warm yellow
+  bgTableRow: '#FFFAF0',            // Floral white
+  bgTableRowAlt: '#FFF3E0',         // Papaya whip alternating
+  bgInput: '#FFFFFF',               // White inputs
+  bgHover: '#FFEBEE',               // Light red hover
+
+  // Sky and nature
+  skyBlue: '#87CEEB',               // Bright blue sky
+  skyBlueDark: '#5DADE2',           // Deeper sky
+  grassGreen: '#7CB342',            // Birdwell Island grass
+  grassGreenDark: '#558B2F',        // Darker grass/trees
+  sunflowerYellow: '#FFD54F',       // Sunny warmth
+  sandyBeach: '#F5DEB3',            // Beach/sand color
+
+  // Text colors - warm browns
+  textPrimary: '#3E2723',           // Dark brown (like a dog's eyes)
+  textSecondary: '#5D4037',         // Medium brown
+  textMuted: '#8D6E63',             // Light brown
+  textDisabled: '#BCAAA4',          // Faded brown
+  textOnRed: '#FFFFFF',             // White text on red backgrounds
+
+  // Emily Elizabeth's dress blue
+  emilyBlue: '#5C6BC0',             // Her signature color
+  emilyBlueDark: '#3F51B5',
+
+  // Link colors
+  link: '#D42A2A',                  // Clifford red links!
+  linkHover: '#B71C1C',             // Darker on hover
+  linkVisited: '#7B1FA2',           // Purple for visited
+
+  // Status colors
+  seeders: '#7CB342',               // Grass green for seeders
+  leechers: '#D42A2A',              // Clifford red for leechers
+  freeleech: '#FFD54F',             // Sunflower yellow
+  snatched: '#5C6BC0',              // Emily blue
+
+  // Borders
+  border: '#FFCCBC',                // Warm peach border
+  borderLight: '#FFE0B2',           // Lighter border
+  borderRed: '#EF9A9A',             // Red-tinted border
+
+  // Badges
+  badgeBg: '#FFEBEE',
+  badgeBorder: '#D42A2A',
+  badgeText: '#B71C1C',
+
+  // T-Bone (yellow lab friend)
+  tBoneYellow: '#FDD835',
+  // Cleo (purple poodle friend)
+  cleoPurple: '#9C27B0',
+  // Mac (blue dog friend)
+  macBlue: '#2196F3',
+};
 
 // Custom Gazelle dark color palette - matches the community look and feel
 // These colors are specifically chosen to maintain Gazelle's signature dark theme
@@ -152,6 +224,73 @@ export const gazelleColors = {
   sceneBadge: {
     background: gazelleDarkPalette.sceneBadgeBg,
     text: gazelleDarkPalette.sceneBadgeText,
+  },
+};
+
+// Clifford theme colors - warm, friendly, and BIG RED
+export const cliffordColors = {
+  // Primary brand colors - Clifford's fur!
+  primary: cliffordPalette.cliffordRed,
+  primaryHover: cliffordPalette.cliffordRedDark,
+  primaryActive: cliffordPalette.cliffordRedLight,
+
+  // Status colors - Birdwell Island inspired
+  success: cliffordPalette.grassGreen,
+  warning: cliffordPalette.sunflowerYellow,
+  error: cliffordPalette.cliffordRed,
+  info: cliffordPalette.skyBlue,
+
+  // Text colors - warm browns
+  textPrimary: cliffordPalette.textPrimary,
+  textSecondary: cliffordPalette.textSecondary,
+  textDisabled: cliffordPalette.textDisabled,
+  textOnPrimary: cliffordPalette.textOnRed,
+
+  // Background colors - sunny Birdwell Island
+  backgroundPage: cliffordPalette.bgPage,
+  backgroundCard: cliffordPalette.bgCard,
+  backgroundHover: cliffordPalette.bgHover,
+  backgroundHeader: cliffordPalette.bgHeader,
+  backgroundTable: cliffordPalette.bgTableRow,
+  backgroundTableAlt: cliffordPalette.bgTableRowAlt,
+  backgroundTableHeader: cliffordPalette.bgTableHeader,
+  backgroundInput: cliffordPalette.bgInput,
+
+  // Border colors - warm peach tones
+  border: cliffordPalette.border,
+  borderLight: cliffordPalette.borderLight,
+
+  // Link colors - big red links!
+  link: cliffordPalette.link,
+  linkHover: cliffordPalette.linkHover,
+  linkVisited: cliffordPalette.linkVisited,
+
+  // Special colors
+  freeleech: cliffordPalette.sunflowerYellow,
+  neutralLeech: cliffordPalette.skyBlue,
+  warned: cliffordPalette.sunflowerYellow,
+  disabled: cliffordPalette.textDisabled,
+  donor: cliffordPalette.cleoPurple,
+  seeders: cliffordPalette.seeders,
+  leechers: cliffordPalette.leechers,
+  snatched: cliffordPalette.snatched,
+
+  // Character colors for fun accents
+  clifford: cliffordPalette.cliffordRed,
+  emily: cliffordPalette.emilyBlue,
+  tBone: cliffordPalette.tBoneYellow,
+  cleo: cliffordPalette.cleoPurple,
+  mac: cliffordPalette.macBlue,
+
+  // Badge colors
+  badge: {
+    background: cliffordPalette.badgeBg,
+    border: cliffordPalette.badgeBorder,
+    text: cliffordPalette.badgeText,
+  },
+  sceneBadge: {
+    background: '#FFF3E0',
+    text: cliffordPalette.cliffordRedDark,
   },
 };
 
@@ -313,6 +452,9 @@ export default {
   DEFAULT_COLOR_SCHEME,
   DEFAULT_DENSITY,
   gazelleColors,
+  cliffordColors,
+  gazelleDarkPalette,
+  cliffordPalette,
   spacing,
   typography,
   borderRadius,

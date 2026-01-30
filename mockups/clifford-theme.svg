@@ -1,0 +1,327 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <!-- Clifford the Big Red Dog Color Palette -->
+    <style>
+      .bg-page { fill: #FFF8E7; }
+      .bg-header { fill: #D42A2A; }
+      .bg-card { fill: #FFFFFF; }
+      .bg-table-header { fill: #FFECB3; }
+      .bg-table-row { fill: #FFFAF0; }
+      .bg-table-row-alt { fill: #FFF3E0; }
+      .bg-hover { fill: #FFEBEE; }
+
+      .text-primary { fill: #3E2723; }
+      .text-secondary { fill: #5D4037; }
+      .text-muted { fill: #8D6E63; }
+      .text-on-red { fill: #FFFFFF; }
+
+      .clifford-red { fill: #D42A2A; }
+      .clifford-red-dark { fill: #B71C1C; }
+      .clifford-red-light { fill: #EF5350; }
+
+      .sky-blue { fill: #87CEEB; }
+      .grass-green { fill: #7CB342; }
+      .sunflower { fill: #FFD54F; }
+      .emily-blue { fill: #5C6BC0; }
+      .cleo-purple { fill: #9C27B0; }
+      .tbone-yellow { fill: #FDD835; }
+
+      .border { stroke: #FFCCBC; }
+      .border-red { stroke: #EF9A9A; }
+
+      .link { fill: #D42A2A; }
+      .seeders { fill: #7CB342; }
+      .leechers { fill: #D42A2A; }
+
+      .paw-print { fill: #3E2723; opacity: 0.1; }
+    </style>
+
+    <!-- Paw Print Pattern -->
+    <pattern id="pawPattern" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+      <g class="paw-print" transform="rotate(-15 60 60)">
+        <!-- Main pad -->
+        <ellipse cx="60" cy="70" rx="18" ry="15"/>
+        <!-- Toe pads -->
+        <circle cx="45" cy="50" r="8"/>
+        <circle cx="60" cy="45" r="8"/>
+        <circle cx="75" cy="50" r="8"/>
+        <circle cx="52" cy="58" r="6"/>
+        <circle cx="68" cy="58" r="6"/>
+      </g>
+    </pattern>
+
+    <!-- Clifford Silhouette for Logo -->
+    <symbol id="clifford-logo" viewBox="0 0 100 60">
+      <!-- Simplified big red dog silhouette -->
+      <ellipse cx="35" cy="40" rx="25" ry="18" fill="#D42A2A"/> <!-- Body -->
+      <circle cx="65" cy="30" r="18" fill="#D42A2A"/> <!-- Head -->
+      <ellipse cx="78" cy="28" rx="8" ry="5" fill="#D42A2A"/> <!-- Snout -->
+      <circle cx="82" cy="26" r="3" fill="#1A1A1A"/> <!-- Nose -->
+      <ellipse cx="60" cy="18" rx="6" ry="10" fill="#D42A2A"/> <!-- Ear -->
+      <rect x="20" y="45" width="6" height="15" rx="3" fill="#D42A2A"/> <!-- Leg 1 -->
+      <rect x="32" y="45" width="6" height="15" rx="3" fill="#D42A2A"/> <!-- Leg 2 -->
+      <rect x="44" y="45" width="6" height="15" rx="3" fill="#D42A2A"/> <!-- Leg 3 -->
+      <!-- Tail -->
+      <path d="M 10 35 Q 0 25, 5 15" stroke="#D42A2A" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <!-- Eye -->
+      <circle cx="68" cy="26" r="3" fill="#FFFFFF"/>
+      <circle cx="69" cy="26" r="1.5" fill="#3E2723"/>
+      <!-- Tongue -->
+      <ellipse cx="85" cy="32" rx="4" ry="6" fill="#EF5350"/>
+    </symbol>
+  </defs>
+
+  <!-- Background with paw print pattern -->
+  <rect width="1200" height="900" class="bg-page"/>
+  <rect width="1200" height="900" fill="url(#pawPattern)"/>
+
+  <!-- Big Red Header -->
+  <rect x="0" y="0" width="1200" height="70" class="bg-header"/>
+
+  <!-- Logo Area with Clifford -->
+  <use href="#clifford-logo" x="20" y="8" width="80" height="48"/>
+  <text x="110" y="45" font-family="Georgia, serif" font-size="28" font-weight="bold" class="text-on-red">
+    BIG RED TRACKER
+  </text>
+
+  <!-- Navigation on red header -->
+  <g font-family="Segoe UI, sans-serif" font-size="14" font-weight="500" class="text-on-red">
+    <text x="320" y="42">Home</text>
+    <text x="380" y="42">Torrents</text>
+    <text x="460" y="42">Requests</text>
+    <text x="545" y="42">Forums</text>
+    <text x="615" y="42">Wiki</text>
+  </g>
+
+  <!-- User Stats on header right side -->
+  <g font-family="Segoe UI, sans-serif" font-size="12" class="text-on-red" text-anchor="end">
+    <text x="1000" y="35">Upload: 2.45 TB</text>
+    <text x="1000" y="52">Download: 890 GB</text>
+    <text x="1100" y="35">Ratio: 2.82</text>
+    <text x="1100" y="52">Points: 15,420</text>
+    <text x="1180" y="42">EmilyElizabeth</text>
+  </g>
+
+  <!-- Sub Navigation Bar - Sky Blue -->
+  <rect x="0" y="70" width="1200" height="35" class="sky-blue"/>
+  <g font-family="Segoe UI, sans-serif" font-size="12" class="text-primary">
+    <text x="30" y="92">Browse</text>
+    <text x="90" y="92">Upload</text>
+    <text x="150" y="92">Top 10</text>
+    <text x="210" y="92">Collages</text>
+    <text x="280" y="92">Staff Picks</text>
+  </g>
+
+  <!-- Search Bar -->
+  <rect x="850" y="78" width="320" height="22" rx="11" class="bg-card" stroke="#FFCCBC"/>
+  <text x="865" y="93" font-family="Segoe UI, sans-serif" font-size="11" class="text-muted">Search for big adventures...</text>
+
+  <!-- Main Content Area -->
+
+  <!-- Welcome Card with Clifford -->
+  <rect x="30" y="125" width="740" height="100" rx="12" class="bg-card" stroke="#FFCCBC" stroke-width="1"/>
+  <rect x="30" y="125" width="740" height="35" rx="12" class="sunflower"/>
+  <rect x="30" y="148" width="740" height="12" class="sunflower"/>
+  <text x="50" y="148" font-family="Georgia, serif" font-size="16" font-weight="bold" class="text-primary">
+    Welcome to Birdwell Island!
+  </text>
+  <text x="50" y="180" font-family="Segoe UI, sans-serif" font-size="13" class="text-secondary">
+    Remember: Being a good friend is always the biggest adventure. Share kindly!
+  </text>
+  <text x="50" y="205" font-family="Segoe UI, sans-serif" font-size="12" class="text-muted">
+    Site News: New freeleech event this weekend! All torrents tagged "family-friendly" are free!
+  </text>
+
+  <!-- Stats Card -->
+  <rect x="790" y="125" width="380" height="100" rx="12" class="bg-card" stroke="#FFCCBC" stroke-width="1"/>
+  <rect x="790" y="125" width="380" height="35" rx="12" class="clifford-red"/>
+  <rect x="790" y="148" width="380" height="12" class="clifford-red"/>
+  <text x="810" y="148" font-family="Georgia, serif" font-size="14" font-weight="bold" class="text-on-red">
+    Community Stats
+  </text>
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <text x="810" y="180" class="text-secondary">Users Online:</text>
+    <text x="910" y="180" class="grass-green" font-weight="600">1,247</text>
+    <text x="980" y="180" class="text-secondary">Total Torrents:</text>
+    <text x="1090" y="180" class="clifford-red" font-weight="600">89,432</text>
+    <text x="810" y="205" class="text-secondary">New Today:</text>
+    <text x="910" y="205" class="emily-blue" font-weight="600">156</text>
+    <text x="980" y="205" class="text-secondary">Active Seeds:</text>
+    <text x="1090" y="205" class="grass-green" font-weight="600">245K</text>
+  </g>
+
+  <!-- Torrent Table -->
+  <rect x="30" y="245" width="1140" height="380" rx="8" class="bg-card" stroke="#FFCCBC" stroke-width="1"/>
+
+  <!-- Table Header -->
+  <rect x="30" y="245" width="1140" height="40" rx="8" class="bg-table-header"/>
+  <rect x="30" y="275" width="1140" height="10" class="bg-table-header"/>
+  <g font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" class="text-primary">
+    <text x="50" y="270">Category</text>
+    <text x="150" y="270">Name</text>
+    <text x="750" y="270">Size</text>
+    <text x="830" y="270">Seeders</text>
+    <text x="910" y="270">Leechers</text>
+    <text x="1000" y="270">Snatched</text>
+    <text x="1090" y="270">Added</text>
+  </g>
+
+  <!-- Table Rows -->
+  <!-- Row 1 -->
+  <rect x="30" y="285" width="1140" height="45" class="bg-table-row"/>
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="50" y="297" width="60" height="20" rx="4" class="clifford-red"/>
+    <text x="60" y="311" class="text-on-red" font-size="10">Animation</text>
+    <text x="150" y="312" class="link" font-weight="500">Clifford's Really Big Movie (2004) [1080p BluRay]</text>
+    <rect x="620" y="297" width="55" height="20" rx="4" class="sunflower"/>
+    <text x="630" y="311" class="text-primary" font-size="10">FREELEECH</text>
+    <text x="750" y="312" class="text-secondary">4.2 GB</text>
+    <text x="830" y="312" class="seeders" font-weight="600">847</text>
+    <text x="910" y="312" class="leechers">23</text>
+    <text x="1000" y="312" class="emily-blue">12,456</text>
+    <text x="1090" y="312" class="text-muted">2h ago</text>
+  </g>
+
+  <!-- Row 2 Alt -->
+  <rect x="30" y="330" width="1140" height="45" class="bg-table-row-alt"/>
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="50" y="342" width="60" height="20" rx="4" class="grass-green"/>
+    <text x="63" y="356" class="text-on-red" font-size="10">Books</text>
+    <text x="150" y="357" class="link" font-weight="500">Clifford Collection - Norman Bridwell [EPUB]</text>
+    <text x="750" y="357" class="text-secondary">89 MB</text>
+    <text x="830" y="357" class="seeders" font-weight="600">234</text>
+    <text x="910" y="357" class="leechers">5</text>
+    <text x="1000" y="357" class="emily-blue">3,891</text>
+    <text x="1090" y="357" class="text-muted">5h ago</text>
+  </g>
+
+  <!-- Row 3 -->
+  <rect x="30" y="375" width="1140" height="45" class="bg-table-row"/>
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="50" y="387" width="60" height="20" rx="4" class="emily-blue"/>
+    <text x="62" y="401" class="text-on-red" font-size="10">TV Show</text>
+    <text x="150" y="402" class="link" font-weight="500">Clifford the Big Red Dog S01 Complete [720p AMZN WEB-DL]</text>
+    <text x="750" y="402" class="text-secondary">18.7 GB</text>
+    <text x="830" y="402" class="seeders" font-weight="600">562</text>
+    <text x="910" y="402" class="leechers">89</text>
+    <text x="1000" y="402" class="emily-blue">8,234</text>
+    <text x="1090" y="402" class="text-muted">1d ago</text>
+  </g>
+
+  <!-- Row 4 Alt -->
+  <rect x="30" y="420" width="1140" height="45" class="bg-table-row-alt"/>
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="50" y="432" width="60" height="20" rx="4" class="cleo-purple"/>
+    <text x="60" y="446" class="text-on-red" font-size="10">Music</text>
+    <text x="150" y="447" class="link" font-weight="500">Clifford the Big Red Dog - Original Soundtrack [FLAC]</text>
+    <text x="750" y="447" class="text-secondary">312 MB</text>
+    <text x="830" y="447" class="seeders" font-weight="600">156</text>
+    <text x="910" y="447" class="leechers">12</text>
+    <text x="1000" y="447" class="emily-blue">2,567</text>
+    <text x="1090" y="447" class="text-muted">2d ago</text>
+  </g>
+
+  <!-- Row 5 -->
+  <rect x="30" y="465" width="1140" height="45" class="bg-table-row"/>
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="50" y="477" width="60" height="20" rx="4" class="tbone-yellow"/>
+    <text x="60" y="491" class="text-primary" font-size="10">Games</text>
+    <text x="150" y="492" class="link" font-weight="500">Clifford's Big Red Adventures - PC Game [ISO]</text>
+    <text x="750" y="492" class="text-secondary">1.8 GB</text>
+    <text x="830" y="492" class="seeders" font-weight="600">78</text>
+    <text x="910" y="492" class="leechers">3</text>
+    <text x="1000" y="492" class="emily-blue">945</text>
+    <text x="1090" y="492" class="text-muted">3d ago</text>
+  </g>
+
+  <!-- Row 6 Alt -->
+  <rect x="30" y="510" width="1140" height="45" class="bg-table-row-alt"/>
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="50" y="522" width="60" height="20" rx="4" class="clifford-red"/>
+    <text x="60" y="536" class="text-on-red" font-size="10">Animation</text>
+    <text x="150" y="537" class="link" font-weight="500">Clifford's Puppy Days Complete Series [DVD Remux]</text>
+    <rect x="520" y="522" width="55" height="20" rx="4" class="sunflower"/>
+    <text x="530" y="536" class="text-primary" font-size="10">FREELEECH</text>
+    <text x="750" y="537" class="text-secondary">24.5 GB</text>
+    <text x="830" y="537" class="seeders" font-weight="600">412</text>
+    <text x="910" y="537" class="leechers">67</text>
+    <text x="1000" y="537" class="emily-blue">6,789</text>
+    <text x="1090" y="537" class="text-muted">5d ago</text>
+  </g>
+
+  <!-- Row 7 -->
+  <rect x="30" y="555" width="1140" height="45" class="bg-table-row"/>
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <rect x="50" y="567" width="60" height="20" rx="4" class="sky-blue"/>
+    <text x="60" y="581" class="text-primary" font-size="10">Other</text>
+    <text x="150" y="582" class="link" font-weight="500">Birdwell Island Fan Art Collection [PNG/PSD]</text>
+    <text x="750" y="582" class="text-secondary">2.1 GB</text>
+    <text x="830" y="582" class="seeders" font-weight="600">45</text>
+    <text x="910" y="582" class="leechers">2</text>
+    <text x="1000" y="582" class="emily-blue">423</text>
+    <text x="1090" y="582" class="text-muted">1w ago</text>
+  </g>
+
+  <!-- Sidebar - Character Friends -->
+  <rect x="30" y="650" width="350" height="120" rx="12" class="bg-card" stroke="#FFCCBC" stroke-width="1"/>
+  <rect x="30" y="650" width="350" height="35" rx="12" class="clifford-red"/>
+  <rect x="30" y="673" width="350" height="12" class="clifford-red"/>
+  <text x="50" y="673" font-family="Georgia, serif" font-size="14" font-weight="bold" class="text-on-red">
+    Clifford's Friends (Top Uploaders)
+  </text>
+  <g font-family="Segoe UI, sans-serif" font-size="12">
+    <circle cx="55" cy="710" r="12" class="clifford-red"/>
+    <text x="75" y="714" class="text-secondary">Clifford_Fan</text>
+    <text x="200" y="714" class="grass-green" font-weight="600">45.2 TB</text>
+
+    <circle cx="55" cy="740" r="12" class="emily-blue"/>
+    <text x="75" y="744" class="text-secondary">EmilyElizabeth</text>
+    <text x="200" y="744" class="grass-green" font-weight="600">32.8 TB</text>
+  </g>
+
+  <!-- Recent Forum Posts -->
+  <rect x="400" y="650" width="380" height="120" rx="12" class="bg-card" stroke="#FFCCBC" stroke-width="1"/>
+  <rect x="400" y="650" width="380" height="35" rx="12" class="grass-green"/>
+  <rect x="400" y="673" width="380" height="12" class="grass-green"/>
+  <text x="420" y="673" font-family="Georgia, serif" font-size="14" font-weight="bold" class="text-on-red">
+    Island News (Forums)
+  </text>
+  <g font-family="Segoe UI, sans-serif" font-size="11">
+    <text x="420" y="710" class="link">New encoding standards discussion</text>
+    <text x="420" y="728" class="text-muted">by T_Bone_Rules · 3 replies</text>
+    <text x="420" y="755" class="link">Weekend freeleech announcement!</text>
+    <text x="420" y="773" class="text-muted">by Admin · 45 replies</text>
+  </g>
+
+  <!-- Staff Picks -->
+  <rect x="800" y="650" width="370" height="120" rx="12" class="bg-card" stroke="#FFCCBC" stroke-width="1"/>
+  <rect x="800" y="650" width="370" height="35" rx="12" class="sunflower"/>
+  <rect x="800" y="673" width="370" height="12" class="sunflower"/>
+  <text x="820" y="673" font-family="Georgia, serif" font-size="14" font-weight="bold" class="text-primary">
+    Staff Picks
+  </text>
+  <g font-family="Segoe UI, sans-serif" font-size="11">
+    <text x="820" y="710" class="link">Clifford's Really Big Movie [4K Remaster]</text>
+    <text x="820" y="728" class="text-muted">Picked by CleoThePoodle</text>
+    <text x="820" y="755" class="link">Norman Bridwell Art Book [Scan]</text>
+    <text x="820" y="773" class="text-muted">Picked by MacTheBlue</text>
+  </g>
+
+  <!-- Footer -->
+  <rect x="0" y="800" width="1200" height="100" class="clifford-red"/>
+  <g font-family="Segoe UI, sans-serif" font-size="11" class="text-on-red" text-anchor="middle">
+    <text x="600" y="830">Big Red Tracker - Where Every Download is a Big Adventure!</text>
+    <text x="600" y="850" font-size="10" opacity="0.8">Inspired by Clifford the Big Red Dog by Norman Bridwell</text>
+    <text x="600" y="870" font-size="10" opacity="0.8">Remember: Be kind, share generously, and help your friends!</text>
+  </g>
+
+  <!-- Decorative Clifford in footer corner -->
+  <use href="#clifford-logo" x="50" y="810" width="100" height="60" opacity="0.3"/>
+  <use href="#clifford-logo" x="1050" y="810" width="100" height="60" opacity="0.3" transform="scale(-1,1) translate(-2200,0)"/>
+
+  <!-- Theme Label -->
+  <rect x="1050" y="10" width="130" height="25" rx="12" fill="#FFFFFF" opacity="0.9"/>
+  <text x="1115" y="27" font-family="Georgia, serif" font-size="11" text-anchor="middle" class="clifford-red" font-weight="bold">
+    CLIFFORD THEME
+  </text>
+</svg>
