@@ -27,18 +27,18 @@ export const THEME_CONFIG: Record<GazelleTheme, {
   density: ThemeDensity;
 }> = {
   oppai: {
-    family: 'enterprise',
-    colorScheme: 'light',
+    family: 'prisma',
+    colorScheme: 'dark',
     density: 'comfortable',
   },
   beluga: {
     family: 'prisma',
-    colorScheme: 'light',
+    colorScheme: 'dark',
     density: 'compact',
   },
   genaviv: {
     family: 'enterprise',
-    colorScheme: 'light',
+    colorScheme: 'dark',
     density: 'compact',
   },
   kuro: {
@@ -48,90 +48,111 @@ export const THEME_CONFIG: Record<GazelleTheme, {
   },
 };
 
-// Default theme configuration
+// Default theme configuration - dark by default to match Gazelle's community identity
 export const DEFAULT_THEME: GazelleTheme = 'oppai';
-export const DEFAULT_FAMILY: ThemeFamily = 'enterprise';
-export const DEFAULT_COLOR_SCHEME: ColorScheme = 'light';
+export const DEFAULT_FAMILY: ThemeFamily = 'prisma';
+export const DEFAULT_COLOR_SCHEME: ColorScheme = 'dark';
 export const DEFAULT_DENSITY: ThemeDensity = 'comfortable';
 
-// Gazelle-specific color palette using Splunk theme variables
-export const gazelleColors = {
-  // Primary brand colors using Splunk's pick() for theme compatibility
-  primary: pick({
-    enterprise: variables.brandColor,
-    prisma: variables.brandColorL10,
-  }),
-  primaryHover: pick({
-    enterprise: variables.brandColorL10,
-    prisma: variables.brandColorL20,
-  }),
-  primaryActive: pick({
-    enterprise: variables.brandColorD10,
-    prisma: variables.brandColor,
-  }),
-
-  // Status colors
-  success: pick({
-    enterprise: variables.successColor,
-    prisma: variables.successColorL10,
-  }),
-  warning: pick({
-    enterprise: variables.warningColor,
-    prisma: variables.warningColorL10,
-  }),
-  error: pick({
-    enterprise: variables.errorColor,
-    prisma: variables.errorColorL10,
-  }),
-  info: pick({
-    enterprise: variables.infoColor,
-    prisma: variables.infoColorL10,
-  }),
+// Custom Gazelle dark color palette - matches the community look and feel
+// These colors are specifically chosen to maintain Gazelle's signature dark theme
+export const gazelleDarkPalette = {
+  // Backgrounds - the signature Gazelle dark blues
+  bgPage: '#1a1a2e',        // Main page background
+  bgHeader: '#0f0f1a',      // Header/navigation
+  bgCard: '#16213e',        // Cards and panels
+  bgTableHeader: '#2c3e50', // Table headers
+  bgTableRow: '#1e2a38',    // Table rows
+  bgTableRowAlt: '#162029', // Alternating table rows
+  bgInput: '#21262d',       // Form inputs
+  bgHover: '#21262d',       // Hover state
 
   // Text colors
-  textPrimary: pick({
-    enterprise: variables.textColor,
-    prisma: variables.contentColorDefault,
-  }),
-  textSecondary: pick({
-    enterprise: variables.textGray,
-    prisma: variables.contentColorMuted,
-  }),
-  textDisabled: pick({
-    enterprise: variables.textDisabledColor,
-    prisma: variables.contentColorDisabled,
-  }),
+  textPrimary: '#f0f6fc',   // Headers, important text
+  textSecondary: '#c9d1d9', // Normal body text
+  textMuted: '#8b949e',     // Secondary/muted text
+  textDisabled: '#6e7681',  // Disabled text
+
+  // Link colors
+  link: '#58a6ff',          // Primary links
+  linkHover: '#79b8ff',     // Link hover state
+  linkVisited: '#a371f7',   // Visited links
+
+  // Status colors (matching Gazelle conventions)
+  seeders: '#3fb950',       // Green for seeders
+  leechers: '#f85149',      // Red for leechers
+  freeleech: '#f0c14b',     // Gold for freeleech
+  snatched: '#a371f7',      // Purple for snatched
+
+  // Borders
+  border: '#30363d',
+  borderLight: '#21262d',
+
+  // Badges and tags
+  badgeBg: '#388bfd26',
+  badgeBorder: '#388bfd',
+  badgeText: '#58a6ff',
+  sceneBadgeBg: '#f8514926',
+  sceneBadgeText: '#f85149',
+};
+
+// Gazelle-specific color palette using Splunk theme variables with Gazelle overrides
+export const gazelleColors = {
+  // Primary brand colors - Gazelle blue
+  primary: '#58a6ff',
+  primaryHover: '#79b8ff',
+  primaryActive: '#388bfd',
+
+  // Status colors - Gazelle community conventions
+  success: gazelleDarkPalette.seeders,
+  warning: gazelleDarkPalette.freeleech,
+  error: gazelleDarkPalette.leechers,
+  info: gazelleDarkPalette.link,
+
+  // Text colors
+  textPrimary: gazelleDarkPalette.textPrimary,
+  textSecondary: gazelleDarkPalette.textSecondary,
+  textDisabled: gazelleDarkPalette.textDisabled,
 
   // Background colors
-  backgroundPage: pick({
-    enterprise: variables.backgroundColor,
-    prisma: variables.backgroundColorPage,
-  }),
-  backgroundCard: pick({
-    enterprise: variables.white,
-    prisma: variables.backgroundColorSection,
-  }),
-  backgroundHover: pick({
-    enterprise: variables.backgroundColorHover,
-    prisma: variables.interactiveColorHover,
-  }),
+  backgroundPage: gazelleDarkPalette.bgPage,
+  backgroundCard: gazelleDarkPalette.bgCard,
+  backgroundHover: gazelleDarkPalette.bgHover,
+  backgroundHeader: gazelleDarkPalette.bgHeader,
+  backgroundTable: gazelleDarkPalette.bgTableRow,
+  backgroundTableAlt: gazelleDarkPalette.bgTableRowAlt,
+  backgroundTableHeader: gazelleDarkPalette.bgTableHeader,
+  backgroundInput: gazelleDarkPalette.bgInput,
 
   // Border colors
-  border: pick({
-    enterprise: variables.borderColor,
-    prisma: variables.borderColor,
-  }),
-  borderLight: pick({
-    enterprise: variables.borderLightColor,
-    prisma: variables.borderColorLight,
-  }),
+  border: gazelleDarkPalette.border,
+  borderLight: gazelleDarkPalette.borderLight,
+
+  // Link colors
+  link: gazelleDarkPalette.link,
+  linkHover: gazelleDarkPalette.linkHover,
+  linkVisited: gazelleDarkPalette.linkVisited,
 
   // Special Gazelle colors
-  freeleech: '#4CAF50',
+  freeleech: gazelleDarkPalette.freeleech,
   neutralLeech: '#2196F3',
   warned: '#FF9800',
   disabled: '#F44336',
   donor: '#9C27B0',
+  seeders: gazelleDarkPalette.seeders,
+  leechers: gazelleDarkPalette.leechers,
+  snatched: gazelleDarkPalette.snatched,
+
+  // Badge colors
+  badge: {
+    background: gazelleDarkPalette.badgeBg,
+    border: gazelleDarkPalette.badgeBorder,
+    text: gazelleDarkPalette.badgeText,
+  },
+  sceneBadge: {
+    background: gazelleDarkPalette.sceneBadgeBg,
+    text: gazelleDarkPalette.sceneBadgeText,
+  },
 };
 
 // Spacing constants using Splunk defaults

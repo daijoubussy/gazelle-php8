@@ -1,8 +1,46 @@
 /**
  * Gazelle Frontend Global Styles
  *
- * Base CSS reset and global styles using Splunk UI design tokens
+ * Base CSS reset and global styles preserving Gazelle's signature dark theme
+ * Colors chosen to maintain community identity while modernizing the UI
  */
+
+/* Gazelle Dark Theme CSS Custom Properties */
+:root {
+  /* Backgrounds - the signature Gazelle dark blues */
+  --gz-bg-page: #1a1a2e;
+  --gz-bg-header: #0f0f1a;
+  --gz-bg-card: #16213e;
+  --gz-bg-table-header: #2c3e50;
+  --gz-bg-table-row: #1e2a38;
+  --gz-bg-table-row-alt: #162029;
+  --gz-bg-input: #21262d;
+  --gz-bg-hover: #21262d;
+
+  /* Text colors */
+  --gz-text-primary: #f0f6fc;
+  --gz-text-secondary: #c9d1d9;
+  --gz-text-muted: #8b949e;
+  --gz-text-disabled: #6e7681;
+
+  /* Link colors */
+  --gz-link: #58a6ff;
+  --gz-link-hover: #79b8ff;
+  --gz-link-visited: #a371f7;
+
+  /* Status colors */
+  --gz-seeders: #3fb950;
+  --gz-leechers: #f85149;
+  --gz-freeleech: #f0c14b;
+  --gz-snatched: #a371f7;
+
+  /* Borders */
+  --gz-border: #30363d;
+  --gz-border-light: #21262d;
+
+  /* Focus */
+  --gz-focus: #58a6ff;
+}
 
 /* CSS Reset */
 *,
@@ -31,7 +69,9 @@ body,
 
 body {
   line-height: 1.5;
-  font-family: 'Splunk Platform Sans', 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Segoe UI', 'Splunk Platform Sans', 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: var(--gz-bg-page);
+  color: var(--gz-text-secondary);
 }
 
 img,
@@ -62,7 +102,16 @@ h6 {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: var(--gz-link);
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--gz-link-hover);
+}
+
+a:visited {
+  color: var(--gz-link-visited);
 }
 
 ul,
@@ -75,34 +124,34 @@ table {
   border-spacing: 0;
 }
 
-/* Scrollbar Styling */
+/* Scrollbar Styling - Dark theme */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--gz-bg-card);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(155, 155, 155, 0.5);
+  background-color: var(--gz-border);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(155, 155, 155, 0.7);
+  background-color: var(--gz-text-muted);
 }
 
-/* Focus Styles */
+/* Focus Styles - Gazelle blue */
 :focus-visible {
-  outline: 2px solid #0078d4;
+  outline: 2px solid var(--gz-focus);
   outline-offset: 2px;
 }
 
-/* Selection Styles */
+/* Selection Styles - Gazelle blue */
 ::selection {
-  background-color: rgba(0, 120, 212, 0.3);
+  background-color: rgba(88, 166, 255, 0.3);
 }
 
 /* Utility Classes */
@@ -170,4 +219,116 @@ table {
 
 .animate-slide-in {
   animation: slideIn 0.2s ease-out;
+}
+
+/* Gazelle-specific utility classes */
+
+/* Status colors */
+.gz-seeders {
+  color: var(--gz-seeders);
+}
+
+.gz-leechers {
+  color: var(--gz-leechers);
+}
+
+.gz-freeleech {
+  color: var(--gz-freeleech);
+}
+
+.gz-snatched {
+  color: var(--gz-snatched);
+}
+
+/* Badge styles */
+.gz-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 4px;
+  background: rgba(56, 139, 253, 0.15);
+  border: 1px solid #388bfd;
+  color: var(--gz-link);
+}
+
+.gz-badge--scene {
+  background: rgba(248, 81, 73, 0.15);
+  border-color: var(--gz-leechers);
+  color: var(--gz-leechers);
+}
+
+.gz-badge--freeleech {
+  background: rgba(240, 193, 75, 0.15);
+  border-color: var(--gz-freeleech);
+  color: var(--gz-freeleech);
+}
+
+/* Card and panel styles */
+.gz-card {
+  background: var(--gz-bg-card);
+  border: 1px solid var(--gz-border);
+  border-radius: 6px;
+}
+
+.gz-panel {
+  background: var(--gz-bg-card);
+  border: 1px solid var(--gz-border);
+  border-radius: 8px;
+}
+
+/* Table styles */
+.gz-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.gz-table th {
+  background: var(--gz-bg-table-header);
+  color: var(--gz-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.gz-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--gz-border);
+}
+
+.gz-table tr:nth-child(even) {
+  background: var(--gz-bg-table-row-alt);
+}
+
+.gz-table tr:nth-child(odd) {
+  background: var(--gz-bg-table-row);
+}
+
+.gz-table tr:hover {
+  background: var(--gz-bg-hover);
+}
+
+/* Header navigation */
+.gz-header {
+  background: var(--gz-bg-header);
+  border-bottom: 1px solid var(--gz-border);
+}
+
+.gz-nav-link {
+  color: var(--gz-link);
+  padding: 8px 12px;
+  transition: background-color 0.15s ease;
+}
+
+.gz-nav-link:hover {
+  background: var(--gz-bg-hover);
+}
+
+.gz-nav-link--active {
+  color: var(--gz-text-primary);
+  font-weight: 600;
 }
