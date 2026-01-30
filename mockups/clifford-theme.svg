@@ -1,327 +1,865 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1024">
   <defs>
-    <!-- Clifford the Big Red Dog Color Palette -->
+    <!-- Clifford Theme Color Definitions -->
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+
+      /* Base styles */
+      text { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+
+      /* Clifford Palette */
       .bg-page { fill: #FFF8E7; }
       .bg-header { fill: #D42A2A; }
+      .bg-header-dark { fill: #B71C1C; }
       .bg-card { fill: #FFFFFF; }
+      .bg-card-elevated { fill: #FFFFFF; filter: drop-shadow(0 2px 8px rgba(62, 39, 35, 0.08)); }
+      .bg-input { fill: #FFFFFF; }
+      .bg-input-focus { fill: #FFFAF6; }
       .bg-table-header { fill: #FFECB3; }
       .bg-table-row { fill: #FFFAF0; }
-      .bg-table-row-alt { fill: #FFF3E0; }
-      .bg-hover { fill: #FFEBEE; }
+      .bg-table-row-alt { fill: #FFF8E7; }
+      .bg-table-hover { fill: #FFEBEE; }
+      .bg-sidebar { fill: #FFF3E0; }
+      .bg-badge { fill: #FFEBEE; }
+      .bg-badge-freeleech { fill: #FFF9C4; }
+      .bg-badge-reported { fill: #FFCDD2; }
+      .bg-tag { fill: #E8F5E9; }
+      .bg-dropdown { fill: #FFFFFF; }
+      .bg-tooltip { fill: #3E2723; }
+      .bg-progress { fill: #FFCCBC; }
+      .bg-progress-fill { fill: #7CB342; }
+      .bg-skeleton { fill: #FFE0B2; }
 
+      /* Borders */
+      .border-light { stroke: #FFE0B2; stroke-width: 1; }
+      .border-medium { stroke: #FFCCBC; stroke-width: 1; }
+      .border-dark { stroke: #FFAB91; stroke-width: 1; }
+      .border-input { stroke: #FFCCBC; stroke-width: 1.5; }
+      .border-focus { stroke: #D42A2A; stroke-width: 2; }
+      .border-card { stroke: #FFE0B2; stroke-width: 1; }
+
+      /* Text Colors */
       .text-primary { fill: #3E2723; }
       .text-secondary { fill: #5D4037; }
       .text-muted { fill: #8D6E63; }
-      .text-on-red { fill: #FFFFFF; }
+      .text-disabled { fill: #BCAAA4; }
+      .text-inverse { fill: #FFFFFF; }
+      .text-link { fill: #D42A2A; }
+      .text-link-hover { fill: #B71C1C; }
+      .text-success { fill: #558B2F; }
+      .text-warning { fill: #F57F17; }
+      .text-error { fill: #C62828; }
+      .text-info { fill: #1565C0; }
 
+      /* Character Colors */
       .clifford-red { fill: #D42A2A; }
-      .clifford-red-dark { fill: #B71C1C; }
-      .clifford-red-light { fill: #EF5350; }
-
-      .sky-blue { fill: #87CEEB; }
-      .grass-green { fill: #7CB342; }
-      .sunflower { fill: #FFD54F; }
+      .clifford-dark { fill: #B71C1C; }
       .emily-blue { fill: #5C6BC0; }
-      .cleo-purple { fill: #9C27B0; }
       .tbone-yellow { fill: #FDD835; }
+      .cleo-purple { fill: #9C27B0; }
+      .grass-green { fill: #7CB342; }
+      .sky-blue { fill: #87CEEB; }
+      .sunflower { fill: #FFD54F; }
 
-      .border { stroke: #FFCCBC; }
-      .border-red { stroke: #EF9A9A; }
-
-      .link { fill: #D42A2A; }
-      .seeders { fill: #7CB342; }
-      .leechers { fill: #D42A2A; }
-
-      .paw-print { fill: #3E2723; opacity: 0.1; }
+      /* Interactive States */
+      .hover-lift:hover { transform: translateY(-1px); }
+      .clickable { cursor: pointer; }
     </style>
 
-    <!-- Paw Print Pattern -->
-    <pattern id="pawPattern" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
-      <g class="paw-print" transform="rotate(-15 60 60)">
-        <!-- Main pad -->
-        <ellipse cx="60" cy="70" rx="18" ry="15"/>
-        <!-- Toe pads -->
-        <circle cx="45" cy="50" r="8"/>
-        <circle cx="60" cy="45" r="8"/>
-        <circle cx="75" cy="50" r="8"/>
-        <circle cx="52" cy="58" r="6"/>
-        <circle cx="68" cy="58" r="6"/>
-      </g>
-    </pattern>
-
-    <!-- Clifford Silhouette for Logo -->
-    <symbol id="clifford-logo" viewBox="0 0 100 60">
-      <!-- Simplified big red dog silhouette -->
-      <ellipse cx="35" cy="40" rx="25" ry="18" fill="#D42A2A"/> <!-- Body -->
-      <circle cx="65" cy="30" r="18" fill="#D42A2A"/> <!-- Head -->
-      <ellipse cx="78" cy="28" rx="8" ry="5" fill="#D42A2A"/> <!-- Snout -->
-      <circle cx="82" cy="26" r="3" fill="#1A1A1A"/> <!-- Nose -->
-      <ellipse cx="60" cy="18" rx="6" ry="10" fill="#D42A2A"/> <!-- Ear -->
-      <rect x="20" y="45" width="6" height="15" rx="3" fill="#D42A2A"/> <!-- Leg 1 -->
-      <rect x="32" y="45" width="6" height="15" rx="3" fill="#D42A2A"/> <!-- Leg 2 -->
-      <rect x="44" y="45" width="6" height="15" rx="3" fill="#D42A2A"/> <!-- Leg 3 -->
-      <!-- Tail -->
-      <path d="M 10 35 Q 0 25, 5 15" stroke="#D42A2A" stroke-width="6" fill="none" stroke-linecap="round"/>
-      <!-- Eye -->
-      <circle cx="68" cy="26" r="3" fill="#FFFFFF"/>
-      <circle cx="69" cy="26" r="1.5" fill="#3E2723"/>
-      <!-- Tongue -->
-      <ellipse cx="85" cy="32" rx="4" ry="6" fill="#EF5350"/>
+    <!-- Icons -->
+    <symbol id="icon-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M21 21l-4.35-4.35" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
     </symbol>
+
+    <symbol id="icon-chevron-down" viewBox="0 0 24 24">
+      <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-download" viewBox="0 0 24 24">
+      <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-upload" viewBox="0 0 24 24">
+      <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-bookmark" viewBox="0 0 24 24">
+      <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-star" viewBox="0 0 24 24">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"/>
+    </symbol>
+
+    <symbol id="icon-check" viewBox="0 0 24 24">
+      <polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-plus" viewBox="0 0 24 24">
+      <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="icon-minus" viewBox="0 0 24 24">
+      <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="icon-folder" viewBox="0 0 24 24">
+      <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+      <polyline points="12 6 12 12 16 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-user" viewBox="0 0 24 24">
+      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="12" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-bell" viewBox="0 0 24 24">
+      <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-message" viewBox="0 0 24 24">
+      <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="icon-paw" viewBox="0 0 100 100">
+      <ellipse cx="50" cy="68" rx="22" ry="18"/>
+      <circle cx="28" cy="42" r="12"/>
+      <circle cx="50" cy="30" r="12"/>
+      <circle cx="72" cy="42" r="12"/>
+    </symbol>
+
+    <!-- Clifford Dog Silhouette Logo -->
+    <symbol id="clifford-logo" viewBox="0 0 120 50">
+      <ellipse cx="40" cy="32" rx="28" ry="16" fill="#D42A2A"/>
+      <circle cx="75" cy="22" r="18" fill="#D42A2A"/>
+      <ellipse cx="90" cy="20" rx="10" ry="6" fill="#D42A2A"/>
+      <circle cx="96" cy="18" r="4" fill="#1A1A1A"/>
+      <ellipse cx="68" cy="8" rx="7" ry="12" fill="#D42A2A"/>
+      <rect x="22" y="40" width="7" height="14" rx="3.5" fill="#D42A2A"/>
+      <rect x="36" y="40" width="7" height="14" rx="3.5" fill="#D42A2A"/>
+      <rect x="50" y="40" width="7" height="14" rx="3.5" fill="#D42A2A"/>
+      <path d="M 12 28 Q 0 18, 6 6" stroke="#D42A2A" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <circle cx="78" cy="18" r="3" fill="#FFFFFF"/>
+      <circle cx="79" cy="18" r="1.5" fill="#3E2723"/>
+      <ellipse cx="100" cy="26" rx="5" ry="7" fill="#EF5350"/>
+    </symbol>
+
+    <!-- Card Shadow Filter -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#3E2723" flood-opacity="0.08"/>
+    </filter>
+
+    <filter id="elevatedShadow" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#3E2723" flood-opacity="0.12"/>
+    </filter>
   </defs>
 
-  <!-- Background with paw print pattern -->
-  <rect width="1200" height="900" class="bg-page"/>
-  <rect width="1200" height="900" fill="url(#pawPattern)"/>
+  <!-- Page Background -->
+  <rect width="1440" height="1024" class="bg-page"/>
 
-  <!-- Big Red Header -->
-  <rect x="0" y="0" width="1200" height="70" class="bg-header"/>
-
-  <!-- Logo Area with Clifford -->
-  <use href="#clifford-logo" x="20" y="8" width="80" height="48"/>
-  <text x="110" y="45" font-family="Georgia, serif" font-size="28" font-weight="bold" class="text-on-red">
-    BIG RED TRACKER
-  </text>
-
-  <!-- Navigation on red header -->
-  <g font-family="Segoe UI, sans-serif" font-size="14" font-weight="500" class="text-on-red">
-    <text x="320" y="42">Home</text>
-    <text x="380" y="42">Torrents</text>
-    <text x="460" y="42">Requests</text>
-    <text x="545" y="42">Forums</text>
-    <text x="615" y="42">Wiki</text>
+  <!-- Subtle paw print watermark pattern -->
+  <g opacity="0.03">
+    <use href="#icon-paw" x="100" y="200" width="60" height="60" fill="#3E2723" transform="rotate(-15 130 230)"/>
+    <use href="#icon-paw" x="300" y="350" width="50" height="50" fill="#3E2723" transform="rotate(10 325 375)"/>
+    <use href="#icon-paw" x="1200" y="400" width="70" height="70" fill="#3E2723" transform="rotate(-20 1235 435)"/>
+    <use href="#icon-paw" x="1100" y="700" width="55" height="55" fill="#3E2723" transform="rotate(5 1127 727)"/>
+    <use href="#icon-paw" x="200" y="800" width="65" height="65" fill="#3E2723" transform="rotate(-10 232 832)"/>
   </g>
 
-  <!-- User Stats on header right side -->
-  <g font-family="Segoe UI, sans-serif" font-size="12" class="text-on-red" text-anchor="end">
-    <text x="1000" y="35">Upload: 2.45 TB</text>
-    <text x="1000" y="52">Download: 890 GB</text>
-    <text x="1100" y="35">Ratio: 2.82</text>
-    <text x="1100" y="52">Points: 15,420</text>
-    <text x="1180" y="42">EmilyElizabeth</text>
+  <!-- ==================== HEADER ==================== -->
+  <g id="header">
+    <!-- Main Header Bar -->
+    <rect x="0" y="0" width="1440" height="56" class="bg-header"/>
+
+    <!-- Logo -->
+    <use href="#clifford-logo" x="24" y="6" width="100" height="44"/>
+    <text x="130" y="36" font-size="20" font-weight="700" class="text-inverse" letter-spacing="-0.5">
+      BIG RED TRACKER
+    </text>
+
+    <!-- Main Navigation -->
+    <g font-size="14" font-weight="500" class="text-inverse">
+      <g transform="translate(300, 0)">
+        <!-- Active nav item -->
+        <rect x="0" y="0" width="70" height="56" fill="rgba(255,255,255,0.15)"/>
+        <rect x="0" y="52" width="70" height="4" fill="#FFFFFF"/>
+        <text x="35" y="34" text-anchor="middle">Home</text>
+      </g>
+      <text x="415" y="34">Torrents</text>
+      <text x="505" y="34">Requests</text>
+      <text x="600" y="34">Forums</text>
+      <text x="680" y="34">Collages</text>
+      <text x="765" y="34">Wiki</text>
+      <text x="830" y="34">Upload</text>
+    </g>
+
+    <!-- Search Bar -->
+    <g transform="translate(920, 12)">
+      <rect x="0" y="0" width="280" height="32" rx="16" fill="rgba(255,255,255,0.2)"/>
+      <use href="#icon-search" x="10" y="6" width="20" height="20" stroke="#FFFFFF" opacity="0.7"/>
+      <text x="38" y="21" font-size="13" fill="#FFFFFF" opacity="0.7">Search torrents...</text>
+      <rect x="230" y="6" width="40" height="20" rx="4" fill="rgba(255,255,255,0.2)"/>
+      <text x="250" y="20" font-size="10" fill="#FFFFFF" text-anchor="middle" opacity="0.8">⌘K</text>
+    </g>
+
+    <!-- User Section -->
+    <g transform="translate(1220, 12)">
+      <!-- Notifications -->
+      <g transform="translate(0, 0)">
+        <use href="#icon-bell" x="0" y="4" width="24" height="24" stroke="#FFFFFF" opacity="0.9"/>
+        <circle cx="18" cy="8" r="8" fill="#FFD54F"/>
+        <text x="18" y="12" font-size="10" font-weight="600" class="text-primary" text-anchor="middle">3</text>
+      </g>
+
+      <!-- Messages -->
+      <g transform="translate(45, 0)">
+        <use href="#icon-message" x="0" y="4" width="24" height="24" stroke="#FFFFFF" opacity="0.9"/>
+        <circle cx="18" cy="8" r="8" fill="#7CB342"/>
+        <text x="18" y="12" font-size="10" font-weight="600" class="text-inverse" text-anchor="middle">5</text>
+      </g>
+
+      <!-- User Avatar & Dropdown -->
+      <g transform="translate(95, 0)">
+        <circle cx="16" cy="16" r="16" fill="#FFECB3"/>
+        <text x="16" y="21" font-size="14" font-weight="600" class="text-primary" text-anchor="middle">EE</text>
+        <use href="#icon-chevron-down" x="38" y="8" width="16" height="16" stroke="#FFFFFF" opacity="0.8"/>
+      </g>
+    </g>
   </g>
 
-  <!-- Sub Navigation Bar - Sky Blue -->
-  <rect x="0" y="70" width="1200" height="35" class="sky-blue"/>
-  <g font-family="Segoe UI, sans-serif" font-size="12" class="text-primary">
-    <text x="30" y="92">Browse</text>
-    <text x="90" y="92">Upload</text>
-    <text x="150" y="92">Top 10</text>
-    <text x="210" y="92">Collages</text>
-    <text x="280" y="92">Staff Picks</text>
+  <!-- ==================== USER STATS BAR ==================== -->
+  <g id="stats-bar" transform="translate(0, 56)">
+    <rect x="0" y="0" width="1440" height="44" class="bg-header-dark"/>
+
+    <g font-size="12" class="text-inverse" transform="translate(24, 0)">
+      <!-- Upload -->
+      <g transform="translate(0, 0)">
+        <use href="#icon-upload" x="0" y="12" width="18" height="18" stroke="#7CB342"/>
+        <text x="24" y="22" opacity="0.7">Up:</text>
+        <text x="46" y="22" font-weight="600" fill="#7CB342">2.45 TB</text>
+      </g>
+
+      <!-- Download -->
+      <g transform="translate(130, 0)">
+        <use href="#icon-download" x="0" y="12" width="18" height="18" stroke="#EF5350"/>
+        <text x="24" y="22" opacity="0.7">Down:</text>
+        <text x="60" y="22" font-weight="600" fill="#EF5350">892.4 GB</text>
+      </g>
+
+      <!-- Ratio -->
+      <g transform="translate(280, 0)">
+        <text x="0" y="22" opacity="0.7">Ratio:</text>
+        <text x="42" y="22" font-weight="600" fill="#7CB342">2.81</text>
+      </g>
+
+      <!-- Required Ratio -->
+      <g transform="translate(370, 0)">
+        <text x="0" y="22" opacity="0.7">Required:</text>
+        <text x="58" y="22" font-weight="500">0.60</text>
+      </g>
+
+      <!-- Buffer -->
+      <g transform="translate(480, 0)">
+        <text x="0" y="22" opacity="0.7">Buffer:</text>
+        <text x="46" y="22" font-weight="600" fill="#FFD54F">1.58 TB</text>
+      </g>
+
+      <!-- Points -->
+      <g transform="translate(620, 0)">
+        <use href="#icon-star" x="0" y="12" width="18" height="18" fill="#FFD54F"/>
+        <text x="24" y="22" opacity="0.7">Points:</text>
+        <text x="66" y="22" font-weight="600" fill="#FFD54F">24,892</text>
+      </g>
+    </g>
+
+    <!-- Right side stats -->
+    <g font-size="12" class="text-inverse" transform="translate(1100, 0)">
+      <text x="0" y="22" opacity="0.7">Seeding:</text>
+      <text x="52" y="22" font-weight="500">847</text>
+      <text x="100" y="22" opacity="0.7">Leeching:</text>
+      <text x="160" y="22" font-weight="500">3</text>
+      <text x="200" y="22" opacity="0.7">Snatched:</text>
+      <text x="260" y="22" font-weight="500">2,156</text>
+    </g>
   </g>
 
-  <!-- Search Bar -->
-  <rect x="850" y="78" width="320" height="22" rx="11" class="bg-card" stroke="#FFCCBC"/>
-  <text x="865" y="93" font-family="Segoe UI, sans-serif" font-size="11" class="text-muted">Search for big adventures...</text>
+  <!-- ==================== MAIN CONTENT AREA ==================== -->
+  <g id="main-content" transform="translate(0, 100)">
 
-  <!-- Main Content Area -->
+    <!-- ==================== LEFT SIDEBAR / FILTERS ==================== -->
+    <g id="sidebar" transform="translate(24, 24)">
+      <rect x="0" y="0" width="240" height="800" rx="12" class="bg-card" filter="url(#cardShadow)"/>
+      <rect x="0" y="0" width="240" height="800" rx="12" fill="none" class="border-card"/>
 
-  <!-- Welcome Card with Clifford -->
-  <rect x="30" y="125" width="740" height="100" rx="12" class="bg-card" stroke="#FFCCBC" stroke-width="1"/>
-  <rect x="30" y="125" width="740" height="35" rx="12" class="sunflower"/>
-  <rect x="30" y="148" width="740" height="12" class="sunflower"/>
-  <text x="50" y="148" font-family="Georgia, serif" font-size="16" font-weight="bold" class="text-primary">
-    Welcome to Birdwell Island!
-  </text>
-  <text x="50" y="180" font-family="Segoe UI, sans-serif" font-size="13" class="text-secondary">
-    Remember: Being a good friend is always the biggest adventure. Share kindly!
-  </text>
-  <text x="50" y="205" font-family="Segoe UI, sans-serif" font-size="12" class="text-muted">
-    Site News: New freeleech event this weekend! All torrents tagged "family-friendly" are free!
-  </text>
+      <!-- Filter Header -->
+      <rect x="0" y="0" width="240" height="48" rx="12" class="bg-table-header"/>
+      <rect x="0" y="36" width="240" height="12" class="bg-table-header"/>
+      <text x="20" y="30" font-size="14" font-weight="600" class="text-primary">Filter Torrents</text>
+      <text x="180" y="30" font-size="11" class="text-link" font-weight="500">Reset</text>
 
-  <!-- Stats Card -->
-  <rect x="790" y="125" width="380" height="100" rx="12" class="bg-card" stroke="#FFCCBC" stroke-width="1"/>
-  <rect x="790" y="125" width="380" height="35" rx="12" class="clifford-red"/>
-  <rect x="790" y="148" width="380" height="12" class="clifford-red"/>
-  <text x="810" y="148" font-family="Georgia, serif" font-size="14" font-weight="bold" class="text-on-red">
-    Community Stats
-  </text>
-  <g font-family="Segoe UI, sans-serif" font-size="12">
-    <text x="810" y="180" class="text-secondary">Users Online:</text>
-    <text x="910" y="180" class="grass-green" font-weight="600">1,247</text>
-    <text x="980" y="180" class="text-secondary">Total Torrents:</text>
-    <text x="1090" y="180" class="clifford-red" font-weight="600">89,432</text>
-    <text x="810" y="205" class="text-secondary">New Today:</text>
-    <text x="910" y="205" class="emily-blue" font-weight="600">156</text>
-    <text x="980" y="205" class="text-secondary">Active Seeds:</text>
-    <text x="1090" y="205" class="grass-green" font-weight="600">245K</text>
+      <!-- Search within results -->
+      <g transform="translate(16, 64)">
+        <rect x="0" y="0" width="208" height="36" rx="8" class="bg-input" stroke="#FFCCBC" stroke-width="1"/>
+        <use href="#icon-search" x="10" y="8" width="20" height="20" stroke="#8D6E63"/>
+        <text x="38" y="23" font-size="13" class="text-muted">Search in results...</text>
+      </g>
+
+      <!-- Categories -->
+      <g transform="translate(16, 120)">
+        <text x="0" y="0" font-size="11" font-weight="600" class="text-muted" letter-spacing="0.5">CATEGORY</text>
+
+        <g transform="translate(0, 16)">
+          <!-- Category checkboxes -->
+          <g transform="translate(0, 0)">
+            <rect x="0" y="0" width="18" height="18" rx="4" fill="#D42A2A"/>
+            <use href="#icon-check" x="2" y="2" width="14" height="14" stroke="#FFFFFF" stroke-width="2.5"/>
+            <text x="26" y="14" font-size="13" class="text-secondary">Animation</text>
+            <text x="190" y="14" font-size="11" class="text-muted" text-anchor="end">1,247</text>
+          </g>
+
+          <g transform="translate(0, 28)">
+            <rect x="0" y="0" width="18" height="18" rx="4" fill="#D42A2A"/>
+            <use href="#icon-check" x="2" y="2" width="14" height="14" stroke="#FFFFFF" stroke-width="2.5"/>
+            <text x="26" y="14" font-size="13" class="text-secondary">TV Shows</text>
+            <text x="190" y="14" font-size="11" class="text-muted" text-anchor="end">3,892</text>
+          </g>
+
+          <g transform="translate(0, 56)">
+            <rect x="0" y="0" width="18" height="18" rx="4" stroke="#FFCCBC" stroke-width="1.5" fill="#FFFFFF"/>
+            <text x="26" y="14" font-size="13" class="text-secondary">Movies</text>
+            <text x="190" y="14" font-size="11" class="text-muted" text-anchor="end">12,456</text>
+          </g>
+
+          <g transform="translate(0, 84)">
+            <rect x="0" y="0" width="18" height="18" rx="4" stroke="#FFCCBC" stroke-width="1.5" fill="#FFFFFF"/>
+            <text x="26" y="14" font-size="13" class="text-secondary">Music</text>
+            <text x="190" y="14" font-size="11" class="text-muted" text-anchor="end">8,234</text>
+          </g>
+
+          <g transform="translate(0, 112)">
+            <rect x="0" y="0" width="18" height="18" rx="4" stroke="#FFCCBC" stroke-width="1.5" fill="#FFFFFF"/>
+            <text x="26" y="14" font-size="13" class="text-secondary">Books</text>
+            <text x="190" y="14" font-size="11" class="text-muted" text-anchor="end">2,891</text>
+          </g>
+
+          <g transform="translate(0, 140)">
+            <rect x="0" y="0" width="18" height="18" rx="4" stroke="#FFCCBC" stroke-width="1.5" fill="#FFFFFF"/>
+            <text x="26" y="14" font-size="13" class="text-secondary">Games</text>
+            <text x="190" y="14" font-size="11" class="text-muted" text-anchor="end">956</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- Quality -->
+      <g transform="translate(16, 310)">
+        <text x="0" y="0" font-size="11" font-weight="600" class="text-muted" letter-spacing="0.5">QUALITY</text>
+
+        <g transform="translate(0, 16)">
+          <g transform="translate(0, 0)">
+            <rect x="0" y="0" width="18" height="18" rx="4" fill="#D42A2A"/>
+            <use href="#icon-check" x="2" y="2" width="14" height="14" stroke="#FFFFFF" stroke-width="2.5"/>
+            <text x="26" y="14" font-size="13" class="text-secondary">1080p</text>
+          </g>
+
+          <g transform="translate(0, 28)">
+            <rect x="0" y="0" width="18" height="18" rx="4" fill="#D42A2A"/>
+            <use href="#icon-check" x="2" y="2" width="14" height="14" stroke="#FFFFFF" stroke-width="2.5"/>
+            <text x="26" y="14" font-size="13" class="text-secondary">720p</text>
+          </g>
+
+          <g transform="translate(0, 56)">
+            <rect x="0" y="0" width="18" height="18" rx="4" stroke="#FFCCBC" stroke-width="1.5" fill="#FFFFFF"/>
+            <text x="26" y="14" font-size="13" class="text-secondary">4K / UHD</text>
+          </g>
+
+          <g transform="translate(0, 84)">
+            <rect x="0" y="0" width="18" height="18" rx="4" stroke="#FFCCBC" stroke-width="1.5" fill="#FFFFFF"/>
+            <text x="26" y="14" font-size="13" class="text-secondary">DVD</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- Special Tags -->
+      <g transform="translate(16, 460)">
+        <text x="0" y="0" font-size="11" font-weight="600" class="text-muted" letter-spacing="0.5">SPECIAL</text>
+
+        <g transform="translate(0, 16)">
+          <g transform="translate(0, 0)">
+            <rect x="0" y="0" width="18" height="18" rx="4" stroke="#FFCCBC" stroke-width="1.5" fill="#FFFFFF"/>
+            <text x="26" y="14" font-size="13" class="text-secondary">Freeleech Only</text>
+          </g>
+
+          <g transform="translate(0, 28)">
+            <rect x="0" y="0" width="18" height="18" rx="4" stroke="#FFCCBC" stroke-width="1.5" fill="#FFFFFF"/>
+            <text x="26" y="14" font-size="13" class="text-secondary">Personal FL</text>
+          </g>
+
+          <g transform="translate(0, 56)">
+            <rect x="0" y="0" width="18" height="18" rx="4" stroke="#FFCCBC" stroke-width="1.5" fill="#FFFFFF"/>
+            <text x="26" y="14" font-size="13" class="text-secondary">Staff Picks</text>
+          </g>
+
+          <g transform="translate(0, 84)">
+            <rect x="0" y="0" width="18" height="18" rx="4" stroke="#FFCCBC" stroke-width="1.5" fill="#FFFFFF"/>
+            <text x="26" y="14" font-size="13" class="text-secondary">Scene Releases</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- Apply Button -->
+      <g transform="translate(16, 600)">
+        <rect x="0" y="0" width="208" height="40" rx="8" class="bg-header"/>
+        <text x="104" y="26" font-size="14" font-weight="600" class="text-inverse" text-anchor="middle">Apply Filters</text>
+      </g>
+
+      <!-- Recent Searches -->
+      <g transform="translate(16, 660)">
+        <text x="0" y="0" font-size="11" font-weight="600" class="text-muted" letter-spacing="0.5">RECENT SEARCHES</text>
+
+        <g font-size="12" class="text-link">
+          <text x="0" y="24">clifford movie 1080p</text>
+          <text x="0" y="46">big red dog</text>
+          <text x="0" y="68">birdwell island</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- ==================== MAIN TORRENT LIST ==================== -->
+    <g id="torrent-list" transform="translate(288, 24)">
+
+      <!-- Results Header -->
+      <g transform="translate(0, 0)">
+        <text x="0" y="20" font-size="18" font-weight="600" class="text-primary">Browse Torrents</text>
+        <text x="0" y="40" font-size="13" class="text-muted">Showing 1-25 of 5,139 results</text>
+
+        <!-- Sort Dropdown -->
+        <g transform="translate(850, 8)">
+          <rect x="0" y="0" width="140" height="36" rx="8" class="bg-card" stroke="#FFCCBC" stroke-width="1"/>
+          <text x="12" y="23" font-size="13" class="text-secondary">Sort: Time</text>
+          <use href="#icon-chevron-down" x="110" y="10" width="16" height="16" stroke="#8D6E63"/>
+        </g>
+
+        <!-- View Toggle -->
+        <g transform="translate(1010, 8)">
+          <rect x="0" y="0" width="80" height="36" rx="8" class="bg-table-header"/>
+          <rect x="4" y="4" width="36" height="28" rx="6" class="bg-card"/>
+          <text x="22" y="24" font-size="11" class="text-primary" text-anchor="middle">List</text>
+          <text x="60" y="24" font-size="11" class="text-muted" text-anchor="middle">Grid</text>
+        </g>
+      </g>
+
+      <!-- Torrent Table -->
+      <g transform="translate(0, 64)">
+        <rect x="0" y="0" width="1110" height="680" rx="12" class="bg-card" filter="url(#cardShadow)"/>
+        <rect x="0" y="0" width="1110" height="680" rx="12" fill="none" class="border-card"/>
+
+        <!-- Table Header -->
+        <rect x="0" y="0" width="1110" height="44" rx="12" class="bg-table-header"/>
+        <rect x="0" y="32" width="1110" height="12" class="bg-table-header"/>
+
+        <g font-size="11" font-weight="600" class="text-secondary" letter-spacing="0.3">
+          <text x="16" y="27">TYPE</text>
+          <text x="80" y="27">NAME</text>
+          <text x="700" y="27">SIZE</text>
+          <text x="780" y="27">S</text>
+          <text x="830" y="27">L</text>
+          <text x="880" y="27">SNATCHES</text>
+          <text x="970" y="27">UPLOADED</text>
+          <text x="1070" y="27">DL</text>
+        </g>
+
+        <!-- ===== TORRENT ROW 1 - Expanded Group ===== -->
+        <g transform="translate(0, 44)">
+          <!-- Group Header Row (Expanded) -->
+          <rect x="0" y="0" width="1110" height="56" class="bg-table-row"/>
+          <rect x="0" y="55" width="1110" height="1" fill="#FFE0B2"/>
+
+          <!-- Expand/Collapse Toggle -->
+          <g transform="translate(16, 18)">
+            <rect x="0" y="0" width="20" height="20" rx="4" fill="#D42A2A"/>
+            <use href="#icon-minus" x="3" y="3" width="14" height="14" stroke="#FFFFFF" stroke-width="2"/>
+          </g>
+
+          <!-- Category Badge -->
+          <g transform="translate(48, 16)">
+            <rect x="0" y="0" width="24" height="24" rx="6" fill="#FFEBEE"/>
+            <text x="12" y="17" font-size="11" class="clifford-red" text-anchor="middle" font-weight="600">AN</text>
+          </g>
+
+          <!-- Torrent Group Name -->
+          <g transform="translate(84, 12)">
+            <text x="0" y="16" font-size="14" font-weight="600" class="text-link">Clifford the Big Red Dog</text>
+            <text x="210" y="16" font-size="12" class="text-secondary">(2021)</text>
+            <text x="0" y="36" font-size="12" class="text-muted">3 editions available</text>
+
+            <!-- Tags -->
+            <g transform="translate(260, 2)">
+              <rect x="0" y="0" width="72" height="22" rx="4" fill="#FFF9C4" stroke="#FFD54F" stroke-width="1"/>
+              <text x="36" y="15" font-size="10" font-weight="600" fill="#F57F17" text-anchor="middle">FREELEECH</text>
+            </g>
+            <g transform="translate(340, 2)">
+              <rect x="0" y="0" width="48" height="22" rx="4" fill="#E8F5E9" stroke="#7CB342" stroke-width="1"/>
+              <text x="24" y="15" font-size="10" font-weight="500" class="text-success" text-anchor="middle">HD</text>
+            </g>
+          </g>
+        </g>
+
+        <!-- Edition Row 1 -->
+        <g transform="translate(0, 100)">
+          <rect x="0" y="0" width="1110" height="48" fill="#FFFAF6"/>
+          <rect x="0" y="47" width="1110" height="1" fill="#FFE0B2"/>
+
+          <rect x="48" y="12" width="4" height="24" rx="2" fill="#FFCCBC"/>
+
+          <text x="64" y="22" font-size="12" class="text-muted">└</text>
+
+          <g transform="translate(84, 8)">
+            <text x="0" y="16" font-size="13" class="text-link">1080p BluRay REMUX AVC DTS-HD MA 5.1</text>
+            <text x="0" y="32" font-size="11" class="text-muted">Uploaded by CliffordFan · 4 months ago</text>
+          </g>
+
+          <text x="700" y="28" font-size="13" class="text-secondary">24.8 GB</text>
+          <text x="780" y="28" font-size="13" font-weight="600" class="grass-green">156</text>
+          <text x="830" y="28" font-size="13" class="clifford-red">8</text>
+          <text x="880" y="28" font-size="13" class="emily-blue">2,847</text>
+          <text x="970" y="28" font-size="12" class="text-muted">4mo</text>
+
+          <g transform="translate(1060, 14)">
+            <rect x="0" y="0" width="32" height="24" rx="6" fill="#D42A2A"/>
+            <use href="#icon-download" x="6" y="2" width="20" height="20" stroke="#FFFFFF" stroke-width="1.5"/>
+          </g>
+        </g>
+
+        <!-- Edition Row 2 -->
+        <g transform="translate(0, 148)">
+          <rect x="0" y="0" width="1110" height="48" fill="#FFF8F0"/>
+          <rect x="0" y="47" width="1110" height="1" fill="#FFE0B2"/>
+
+          <rect x="48" y="12" width="4" height="24" rx="2" fill="#FFCCBC"/>
+
+          <text x="64" y="22" font-size="12" class="text-muted">└</text>
+
+          <g transform="translate(84, 8)">
+            <text x="0" y="16" font-size="13" class="text-link">2160p UHD BluRay HDR10 HEVC Atmos</text>
+            <text x="0" y="32" font-size="11" class="text-muted">Uploaded by BigRedDog4K · 2 months ago</text>
+          </g>
+
+          <text x="700" y="28" font-size="13" class="text-secondary">52.3 GB</text>
+          <text x="780" y="28" font-size="13" font-weight="600" class="grass-green">89</text>
+          <text x="830" y="28" font-size="13" class="clifford-red">12</text>
+          <text x="880" y="28" font-size="13" class="emily-blue">1,234</text>
+          <text x="970" y="28" font-size="12" class="text-muted">2mo</text>
+
+          <g transform="translate(1060, 14)">
+            <rect x="0" y="0" width="32" height="24" rx="6" fill="#D42A2A"/>
+            <use href="#icon-download" x="6" y="2" width="20" height="20" stroke="#FFFFFF" stroke-width="1.5"/>
+          </g>
+        </g>
+
+        <!-- Edition Row 3 -->
+        <g transform="translate(0, 196)">
+          <rect x="0" y="0" width="1110" height="48" fill="#FFFAF6"/>
+          <rect x="0" y="47" width="1110" height="1" fill="#FFCCBC"/>
+
+          <rect x="48" y="12" width="4" height="24" rx="2" fill="#FFCCBC"/>
+
+          <text x="64" y="22" font-size="12" class="text-muted">└</text>
+
+          <g transform="translate(84, 8)">
+            <text x="0" y="16" font-size="13" class="text-link">720p WEB-DL DD5.1 x264</text>
+            <text x="0" y="32" font-size="11" class="text-muted">Uploaded by EmilyElizabeth · 6 months ago</text>
+          </g>
+
+          <text x="700" y="28" font-size="13" class="text-secondary">4.2 GB</text>
+          <text x="780" y="28" font-size="13" font-weight="600" class="grass-green">423</text>
+          <text x="830" y="28" font-size="13" class="clifford-red">2</text>
+          <text x="880" y="28" font-size="13" class="emily-blue">5,891</text>
+          <text x="970" y="28" font-size="12" class="text-muted">6mo</text>
+
+          <g transform="translate(1060, 14)">
+            <rect x="0" y="0" width="32" height="24" rx="6" fill="#D42A2A"/>
+            <use href="#icon-download" x="6" y="2" width="20" height="20" stroke="#FFFFFF" stroke-width="1.5"/>
+          </g>
+        </g>
+
+        <!-- ===== TORRENT ROW 2 - Collapsed Group ===== -->
+        <g transform="translate(0, 244)">
+          <rect x="0" y="0" width="1110" height="56" class="bg-table-row-alt"/>
+          <rect x="0" y="55" width="1110" height="1" fill="#FFE0B2"/>
+
+          <!-- Expand Toggle (Collapsed) -->
+          <g transform="translate(16, 18)">
+            <rect x="0" y="0" width="20" height="20" rx="4" stroke="#FFCCBC" stroke-width="1.5" fill="#FFFFFF"/>
+            <use href="#icon-plus" x="3" y="3" width="14" height="14" stroke="#D42A2A" stroke-width="2"/>
+          </g>
+
+          <!-- Category Badge -->
+          <g transform="translate(48, 16)">
+            <rect x="0" y="0" width="24" height="24" rx="6" fill="#E8EAF6"/>
+            <text x="12" y="17" font-size="11" class="emily-blue" text-anchor="middle" font-weight="600">TV</text>
+          </g>
+
+          <!-- Torrent Name -->
+          <g transform="translate(84, 12)">
+            <text x="0" y="16" font-size="14" font-weight="600" class="text-link">Clifford the Big Red Dog S01 Complete</text>
+            <text x="295" y="16" font-size="12" class="text-secondary">(2000)</text>
+            <text x="0" y="36" font-size="12" class="text-muted">13 episodes · 5 editions</text>
+          </g>
+
+          <text x="700" y="32" font-size="13" class="text-secondary">18.7 GB</text>
+          <text x="780" y="32" font-size="13" font-weight="600" class="grass-green">562</text>
+          <text x="830" y="32" font-size="13" class="clifford-red">23</text>
+          <text x="880" y="32" font-size="13" class="emily-blue">8,234</text>
+          <text x="970" y="32" font-size="12" class="text-muted">2d ago</text>
+
+          <g transform="translate(1060, 18)">
+            <rect x="0" y="0" width="32" height="24" rx="6" fill="#D42A2A"/>
+            <use href="#icon-download" x="6" y="2" width="20" height="20" stroke="#FFFFFF" stroke-width="1.5"/>
+          </g>
+        </g>
+
+        <!-- ===== TORRENT ROW 3 ===== -->
+        <g transform="translate(0, 300)">
+          <rect x="0" y="0" width="1110" height="56" class="bg-table-row"/>
+          <rect x="0" y="55" width="1110" height="1" fill="#FFE0B2"/>
+
+          <g transform="translate(16, 18)">
+            <rect x="0" y="0" width="20" height="20" rx="4" stroke="#FFCCBC" stroke-width="1.5" fill="#FFFFFF"/>
+            <use href="#icon-plus" x="3" y="3" width="14" height="14" stroke="#D42A2A" stroke-width="2"/>
+          </g>
+
+          <g transform="translate(48, 16)">
+            <rect x="0" y="0" width="24" height="24" rx="6" fill="#F3E5F5"/>
+            <text x="12" y="17" font-size="11" class="cleo-purple" text-anchor="middle" font-weight="600">MU</text>
+          </g>
+
+          <g transform="translate(84, 12)">
+            <text x="0" y="16" font-size="14" font-weight="600" class="text-link">Clifford the Big Red Dog - Original Soundtrack</text>
+            <text x="0" y="36" font-size="12" class="text-muted">John Debney · 2 editions</text>
+          </g>
+
+          <text x="700" y="32" font-size="13" class="text-secondary">312 MB</text>
+          <text x="780" y="32" font-size="13" font-weight="600" class="grass-green">156</text>
+          <text x="830" y="32" font-size="13" class="clifford-red">5</text>
+          <text x="880" y="32" font-size="13" class="emily-blue">2,567</text>
+          <text x="970" y="32" font-size="12" class="text-muted">1w ago</text>
+
+          <g transform="translate(1060, 18)">
+            <rect x="0" y="0" width="32" height="24" rx="6" fill="#D42A2A"/>
+            <use href="#icon-download" x="6" y="2" width="20" height="20" stroke="#FFFFFF" stroke-width="1.5"/>
+          </g>
+        </g>
+
+        <!-- ===== TORRENT ROW 4 ===== -->
+        <g transform="translate(0, 356)">
+          <rect x="0" y="0" width="1110" height="56" class="bg-table-row-alt"/>
+          <rect x="0" y="55" width="1110" height="1" fill="#FFE0B2"/>
+
+          <g transform="translate(16, 18)">
+            <rect x="0" y="0" width="20" height="20" rx="4" stroke="#FFCCBC" stroke-width="1.5" fill="#FFFFFF"/>
+            <use href="#icon-plus" x="3" y="3" width="14" height="14" stroke="#D42A2A" stroke-width="2"/>
+          </g>
+
+          <g transform="translate(48, 16)">
+            <rect x="0" y="0" width="24" height="24" rx="6" fill="#E8F5E9"/>
+            <text x="12" y="17" font-size="11" class="grass-green" text-anchor="middle" font-weight="600">BK</text>
+          </g>
+
+          <g transform="translate(84, 12)">
+            <text x="0" y="16" font-size="14" font-weight="600" class="text-link">Clifford Collection - Norman Bridwell</text>
+            <text x="0" y="36" font-size="12" class="text-muted">eBooks · 14 books · 3 formats</text>
+
+            <!-- Staff Pick Badge -->
+            <g transform="translate(310, 2)">
+              <rect x="0" y="0" width="78" height="22" rx="4" fill="#FFEBEE" stroke="#D42A2A" stroke-width="1"/>
+              <use href="#icon-star" x="6" y="4" width="14" height="14" fill="#D42A2A"/>
+              <text x="48" y="15" font-size="10" font-weight="500" class="clifford-red" text-anchor="middle">Staff Pick</text>
+            </g>
+          </g>
+
+          <text x="700" y="32" font-size="13" class="text-secondary">89 MB</text>
+          <text x="780" y="32" font-size="13" font-weight="600" class="grass-green">234</text>
+          <text x="830" y="32" font-size="13" class="clifford-red">1</text>
+          <text x="880" y="32" font-size="13" class="emily-blue">3,891</text>
+          <text x="970" y="32" font-size="12" class="text-muted">3w ago</text>
+
+          <g transform="translate(1060, 18)">
+            <rect x="0" y="0" width="32" height="24" rx="6" fill="#D42A2A"/>
+            <use href="#icon-download" x="6" y="2" width="20" height="20" stroke="#FFFFFF" stroke-width="1.5"/>
+          </g>
+        </g>
+
+        <!-- ===== TORRENT ROW 5 ===== -->
+        <g transform="translate(0, 412)">
+          <rect x="0" y="0" width="1110" height="56" class="bg-table-row"/>
+          <rect x="0" y="55" width="1110" height="1" fill="#FFE0B2"/>
+
+          <g transform="translate(16, 18)">
+            <rect x="0" y="0" width="20" height="20" rx="4" stroke="#FFCCBC" stroke-width="1.5" fill="#FFFFFF"/>
+            <use href="#icon-plus" x="3" y="3" width="14" height="14" stroke="#D42A2A" stroke-width="2"/>
+          </g>
+
+          <g transform="translate(48, 16)">
+            <rect x="0" y="0" width="24" height="24" rx="6" fill="#FFF3E0"/>
+            <text x="12" y="17" font-size="11" fill="#E65100" text-anchor="middle" font-weight="600">GM</text>
+          </g>
+
+          <g transform="translate(84, 12)">
+            <text x="0" y="16" font-size="14" font-weight="600" class="text-link">Clifford's Really Big Adventures</text>
+            <text x="260" y="16" font-size="12" class="text-secondary">PC Game</text>
+            <text x="0" y="36" font-size="12" class="text-muted">Educational · Windows · ISO</text>
+          </g>
+
+          <text x="700" y="32" font-size="13" class="text-secondary">1.8 GB</text>
+          <text x="780" y="32" font-size="13" font-weight="600" class="grass-green">78</text>
+          <text x="830" y="32" font-size="13" class="clifford-red">3</text>
+          <text x="880" y="32" font-size="13" class="emily-blue">945</text>
+          <text x="970" y="32" font-size="12" class="text-muted">1mo ago</text>
+
+          <g transform="translate(1060, 18)">
+            <rect x="0" y="0" width="32" height="24" rx="6" fill="#D42A2A"/>
+            <use href="#icon-download" x="6" y="2" width="20" height="20" stroke="#FFFFFF" stroke-width="1.5"/>
+          </g>
+        </g>
+
+        <!-- ===== TORRENT ROW 6 ===== -->
+        <g transform="translate(0, 468)">
+          <rect x="0" y="0" width="1110" height="56" class="bg-table-row-alt"/>
+          <rect x="0" y="55" width="1110" height="1" fill="#FFE0B2"/>
+
+          <g transform="translate(16, 18)">
+            <rect x="0" y="0" width="20" height="20" rx="4" stroke="#FFCCBC" stroke-width="1.5" fill="#FFFFFF"/>
+            <use href="#icon-plus" x="3" y="3" width="14" height="14" stroke="#D42A2A" stroke-width="2"/>
+          </g>
+
+          <g transform="translate(48, 16)">
+            <rect x="0" y="0" width="24" height="24" rx="6" fill="#FFEBEE"/>
+            <text x="12" y="17" font-size="11" class="clifford-red" text-anchor="middle" font-weight="600">AN</text>
+          </g>
+
+          <g transform="translate(84, 12)">
+            <text x="0" y="16" font-size="14" font-weight="600" class="text-link">Clifford's Puppy Days Complete Series</text>
+            <text x="290" y="16" font-size="12" class="text-secondary">(2003-2006)</text>
+            <text x="0" y="36" font-size="12" class="text-muted">52 episodes · 4 seasons</text>
+
+            <g transform="translate(380, 2)">
+              <rect x="0" y="0" width="72" height="22" rx="4" fill="#FFF9C4" stroke="#FFD54F" stroke-width="1"/>
+              <text x="36" y="15" font-size="10" font-weight="600" fill="#F57F17" text-anchor="middle">FREELEECH</text>
+            </g>
+          </g>
+
+          <text x="700" y="32" font-size="13" class="text-secondary">38.2 GB</text>
+          <text x="780" y="32" font-size="13" font-weight="600" class="grass-green">312</text>
+          <text x="830" y="32" font-size="13" class="clifford-red">45</text>
+          <text x="880" y="32" font-size="13" class="emily-blue">4,567</text>
+          <text x="970" y="32" font-size="12" class="text-muted">5d ago</text>
+
+          <g transform="translate(1060, 18)">
+            <rect x="0" y="0" width="32" height="24" rx="6" fill="#D42A2A"/>
+            <use href="#icon-download" x="6" y="2" width="20" height="20" stroke="#FFFFFF" stroke-width="1.5"/>
+          </g>
+        </g>
+
+        <!-- ===== TORRENT ROW 7 ===== -->
+        <g transform="translate(0, 524)">
+          <rect x="0" y="0" width="1110" height="56" class="bg-table-row"/>
+          <rect x="0" y="55" width="1110" height="1" fill="#FFE0B2"/>
+
+          <g transform="translate(16, 18)">
+            <rect x="0" y="0" width="20" height="20" rx="4" stroke="#FFCCBC" stroke-width="1.5" fill="#FFFFFF"/>
+            <use href="#icon-plus" x="3" y="3" width="14" height="14" stroke="#D42A2A" stroke-width="2"/>
+          </g>
+
+          <g transform="translate(48, 16)">
+            <rect x="0" y="0" width="24" height="24" rx="6" fill="#E1F5FE"/>
+            <text x="12" y="17" font-size="11" class="text-info" text-anchor="middle" font-weight="600">OT</text>
+          </g>
+
+          <g transform="translate(84, 12)">
+            <text x="0" y="16" font-size="14" font-weight="600" class="text-link">Birdwell Island Fan Art Collection</text>
+            <text x="0" y="36" font-size="12" class="text-muted">Digital Art · PNG/PSD · High Resolution</text>
+          </g>
+
+          <text x="700" y="32" font-size="13" class="text-secondary">2.1 GB</text>
+          <text x="780" y="32" font-size="13" font-weight="600" class="grass-green">45</text>
+          <text x="830" y="32" font-size="13" class="clifford-red">2</text>
+          <text x="880" y="32" font-size="13" class="emily-blue">423</text>
+          <text x="970" y="32" font-size="12" class="text-muted">2w ago</text>
+
+          <g transform="translate(1060, 18)">
+            <rect x="0" y="0" width="32" height="24" rx="6" fill="#D42A2A"/>
+            <use href="#icon-download" x="6" y="2" width="20" height="20" stroke="#FFFFFF" stroke-width="1.5"/>
+          </g>
+        </g>
+
+        <!-- Pagination -->
+        <g transform="translate(0, 600)">
+          <rect x="0" y="0" width="1110" height="80" rx="0" fill="#FFFAF6"/>
+          <rect x="0" y="0" width="1110" height="80" rx="12" fill="none"/>
+
+          <g transform="translate(400, 24)">
+            <!-- Previous -->
+            <g>
+              <rect x="0" y="0" width="32" height="32" rx="6" stroke="#FFCCBC" stroke-width="1" fill="#FFFFFF"/>
+              <text x="16" y="21" font-size="14" class="text-muted" text-anchor="middle">‹</text>
+            </g>
+
+            <!-- Page 1 (Active) -->
+            <g transform="translate(40, 0)">
+              <rect x="0" y="0" width="32" height="32" rx="6" fill="#D42A2A"/>
+              <text x="16" y="21" font-size="13" font-weight="600" class="text-inverse" text-anchor="middle">1</text>
+            </g>
+
+            <!-- Page 2 -->
+            <g transform="translate(80, 0)">
+              <rect x="0" y="0" width="32" height="32" rx="6" stroke="#FFCCBC" stroke-width="1" fill="#FFFFFF"/>
+              <text x="16" y="21" font-size="13" class="text-secondary" text-anchor="middle">2</text>
+            </g>
+
+            <!-- Page 3 -->
+            <g transform="translate(120, 0)">
+              <rect x="0" y="0" width="32" height="32" rx="6" stroke="#FFCCBC" stroke-width="1" fill="#FFFFFF"/>
+              <text x="16" y="21" font-size="13" class="text-secondary" text-anchor="middle">3</text>
+            </g>
+
+            <!-- Ellipsis -->
+            <text x="176" y="21" font-size="13" class="text-muted">...</text>
+
+            <!-- Page 206 -->
+            <g transform="translate(200, 0)">
+              <rect x="0" y="0" width="40" height="32" rx="6" stroke="#FFCCBC" stroke-width="1" fill="#FFFFFF"/>
+              <text x="20" y="21" font-size="13" class="text-secondary" text-anchor="middle">206</text>
+            </g>
+
+            <!-- Next -->
+            <g transform="translate(250, 0)">
+              <rect x="0" y="0" width="32" height="32" rx="6" fill="#D42A2A"/>
+              <text x="16" y="21" font-size="14" class="text-inverse" text-anchor="middle">›</text>
+            </g>
+          </g>
+
+          <!-- Per Page -->
+          <g transform="translate(820, 24)">
+            <text x="0" y="21" font-size="12" class="text-muted">Show:</text>
+            <rect x="45" y="0" width="70" height="32" rx="6" stroke="#FFCCBC" stroke-width="1" fill="#FFFFFF"/>
+            <text x="70" y="21" font-size="13" class="text-secondary" text-anchor="middle">25</text>
+            <use href="#icon-chevron-down" x="95" y="8" width="16" height="16" stroke="#8D6E63"/>
+          </g>
+        </g>
+      </g>
+    </g>
   </g>
 
-  <!-- Torrent Table -->
-  <rect x="30" y="245" width="1140" height="380" rx="8" class="bg-card" stroke="#FFCCBC" stroke-width="1"/>
-
-  <!-- Table Header -->
-  <rect x="30" y="245" width="1140" height="40" rx="8" class="bg-table-header"/>
-  <rect x="30" y="275" width="1140" height="10" class="bg-table-header"/>
-  <g font-family="Segoe UI, sans-serif" font-size="12" font-weight="600" class="text-primary">
-    <text x="50" y="270">Category</text>
-    <text x="150" y="270">Name</text>
-    <text x="750" y="270">Size</text>
-    <text x="830" y="270">Seeders</text>
-    <text x="910" y="270">Leechers</text>
-    <text x="1000" y="270">Snatched</text>
-    <text x="1090" y="270">Added</text>
+  <!-- ==================== THEME LABEL ==================== -->
+  <g transform="translate(1280, 970)">
+    <rect x="0" y="0" width="140" height="36" rx="18" fill="#D42A2A" filter="url(#elevatedShadow)"/>
+    <use href="#icon-paw" x="12" y="8" width="20" height="20" fill="#FFFFFF"/>
+    <text x="80" y="24" font-size="12" font-weight="600" class="text-inverse" text-anchor="middle">CLIFFORD THEME</text>
   </g>
-
-  <!-- Table Rows -->
-  <!-- Row 1 -->
-  <rect x="30" y="285" width="1140" height="45" class="bg-table-row"/>
-  <g font-family="Segoe UI, sans-serif" font-size="12">
-    <rect x="50" y="297" width="60" height="20" rx="4" class="clifford-red"/>
-    <text x="60" y="311" class="text-on-red" font-size="10">Animation</text>
-    <text x="150" y="312" class="link" font-weight="500">Clifford's Really Big Movie (2004) [1080p BluRay]</text>
-    <rect x="620" y="297" width="55" height="20" rx="4" class="sunflower"/>
-    <text x="630" y="311" class="text-primary" font-size="10">FREELEECH</text>
-    <text x="750" y="312" class="text-secondary">4.2 GB</text>
-    <text x="830" y="312" class="seeders" font-weight="600">847</text>
-    <text x="910" y="312" class="leechers">23</text>
-    <text x="1000" y="312" class="emily-blue">12,456</text>
-    <text x="1090" y="312" class="text-muted">2h ago</text>
-  </g>
-
-  <!-- Row 2 Alt -->
-  <rect x="30" y="330" width="1140" height="45" class="bg-table-row-alt"/>
-  <g font-family="Segoe UI, sans-serif" font-size="12">
-    <rect x="50" y="342" width="60" height="20" rx="4" class="grass-green"/>
-    <text x="63" y="356" class="text-on-red" font-size="10">Books</text>
-    <text x="150" y="357" class="link" font-weight="500">Clifford Collection - Norman Bridwell [EPUB]</text>
-    <text x="750" y="357" class="text-secondary">89 MB</text>
-    <text x="830" y="357" class="seeders" font-weight="600">234</text>
-    <text x="910" y="357" class="leechers">5</text>
-    <text x="1000" y="357" class="emily-blue">3,891</text>
-    <text x="1090" y="357" class="text-muted">5h ago</text>
-  </g>
-
-  <!-- Row 3 -->
-  <rect x="30" y="375" width="1140" height="45" class="bg-table-row"/>
-  <g font-family="Segoe UI, sans-serif" font-size="12">
-    <rect x="50" y="387" width="60" height="20" rx="4" class="emily-blue"/>
-    <text x="62" y="401" class="text-on-red" font-size="10">TV Show</text>
-    <text x="150" y="402" class="link" font-weight="500">Clifford the Big Red Dog S01 Complete [720p AMZN WEB-DL]</text>
-    <text x="750" y="402" class="text-secondary">18.7 GB</text>
-    <text x="830" y="402" class="seeders" font-weight="600">562</text>
-    <text x="910" y="402" class="leechers">89</text>
-    <text x="1000" y="402" class="emily-blue">8,234</text>
-    <text x="1090" y="402" class="text-muted">1d ago</text>
-  </g>
-
-  <!-- Row 4 Alt -->
-  <rect x="30" y="420" width="1140" height="45" class="bg-table-row-alt"/>
-  <g font-family="Segoe UI, sans-serif" font-size="12">
-    <rect x="50" y="432" width="60" height="20" rx="4" class="cleo-purple"/>
-    <text x="60" y="446" class="text-on-red" font-size="10">Music</text>
-    <text x="150" y="447" class="link" font-weight="500">Clifford the Big Red Dog - Original Soundtrack [FLAC]</text>
-    <text x="750" y="447" class="text-secondary">312 MB</text>
-    <text x="830" y="447" class="seeders" font-weight="600">156</text>
-    <text x="910" y="447" class="leechers">12</text>
-    <text x="1000" y="447" class="emily-blue">2,567</text>
-    <text x="1090" y="447" class="text-muted">2d ago</text>
-  </g>
-
-  <!-- Row 5 -->
-  <rect x="30" y="465" width="1140" height="45" class="bg-table-row"/>
-  <g font-family="Segoe UI, sans-serif" font-size="12">
-    <rect x="50" y="477" width="60" height="20" rx="4" class="tbone-yellow"/>
-    <text x="60" y="491" class="text-primary" font-size="10">Games</text>
-    <text x="150" y="492" class="link" font-weight="500">Clifford's Big Red Adventures - PC Game [ISO]</text>
-    <text x="750" y="492" class="text-secondary">1.8 GB</text>
-    <text x="830" y="492" class="seeders" font-weight="600">78</text>
-    <text x="910" y="492" class="leechers">3</text>
-    <text x="1000" y="492" class="emily-blue">945</text>
-    <text x="1090" y="492" class="text-muted">3d ago</text>
-  </g>
-
-  <!-- Row 6 Alt -->
-  <rect x="30" y="510" width="1140" height="45" class="bg-table-row-alt"/>
-  <g font-family="Segoe UI, sans-serif" font-size="12">
-    <rect x="50" y="522" width="60" height="20" rx="4" class="clifford-red"/>
-    <text x="60" y="536" class="text-on-red" font-size="10">Animation</text>
-    <text x="150" y="537" class="link" font-weight="500">Clifford's Puppy Days Complete Series [DVD Remux]</text>
-    <rect x="520" y="522" width="55" height="20" rx="4" class="sunflower"/>
-    <text x="530" y="536" class="text-primary" font-size="10">FREELEECH</text>
-    <text x="750" y="537" class="text-secondary">24.5 GB</text>
-    <text x="830" y="537" class="seeders" font-weight="600">412</text>
-    <text x="910" y="537" class="leechers">67</text>
-    <text x="1000" y="537" class="emily-blue">6,789</text>
-    <text x="1090" y="537" class="text-muted">5d ago</text>
-  </g>
-
-  <!-- Row 7 -->
-  <rect x="30" y="555" width="1140" height="45" class="bg-table-row"/>
-  <g font-family="Segoe UI, sans-serif" font-size="12">
-    <rect x="50" y="567" width="60" height="20" rx="4" class="sky-blue"/>
-    <text x="60" y="581" class="text-primary" font-size="10">Other</text>
-    <text x="150" y="582" class="link" font-weight="500">Birdwell Island Fan Art Collection [PNG/PSD]</text>
-    <text x="750" y="582" class="text-secondary">2.1 GB</text>
-    <text x="830" y="582" class="seeders" font-weight="600">45</text>
-    <text x="910" y="582" class="leechers">2</text>
-    <text x="1000" y="582" class="emily-blue">423</text>
-    <text x="1090" y="582" class="text-muted">1w ago</text>
-  </g>
-
-  <!-- Sidebar - Character Friends -->
-  <rect x="30" y="650" width="350" height="120" rx="12" class="bg-card" stroke="#FFCCBC" stroke-width="1"/>
-  <rect x="30" y="650" width="350" height="35" rx="12" class="clifford-red"/>
-  <rect x="30" y="673" width="350" height="12" class="clifford-red"/>
-  <text x="50" y="673" font-family="Georgia, serif" font-size="14" font-weight="bold" class="text-on-red">
-    Clifford's Friends (Top Uploaders)
-  </text>
-  <g font-family="Segoe UI, sans-serif" font-size="12">
-    <circle cx="55" cy="710" r="12" class="clifford-red"/>
-    <text x="75" y="714" class="text-secondary">Clifford_Fan</text>
-    <text x="200" y="714" class="grass-green" font-weight="600">45.2 TB</text>
-
-    <circle cx="55" cy="740" r="12" class="emily-blue"/>
-    <text x="75" y="744" class="text-secondary">EmilyElizabeth</text>
-    <text x="200" y="744" class="grass-green" font-weight="600">32.8 TB</text>
-  </g>
-
-  <!-- Recent Forum Posts -->
-  <rect x="400" y="650" width="380" height="120" rx="12" class="bg-card" stroke="#FFCCBC" stroke-width="1"/>
-  <rect x="400" y="650" width="380" height="35" rx="12" class="grass-green"/>
-  <rect x="400" y="673" width="380" height="12" class="grass-green"/>
-  <text x="420" y="673" font-family="Georgia, serif" font-size="14" font-weight="bold" class="text-on-red">
-    Island News (Forums)
-  </text>
-  <g font-family="Segoe UI, sans-serif" font-size="11">
-    <text x="420" y="710" class="link">New encoding standards discussion</text>
-    <text x="420" y="728" class="text-muted">by T_Bone_Rules · 3 replies</text>
-    <text x="420" y="755" class="link">Weekend freeleech announcement!</text>
-    <text x="420" y="773" class="text-muted">by Admin · 45 replies</text>
-  </g>
-
-  <!-- Staff Picks -->
-  <rect x="800" y="650" width="370" height="120" rx="12" class="bg-card" stroke="#FFCCBC" stroke-width="1"/>
-  <rect x="800" y="650" width="370" height="35" rx="12" class="sunflower"/>
-  <rect x="800" y="673" width="370" height="12" class="sunflower"/>
-  <text x="820" y="673" font-family="Georgia, serif" font-size="14" font-weight="bold" class="text-primary">
-    Staff Picks
-  </text>
-  <g font-family="Segoe UI, sans-serif" font-size="11">
-    <text x="820" y="710" class="link">Clifford's Really Big Movie [4K Remaster]</text>
-    <text x="820" y="728" class="text-muted">Picked by CleoThePoodle</text>
-    <text x="820" y="755" class="link">Norman Bridwell Art Book [Scan]</text>
-    <text x="820" y="773" class="text-muted">Picked by MacTheBlue</text>
-  </g>
-
-  <!-- Footer -->
-  <rect x="0" y="800" width="1200" height="100" class="clifford-red"/>
-  <g font-family="Segoe UI, sans-serif" font-size="11" class="text-on-red" text-anchor="middle">
-    <text x="600" y="830">Big Red Tracker - Where Every Download is a Big Adventure!</text>
-    <text x="600" y="850" font-size="10" opacity="0.8">Inspired by Clifford the Big Red Dog by Norman Bridwell</text>
-    <text x="600" y="870" font-size="10" opacity="0.8">Remember: Be kind, share generously, and help your friends!</text>
-  </g>
-
-  <!-- Decorative Clifford in footer corner -->
-  <use href="#clifford-logo" x="50" y="810" width="100" height="60" opacity="0.3"/>
-  <use href="#clifford-logo" x="1050" y="810" width="100" height="60" opacity="0.3" transform="scale(-1,1) translate(-2200,0)"/>
-
-  <!-- Theme Label -->
-  <rect x="1050" y="10" width="130" height="25" rx="12" fill="#FFFFFF" opacity="0.9"/>
-  <text x="1115" y="27" font-family="Georgia, serif" font-size="11" text-anchor="middle" class="clifford-red" font-weight="bold">
-    CLIFFORD THEME
-  </text>
 </svg>
