@@ -1,0 +1,261 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <style>
+      .new-bg { fill: #f4f5f7; }
+      .new-sidebar { fill: #1a1f36; }
+      .new-header { fill: #ffffff; }
+      .new-card { fill: #ffffff; }
+      .new-text { fill: #3c4257; font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; }
+      .new-text-muted { fill: #6b7280; font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; }
+      .new-text-small { fill: #9ca3af; font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; }
+      .new-link { fill: #0070d2; font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; }
+      .new-title { fill: #1a1f36; font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px; font-weight: 600; }
+      .new-subtitle { fill: #1a1f36; font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; font-weight: 600; }
+      .new-nav-text { fill: #a0aec0; font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; }
+      .new-nav-active { fill: #ffffff; font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; }
+      .new-shadow { filter: drop-shadow(0 1px 3px rgba(0,0,0,0.1)); }
+      .new-green { fill: #10b981; }
+      .new-red { fill: #ef4444; }
+      .new-blue { fill: #3b82f6; }
+      .new-purple { fill: #8b5cf6; }
+      .new-orange { fill: #f59e0b; }
+      .new-border { stroke: #e5e7eb; stroke-width: 1; fill: none; }
+      .new-accent { fill: #0070d2; }
+      .new-input { fill: #ffffff; stroke: #d1d5db; }
+      .label { fill: #374151; font-family: 'Segoe UI', Arial, sans-serif; font-size: 24px; font-weight: bold; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" class="new-bg"/>
+
+  <!-- Label -->
+  <text x="600" y="40" text-anchor="middle" class="label">NEW SPLUNK UI - Torrent Browse</text>
+
+  <!-- Sidebar (collapsed) -->
+  <rect x="0" y="60" width="60" height="740" class="new-sidebar"/>
+
+  <!-- Sidebar Icons -->
+  <circle cx="30" cy="95" r="16" fill="#2d3748"/>
+  <text x="30" y="100" text-anchor="middle" fill="white" font-size="14">G</text>
+
+  <circle cx="30" cy="150" r="14" fill="transparent" stroke="#a0aec0"/>
+  <circle cx="30" cy="190" r="14" fill="#0070d2"/>
+  <circle cx="30" cy="230" r="14" fill="transparent" stroke="#a0aec0"/>
+  <circle cx="30" cy="270" r="14" fill="transparent" stroke="#a0aec0"/>
+  <circle cx="30" cy="310" r="14" fill="transparent" stroke="#a0aec0"/>
+
+  <!-- Header Bar -->
+  <rect x="60" y="60" width="1140" height="60" class="new-header new-shadow"/>
+
+  <!-- Breadcrumb -->
+  <text x="80" y="85" class="new-text-muted">Home</text>
+  <text x="120" y="85" class="new-text-muted">/</text>
+  <text x="140" y="85" class="new-subtitle">Torrents</text>
+
+  <!-- Header Actions -->
+  <rect x="1000" y="75" width="100" height="32" rx="4" fill="#0070d2"/>
+  <text x="1050" y="96" text-anchor="middle" fill="white" font-family="'Segoe UI'" font-size="13">Upload</text>
+
+  <circle cx="1130" cy="90" r="16" fill="#0070d2"/>
+  <text x="1130" y="95" text-anchor="middle" fill="white" font-size="14">U</text>
+
+  <!-- Search/Filter Card -->
+  <rect x="80" y="135" width="1100" height="120" rx="8" class="new-card new-shadow"/>
+
+  <!-- Search Title -->
+  <text x="100" y="162" class="new-subtitle">Search Torrents</text>
+
+  <!-- Filter Row 1 -->
+  <text x="100" y="190" class="new-text-muted">Artist / Album</text>
+  <rect x="100" y="198" width="280" height="36" rx="4" class="new-input"/>
+  <text x="112" y="222" class="new-text-muted">Search by name...</text>
+
+  <text x="400" y="190" class="new-text-muted">Format</text>
+  <rect x="400" y="198" width="140" height="36" rx="4" class="new-input"/>
+  <text x="412" y="222" class="new-text">All Formats</text>
+  <text x="520" y="222" class="new-text-muted">▼</text>
+
+  <text x="560" y="190" class="new-text-muted">Quality</text>
+  <rect x="560" y="198" width="140" height="36" rx="4" class="new-input"/>
+  <text x="572" y="222" class="new-text">All</text>
+  <text x="680" y="222" class="new-text-muted">▼</text>
+
+  <text x="720" y="190" class="new-text-muted">Year</text>
+  <rect x="720" y="198" width="100" height="36" rx="4" class="new-input"/>
+
+  <!-- Toggle Filters -->
+  <rect x="850" y="200" width="80" height="32" rx="16" fill="#e5e7eb"/>
+  <circle cx="870" cy="216" r="12" fill="white"/>
+  <text x="900" y="195" class="new-text-small">Freeleech</text>
+
+  <rect x="970" y="200" width="80" height="32" rx="16" fill="#0070d2"/>
+  <circle cx="1030" cy="216" r="12" fill="white"/>
+  <text x="1020" y="195" class="new-text-small">Has Log</text>
+
+  <!-- Search Button -->
+  <rect x="1080" y="198" width="80" height="36" rx="4" fill="#0070d2"/>
+  <text x="1120" y="222" text-anchor="middle" fill="white" font-family="'Segoe UI'" font-size="13">Search</text>
+
+  <!-- Results Header -->
+  <rect x="80" y="270" width="1100" height="45" rx="8" class="new-card new-shadow"/>
+  <text x="100" y="298" class="new-text">Showing 1-50 of 89,234 results</text>
+
+  <text x="800" y="298" class="new-text-muted">Sort by:</text>
+  <rect x="850" y="280" width="140" height="30" rx="4" class="new-input"/>
+  <text x="862" y="300" class="new-text">Time Added</text>
+  <text x="970" y="300" class="new-text-muted">▼</text>
+
+  <rect x="1010" y="280" width="80" height="30" rx="4" fill="#f4f5f7" stroke="#d1d5db"/>
+  <text x="1025" y="300" class="new-text-muted">Grid</text>
+  <rect x="1090" y="280" width="80" height="30" rx="4" fill="#0070d2"/>
+  <text x="1115" y="300" fill="white" font-size="12">List</text>
+
+  <!-- Results List -->
+  <rect x="80" y="330" width="1100" height="450" rx="8" class="new-card new-shadow"/>
+
+  <!-- Table Header -->
+  <rect x="95" y="345" width="1070" height="35" rx="4" fill="#f9fafb"/>
+  <text x="115" y="368" class="new-text-muted">Release</text>
+  <text x="620" y="368" class="new-text-muted">Size</text>
+  <text x="710" y="368" class="new-text-muted">Seeders</text>
+  <text x="790" y="368" class="new-text-muted">Leechers</text>
+  <text x="880" y="368" class="new-text-muted">Snatches</text>
+  <text x="970" y="368" class="new-text-muted">Added</text>
+  <text x="1080" y="368" class="new-text-muted">Actions</text>
+
+  <!-- Torrent Row 1 -->
+  <line x1="95" y1="390" x2="1165" y2="390" stroke="#e5e7eb"/>
+  <rect x="115" y="400" width="40" height="40" rx="4" fill="#dbeafe"/>
+  <text x="135" y="428" text-anchor="middle" font-size="20">♪</text>
+
+  <text x="170" y="418" class="new-link" font-weight="500">Artist Name - Album Title (2025)</text>
+  <text x="170" y="435" class="new-text-small">Electronic, Ambient • FLAC / Lossless / Log (100%)</text>
+  <rect x="450" y="420" width="60" height="20" rx="10" fill="#fef3c7"/>
+  <text x="480" y="434" text-anchor="middle" class="new-orange" font-size="10">Freeleech</text>
+
+  <text x="620" y="425" class="new-text">485 MB</text>
+  <text x="720" y="425" class="new-green" font-weight="600">24</text>
+  <text x="800" y="425" class="new-red">3</text>
+  <text x="890" y="425" class="new-text">156</text>
+  <text x="970" y="425" class="new-text-muted">2h ago</text>
+
+  <rect x="1070" y="410" width="32" height="32" rx="4" fill="#dcfce7"/>
+  <text x="1086" y="432" text-anchor="middle" class="new-green" font-size="16">↓</text>
+  <rect x="1110" y="410" width="32" height="32" rx="4" fill="#f4f5f7" stroke="#d1d5db"/>
+  <text x="1126" y="432" text-anchor="middle" class="new-text-muted" font-size="16">★</text>
+
+  <!-- Torrent Row 2 -->
+  <line x1="95" y1="450" x2="1165" y2="450" stroke="#e5e7eb"/>
+  <rect x="115" y="460" width="40" height="40" rx="4" fill="#dbeafe"/>
+  <text x="135" y="488" text-anchor="middle" font-size="20">♪</text>
+
+  <text x="170" y="478" class="new-link" font-weight="500">Band Name - Greatest Hits (2020)</text>
+  <text x="170" y="495" class="new-text-small">Rock, Alternative • MP3 / 320kbps</text>
+
+  <text x="620" y="485" class="new-text">128 MB</text>
+  <text x="720" y="485" class="new-green" font-weight="600">18</text>
+  <text x="800" y="485" class="new-red">2</text>
+  <text x="890" y="485" class="new-text">89</text>
+  <text x="970" y="485" class="new-text-muted">5h ago</text>
+
+  <rect x="1070" y="470" width="32" height="32" rx="4" fill="#dcfce7"/>
+  <text x="1086" y="492" text-anchor="middle" class="new-green" font-size="16">↓</text>
+  <rect x="1110" y="470" width="32" height="32" rx="4" fill="#f4f5f7" stroke="#d1d5db"/>
+  <text x="1126" y="492" text-anchor="middle" class="new-text-muted" font-size="16">★</text>
+
+  <!-- Torrent Row 3 -->
+  <line x1="95" y1="510" x2="1165" y2="510" stroke="#e5e7eb"/>
+  <rect x="115" y="520" width="40" height="40" rx="4" fill="#dbeafe"/>
+  <text x="135" y="548" text-anchor="middle" font-size="20">♪</text>
+
+  <text x="170" y="538" class="new-link" font-weight="500">Various Artists - Compilation (2024)</text>
+  <text x="170" y="555" class="new-text-small">Pop, Dance • FLAC / Lossless / Log (98%)</text>
+
+  <text x="620" y="545" class="new-text">1.24 GB</text>
+  <text x="720" y="545" class="new-green" font-weight="600">45</text>
+  <text x="800" y="545" class="new-red">8</text>
+  <text x="890" y="545" class="new-text">234</text>
+  <text x="970" y="545" class="new-text-muted">1d ago</text>
+
+  <rect x="1070" y="530" width="32" height="32" rx="4" fill="#dcfce7"/>
+  <text x="1086" y="552" text-anchor="middle" class="new-green" font-size="16">↓</text>
+  <rect x="1110" y="530" width="32" height="32" rx="4" fill="#fef3c7"/>
+  <text x="1126" y="552" text-anchor="middle" class="new-orange" font-size="16">★</text>
+
+  <!-- Torrent Row 4 -->
+  <line x1="95" y1="570" x2="1165" y2="570" stroke="#e5e7eb"/>
+  <rect x="115" y="580" width="40" height="40" rx="4" fill="#dbeafe"/>
+  <text x="135" y="608" text-anchor="middle" font-size="20">♪</text>
+
+  <text x="170" y="598" class="new-link" font-weight="500">Solo Artist - Debut Album (2025)</text>
+  <text x="170" y="615" class="new-text-small">Jazz, Soul • FLAC / 24bit Lossless / Log (100%)</text>
+  <rect x="470" y="600" width="50" height="20" rx="10" fill="#dcfce7"/>
+  <text x="495" y="614" text-anchor="middle" class="new-green" font-size="10">Perfect</text>
+
+  <text x="620" y="605" class="new-text">2.15 GB</text>
+  <text x="720" y="605" class="new-green" font-weight="600">12</text>
+  <text x="800" y="605" class="new-red">1</text>
+  <text x="890" y="605" class="new-text">67</text>
+  <text x="970" y="605" class="new-text-muted">3d ago</text>
+
+  <rect x="1070" y="590" width="32" height="32" rx="4" fill="#dcfce7"/>
+  <text x="1086" y="612" text-anchor="middle" class="new-green" font-size="16">↓</text>
+  <rect x="1110" y="590" width="32" height="32" rx="4" fill="#f4f5f7" stroke="#d1d5db"/>
+  <text x="1126" y="612" text-anchor="middle" class="new-text-muted" font-size="16">★</text>
+
+  <!-- Torrent Row 5 -->
+  <line x1="95" y1="630" x2="1165" y2="630" stroke="#e5e7eb"/>
+  <rect x="115" y="640" width="40" height="40" rx="4" fill="#dbeafe"/>
+  <text x="135" y="668" text-anchor="middle" font-size="20">♪</text>
+
+  <text x="170" y="658" class="new-link" font-weight="500">Orchestra - Symphony No. 9 (1972)</text>
+  <text x="170" y="675" class="new-text-small">Classical, Orchestral • FLAC / Lossless</text>
+  <rect x="380" y="660" width="45" height="20" rx="10" fill="#fee2e2"/>
+  <text x="402" y="674" text-anchor="middle" class="new-red" font-size="10">Scene</text>
+
+  <text x="620" y="665" class="new-text">892 MB</text>
+  <text x="720" y="665" class="new-green" font-weight="600">34</text>
+  <text x="800" y="665" class="new-text-muted">0</text>
+  <text x="890" y="665" class="new-text">189</text>
+  <text x="970" y="665" class="new-text-muted">5d ago</text>
+
+  <rect x="1070" y="650" width="32" height="32" rx="4" fill="#dcfce7"/>
+  <text x="1086" y="672" text-anchor="middle" class="new-green" font-size="16">↓</text>
+  <rect x="1110" y="650" width="32" height="32" rx="4" fill="#f4f5f7" stroke="#d1d5db"/>
+  <text x="1126" y="672" text-anchor="middle" class="new-text-muted" font-size="16">★</text>
+
+  <!-- Pagination -->
+  <rect x="95" y="700" width="1070" height="50" rx="0 0 8 8" fill="#f9fafb"/>
+
+  <text x="115" y="730" class="new-text-muted">Rows per page:</text>
+  <rect x="200" y="710" width="60" height="28" rx="4" class="new-input"/>
+  <text x="225" y="729" class="new-text">50</text>
+  <text x="245" y="729" class="new-text-muted">▼</text>
+
+  <rect x="500" y="710" width="32" height="28" rx="4" fill="#f4f5f7" stroke="#d1d5db"/>
+  <text x="516" y="729" text-anchor="middle" class="new-text-muted">«</text>
+
+  <rect x="540" y="710" width="32" height="28" rx="4" fill="#f4f5f7" stroke="#d1d5db"/>
+  <text x="556" y="729" text-anchor="middle" class="new-text-muted">‹</text>
+
+  <rect x="580" y="710" width="32" height="28" rx="4" fill="#0070d2"/>
+  <text x="596" y="729" text-anchor="middle" fill="white">1</text>
+
+  <rect x="620" y="710" width="32" height="28" rx="4" fill="#f4f5f7" stroke="#d1d5db"/>
+  <text x="636" y="729" text-anchor="middle" class="new-text">2</text>
+
+  <rect x="660" y="710" width="32" height="28" rx="4" fill="#f4f5f7" stroke="#d1d5db"/>
+  <text x="676" y="729" text-anchor="middle" class="new-text">3</text>
+
+  <text x="710" y="729" class="new-text-muted">...</text>
+
+  <rect x="740" y="710" width="50" height="28" rx="4" fill="#f4f5f7" stroke="#d1d5db"/>
+  <text x="765" y="729" text-anchor="middle" class="new-text">1785</text>
+
+  <rect x="800" y="710" width="32" height="28" rx="4" fill="#f4f5f7" stroke="#d1d5db"/>
+  <text x="816" y="729" text-anchor="middle" class="new-text-muted">›</text>
+
+  <rect x="840" y="710" width="32" height="28" rx="4" fill="#f4f5f7" stroke="#d1d5db"/>
+  <text x="856" y="729" text-anchor="middle" class="new-text-muted">»</text>
+</svg>

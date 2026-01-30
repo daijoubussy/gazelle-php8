@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <style>
+      .old-bg { fill: #1a1a2e; }
+      .old-header { fill: #16213e; }
+      .old-text { fill: #e0e0e0; font-family: Verdana, sans-serif; font-size: 11px; }
+      .old-text-small { fill: #999; font-family: Verdana, sans-serif; font-size: 9px; }
+      .old-link { fill: #5dade2; font-family: Verdana, sans-serif; font-size: 11px; }
+      .old-title { fill: #fff; font-family: Verdana, sans-serif; font-size: 14px; font-weight: bold; }
+      .old-border { stroke: #333; stroke-width: 1; fill: none; }
+      .old-table-header { fill: #2c3e50; }
+      .old-table-row { fill: #1e2a38; }
+      .old-table-row-alt { fill: #162029; }
+      .old-green { fill: #27ae60; }
+      .old-red { fill: #e74c3c; }
+      .old-yellow { fill: #f1c40f; }
+      .old-input { fill: #2c3e50; stroke: #444; }
+      .label { fill: #666; font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" class="old-bg"/>
+
+  <!-- Label -->
+  <text x="600" y="40" text-anchor="middle" class="label">OLD GAZELLE UI - Torrent Browse</text>
+
+  <!-- Header Bar -->
+  <rect x="20" y="60" width="1160" height="50" class="old-header"/>
+  <rect x="20" y="60" width="1160" height="50" class="old-border"/>
+  <text x="40" y="92" class="old-title">GAZELLE TRACKER</text>
+  <text x="200" y="90" class="old-link">Home</text>
+  <text x="250" y="90" class="old-link" font-weight="bold">[Torrents]</text>
+  <text x="320" y="90" class="old-link">Requests</text>
+  <text x="400" y="90" class="old-link">Forums</text>
+  <text x="470" y="90" class="old-link">Rules</text>
+  <text x="520" y="90" class="old-link">Wiki</text>
+
+  <!-- Search Filter Box -->
+  <rect x="20" y="120" width="1160" height="140" class="old-header"/>
+  <rect x="20" y="120" width="1160" height="140" class="old-border"/>
+  <text x="30" y="140" class="old-title">Search Torrents</text>
+
+  <!-- Search Fields Row 1 -->
+  <text x="35" y="170" class="old-text">Artist:</text>
+  <rect x="80" y="155" width="180" height="22" rx="2" class="old-input"/>
+
+  <text x="280" y="170" class="old-text">Album:</text>
+  <rect x="325" y="155" width="180" height="22" rx="2" class="old-input"/>
+
+  <text x="525" y="170" class="old-text">Year:</text>
+  <rect x="560" y="155" width="80" height="22" rx="2" class="old-input"/>
+
+  <text x="660" y="170" class="old-text">Format:</text>
+  <rect x="710" y="155" width="120" height="22" rx="2" class="old-input"/>
+  <text x="720" y="170" class="old-text-small">All</text>
+
+  <text x="850" y="170" class="old-text">Bitrate:</text>
+  <rect x="900" y="155" width="120" height="22" rx="2" class="old-input"/>
+  <text x="910" y="170" class="old-text-small">All</text>
+
+  <!-- Search Fields Row 2 -->
+  <text x="35" y="205" class="old-text">Tags:</text>
+  <rect x="80" y="190" width="280" height="22" rx="2" class="old-input"/>
+
+  <text x="380" y="205" class="old-text">Order by:</text>
+  <rect x="435" y="190" width="120" height="22" rx="2" class="old-input"/>
+  <text x="445" y="205" class="old-text-small">Time</text>
+
+  <!-- Checkboxes -->
+  <rect x="580" y="192" width="14" height="14" fill="#2c3e50" stroke="#666"/>
+  <text x="600" y="205" class="old-text">Scene</text>
+
+  <rect x="660" y="192" width="14" height="14" fill="#2c3e50" stroke="#666"/>
+  <text x="680" y="205" class="old-text">Freeleech</text>
+
+  <rect x="760" y="192" width="14" height="14" fill="#2c3e50" stroke="#666"/>
+  <text x="780" y="205" class="old-text">Has Log</text>
+
+  <rect x="850" y="192" width="14" height="14" fill="#2c3e50" stroke="#666"/>
+  <text x="870" y="205" class="old-text">100% Log</text>
+
+  <!-- Search Button -->
+  <rect x="1030" y="190" width="80" height="24" rx="2" fill="#27ae60"/>
+  <text x="1055" y="207" class="old-text" text-anchor="middle">Search</text>
+
+  <rect x="1115" y="190" width="50" height="24" rx="2" fill="#666"/>
+  <text x="1130" y="207" class="old-text" text-anchor="middle">Reset</text>
+
+  <!-- Results Info -->
+  <text x="30" y="248" class="old-text">Results: 1 - 50 of 89,234</text>
+
+  <!-- Results Table Header -->
+  <rect x="20" y="265" width="1160" height="25" class="old-table-header"/>
+  <rect x="20" y="265" width="1160" height="25" class="old-border"/>
+  <text x="30" y="282" class="old-text">[+]</text>
+  <text x="60" y="282" class="old-text">Release</text>
+  <text x="580" y="282" class="old-text">Files</text>
+  <text x="630" y="282" class="old-text">Time</text>
+  <text x="720" y="282" class="old-text">Size</text>
+  <text x="800" y="282" class="old-text">Sn.</text>
+  <text x="850" y="282" class="old-text">S</text>
+  <text x="890" y="282" class="old-text">L</text>
+  <text x="930" y="282" class="old-text">Uploader</text>
+
+  <!-- Torrent Group Row 1 -->
+  <rect x="20" y="290" width="1160" height="60" class="old-table-row"/>
+  <text x="30" y="310" class="old-link">[+]</text>
+  <text x="60" y="310" class="old-link">Artist Name - Album Title (2025)</text>
+  <text x="60" y="325" class="old-text-small">Electronic, Ambient, Experimental</text>
+
+  <!-- Edition 1 -->
+  <text x="80" y="340" class="old-text">↳</text>
+  <text x="100" y="340" class="old-link">FLAC / Lossless / Log (100%) / Cue</text>
+  <rect x="350" y="330" width="12" height="12" fill="#f1c40f" rx="2"/>
+  <text x="365" y="340" class="old-yellow" font-size="9">FL</text>
+  <text x="580" y="340" class="old-text">18</text>
+  <text x="630" y="340" class="old-text">2h ago</text>
+  <text x="720" y="340" class="old-text">485.23 MB</text>
+  <text x="800" y="340" class="old-text">156</text>
+  <text x="850" y="340" class="old-green">24</text>
+  <text x="890" y="340" class="old-red">3</text>
+  <text x="930" y="340" class="old-link">uploader1</text>
+
+  <!-- Torrent Group Row 2 -->
+  <rect x="20" y="350" width="1160" height="60" class="old-table-row-alt"/>
+  <text x="30" y="370" class="old-link">[+]</text>
+  <text x="60" y="370" class="old-link">Band Name - Greatest Hits (2020)</text>
+  <text x="60" y="385" class="old-text-small">Rock, Alternative</text>
+
+  <text x="80" y="400" class="old-text">↳</text>
+  <text x="100" y="400" class="old-link">MP3 / 320</text>
+  <text x="580" y="400" class="old-text">12</text>
+  <text x="630" y="400" class="old-text">5h ago</text>
+  <text x="720" y="400" class="old-text">128.45 MB</text>
+  <text x="800" y="400" class="old-text">89</text>
+  <text x="850" y="400" class="old-green">18</text>
+  <text x="890" y="400" class="old-red">2</text>
+  <text x="930" y="400" class="old-link">uploader2</text>
+
+  <!-- Torrent Group Row 3 -->
+  <rect x="20" y="410" width="1160" height="80" class="old-table-row"/>
+  <text x="30" y="430" class="old-link">[-]</text>
+  <text x="60" y="430" class="old-link">Various Artists - Compilation (2024)</text>
+  <text x="60" y="445" class="old-text-small">Pop, Dance, Electronic</text>
+
+  <text x="80" y="460" class="old-text">↳</text>
+  <text x="100" y="460" class="old-link">FLAC / Lossless / Log (98%)</text>
+  <text x="580" y="460" class="old-text">24</text>
+  <text x="630" y="460" class="old-text">1d ago</text>
+  <text x="720" y="460" class="old-text">1.24 GB</text>
+  <text x="800" y="460" class="old-text">234</text>
+  <text x="850" y="460" class="old-green">45</text>
+  <text x="890" y="460" class="old-red">8</text>
+  <text x="930" y="460" class="old-link">uploader3</text>
+
+  <text x="80" y="480" class="old-text">↳</text>
+  <text x="100" y="480" class="old-link">MP3 / V0 (VBR)</text>
+  <text x="580" y="480" class="old-text">24</text>
+  <text x="630" y="480" class="old-text">2d ago</text>
+  <text x="720" y="480" class="old-text">312.56 MB</text>
+  <text x="800" y="480" class="old-text">456</text>
+  <text x="850" y="480" class="old-green">67</text>
+  <text x="890" y="480" class="old-red">4</text>
+  <text x="930" y="480" class="old-link">uploader4</text>
+
+  <!-- Torrent Group Row 4 -->
+  <rect x="20" y="490" width="1160" height="60" class="old-table-row-alt"/>
+  <text x="30" y="510" class="old-link">[+]</text>
+  <text x="60" y="510" class="old-link">Solo Artist - Debut Album (2025)</text>
+  <text x="60" y="525" class="old-text-small">Jazz, Soul</text>
+
+  <text x="80" y="540" class="old-text">↳</text>
+  <text x="100" y="540" class="old-link">FLAC / 24bit Lossless / Log (100%) / Cue</text>
+  <text x="580" y="540" class="old-text">15</text>
+  <text x="630" y="540" class="old-text">3d ago</text>
+  <text x="720" y="540" class="old-text">2.15 GB</text>
+  <text x="800" y="540" class="old-text">67</text>
+  <text x="850" y="540" class="old-green">12</text>
+  <text x="890" y="540" class="old-red">1</text>
+  <text x="930" y="540" class="old-link">uploader5</text>
+
+  <!-- Torrent Group Row 5 -->
+  <rect x="20" y="550" width="1160" height="60" class="old-table-row"/>
+  <text x="30" y="570" class="old-link">[+]</text>
+  <text x="60" y="570" class="old-link">Orchestra - Symphony No. 9 (1972)</text>
+  <text x="60" y="585" class="old-text-small">Classical, Orchestral</text>
+
+  <text x="80" y="600" class="old-text">↳</text>
+  <text x="100" y="600" class="old-link">FLAC / Lossless</text>
+  <rect x="220" y="590" width="40" height="12" fill="#e74c3c" rx="2"/>
+  <text x="225" y="600" fill="white" font-size="8">Scene</text>
+  <text x="580" y="600" class="old-text">8</text>
+  <text x="630" y="600" class="old-text">5d ago</text>
+  <text x="720" y="600" class="old-text">892.34 MB</text>
+  <text x="800" y="600" class="old-text">189</text>
+  <text x="850" y="600" class="old-green">34</text>
+  <text x="890" y="600" class="old-red">0</text>
+  <text x="930" y="600" class="old-link">uploader6</text>
+
+  <!-- Pagination -->
+  <rect x="20" y="620" width="1160" height="30" class="old-header"/>
+  <rect x="20" y="620" width="1160" height="30" class="old-border"/>
+  <text x="500" y="640" class="old-text">&lt;&lt; First</text>
+  <text x="560" y="640" class="old-text">&lt; Prev</text>
+  <text x="620" y="640" class="old-link" font-weight="bold">[1]</text>
+  <text x="640" y="640" class="old-link">2</text>
+  <text x="660" y="640" class="old-link">3</text>
+  <text x="680" y="640" class="old-link">4</text>
+  <text x="700" y="640" class="old-link">5</text>
+  <text x="720" y="640" class="old-text">...</text>
+  <text x="750" y="640" class="old-link">1785</text>
+  <text x="790" y="640" class="old-text">Next &gt;</text>
+  <text x="840" y="640" class="old-text">Last &gt;&gt;</text>
+
+  <!-- Footer -->
+  <rect x="20" y="700" width="1160" height="40" class="old-header"/>
+  <rect x="20" y="700" width="1160" height="40" class="old-border"/>
+  <text x="600" y="725" text-anchor="middle" class="old-text-small">Gazelle Tracker © 2026 | Load: 0.0456s | Queries: 24</text>
+</svg>

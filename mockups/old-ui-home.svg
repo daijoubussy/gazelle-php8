@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <style>
+      .old-bg { fill: #1a1a2e; }
+      .old-header { fill: #16213e; }
+      .old-text { fill: #e0e0e0; font-family: Verdana, sans-serif; font-size: 11px; }
+      .old-text-small { fill: #999; font-family: Verdana, sans-serif; font-size: 9px; }
+      .old-link { fill: #5dade2; font-family: Verdana, sans-serif; font-size: 11px; }
+      .old-title { fill: #fff; font-family: Verdana, sans-serif; font-size: 14px; font-weight: bold; }
+      .old-border { stroke: #333; stroke-width: 1; fill: none; }
+      .old-table-header { fill: #2c3e50; }
+      .old-table-row { fill: #1e2a38; }
+      .old-table-row-alt { fill: #162029; }
+      .old-green { fill: #27ae60; }
+      .old-red { fill: #e74c3c; }
+      .old-yellow { fill: #f1c40f; }
+      .label { fill: #666; font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" class="old-bg"/>
+
+  <!-- Label -->
+  <text x="600" y="40" text-anchor="middle" class="label">OLD GAZELLE UI - Home Page</text>
+
+  <!-- Header Bar -->
+  <rect x="20" y="60" width="1160" height="50" class="old-header"/>
+  <rect x="20" y="60" width="1160" height="50" class="old-border"/>
+
+  <!-- Logo -->
+  <text x="40" y="92" class="old-title">GAZELLE TRACKER</text>
+
+  <!-- Nav Links -->
+  <text x="200" y="90" class="old-link">Home</text>
+  <text x="250" y="90" class="old-link">Torrents</text>
+  <text x="320" y="90" class="old-link">Requests</text>
+  <text x="400" y="90" class="old-link">Forums</text>
+  <text x="470" y="90" class="old-link">Rules</text>
+  <text x="520" y="90" class="old-link">Wiki</text>
+
+  <!-- User Stats (right side) -->
+  <text x="750" y="85" class="old-text">Up: 524.32 GB</text>
+  <text x="750" y="100" class="old-text">Down: 128.45 GB</text>
+  <text x="880" y="85" class="old-text">Ratio: 4.08</text>
+  <text x="880" y="100" class="old-text">Points: 15,432</text>
+  <text x="1000" y="90" class="old-link">username</text>
+  <text x="1070" y="90" class="old-link">Inbox (3)</text>
+
+  <!-- Stats Box -->
+  <rect x="20" y="120" width="280" height="120" class="old-header"/>
+  <rect x="20" y="120" width="280" height="120" class="old-border"/>
+  <text x="30" y="140" class="old-title">Site Stats</text>
+  <text x="30" y="165" class="old-text">Users: 12,456 (2,341 active)</text>
+  <text x="30" y="180" class="old-text">Torrents: 89,234</text>
+  <text x="30" y="195" class="old-text">Requests: 4,521 (82% filled)</text>
+  <text x="30" y="210" class="old-text">Peers: 45,678</text>
+  <text x="30" y="225" class="old-text">Seeders: 38,901 | Leechers: 6,777</text>
+
+  <!-- News Box -->
+  <rect x="310" y="120" width="560" height="120" class="old-header"/>
+  <rect x="310" y="120" width="560" height="120" class="old-border"/>
+  <text x="320" y="140" class="old-title">Latest News</text>
+  <text x="320" y="165" class="old-link">Site maintenance scheduled for Saturday</text>
+  <text x="320" y="180" class="old-text-small">Posted by Staff on 2026-01-28</text>
+  <text x="320" y="200" class="old-link">New freeleech event starting Friday!</text>
+  <text x="320" y="215" class="old-text-small">Posted by Admin on 2026-01-25</text>
+
+  <!-- User Box -->
+  <rect x="880" y="120" width="300" height="120" class="old-header"/>
+  <rect x="880" y="120" width="300" height="120" class="old-border"/>
+  <text x="890" y="140" class="old-title">Welcome, username</text>
+  <text x="890" y="165" class="old-text">Class: Power User</text>
+  <text x="890" y="180" class="old-text">Joined: 2024-03-15</text>
+  <text x="890" y="195" class="old-text">Last seen: Just now</text>
+  <text x="890" y="210" class="old-link">Edit Profile</text>
+  <text x="970" y="210" class="old-link">Settings</text>
+
+  <!-- Recent Uploads Table -->
+  <rect x="20" y="250" width="1160" height="30" class="old-table-header"/>
+  <rect x="20" y="250" width="1160" height="250" class="old-border"/>
+  <text x="30" y="270" class="old-title">Recent Uploads</text>
+
+  <!-- Table Header -->
+  <rect x="20" y="280" width="1160" height="25" fill="#2c3e50"/>
+  <text x="30" y="297" class="old-text">Category</text>
+  <text x="120" y="297" class="old-text">Name</text>
+  <text x="650" y="297" class="old-text">Size</text>
+  <text x="750" y="297" class="old-text">S</text>
+  <text x="800" y="297" class="old-text">L</text>
+  <text x="850" y="297" class="old-text">Sn</text>
+  <text x="920" y="297" class="old-text">Uploaded</text>
+  <text x="1050" y="297" class="old-text">Uploader</text>
+
+  <!-- Table Rows -->
+  <rect x="20" y="305" width="1160" height="25" class="old-table-row"/>
+  <text x="30" y="322" class="old-text">[Music]</text>
+  <text x="120" y="322" class="old-link">Artist Name - Album Title (2025) [FLAC / Lossless / Log (100%) / Cue]</text>
+  <text x="650" y="322" class="old-text">485.23 MB</text>
+  <text x="750" y="322" class="old-green">24</text>
+  <text x="800" y="322" class="old-red">3</text>
+  <text x="850" y="322" class="old-text">156</text>
+  <text x="920" y="322" class="old-text">2 hours ago</text>
+  <text x="1050" y="322" class="old-link">uploader1</text>
+
+  <rect x="20" y="330" width="1160" height="25" class="old-table-row-alt"/>
+  <text x="30" y="347" class="old-text">[Music]</text>
+  <text x="120" y="347" class="old-link">Band Name - EP Title (2024) [MP3 / 320]</text>
+  <text x="650" y="347" class="old-text">89.45 MB</text>
+  <text x="750" y="347" class="old-green">18</text>
+  <text x="800" y="347" class="old-red">1</text>
+  <text x="850" y="347" class="old-text">89</text>
+  <text x="920" y="347" class="old-text">4 hours ago</text>
+  <text x="1050" y="347" class="old-link">uploader2</text>
+
+  <rect x="20" y="355" width="1160" height="25" class="old-table-row"/>
+  <text x="30" y="372" class="old-text">[Apps]</text>
+  <text x="120" y="372" class="old-link">Software Name v2.5.1 [Windows x64]</text>
+  <text x="650" y="372" class="old-text">1.24 GB</text>
+  <text x="750" y="372" class="old-green">45</text>
+  <text x="800" y="372" class="old-red">8</text>
+  <text x="850" y="372" class="old-text">234</text>
+  <text x="920" y="372" class="old-text">6 hours ago</text>
+  <text x="1050" y="372" class="old-link">uploader3</text>
+
+  <rect x="20" y="380" width="1160" height="25" class="old-table-row-alt"/>
+  <text x="30" y="397" class="old-text">[Music]</text>
+  <text x="120" y="397" class="old-link">Various Artists - Compilation (2025) [FLAC / Lossless]</text>
+  <text x="650" y="397" class="old-text">2.15 GB</text>
+  <text x="750" y="397" class="old-green">12</text>
+  <text x="800" y="397" class="old-red">5</text>
+  <text x="850" y="397" class="old-text">67</text>
+  <text x="920" y="397" class="old-text">8 hours ago</text>
+  <text x="1050" y="397" class="old-link">uploader4</text>
+
+  <rect x="20" y="405" width="1160" height="25" class="old-table-row"/>
+  <text x="30" y="422" class="old-text">[E-Books]</text>
+  <text x="120" y="422" class="old-link">Author Name - Book Title (EPUB)</text>
+  <text x="650" y="422" class="old-text">2.45 MB</text>
+  <text x="750" y="422" class="old-green">8</text>
+  <text x="800" y="422" class="old-red">0</text>
+  <text x="850" y="422" class="old-text">45</text>
+  <text x="920" y="422" class="old-text">12 hours ago</text>
+  <text x="1050" y="422" class="old-link">uploader5</text>
+
+  <!-- Forums Section -->
+  <rect x="20" y="510" width="570" height="30" class="old-table-header"/>
+  <rect x="20" y="510" width="570" height="180" class="old-border"/>
+  <text x="30" y="530" class="old-title">Recent Forum Posts</text>
+
+  <rect x="20" y="540" width="570" height="25" class="old-table-row"/>
+  <text x="30" y="557" class="old-link">Help with upload issues</text>
+  <text x="400" y="557" class="old-text-small">by user123, 10 min ago</text>
+
+  <rect x="20" y="565" width="570" height="25" class="old-table-row-alt"/>
+  <text x="30" y="582" class="old-link">Best FLAC releases of 2025?</text>
+  <text x="400" y="582" class="old-text-small">by music_fan, 25 min ago</text>
+
+  <rect x="20" y="590" width="570" height="25" class="old-table-row"/>
+  <text x="30" y="607" class="old-link">Ratio problems after new tracker</text>
+  <text x="400" y="607" class="old-text-small">by newbie42, 1 hour ago</text>
+
+  <rect x="20" y="615" width="570" height="25" class="old-table-row-alt"/>
+  <text x="30" y="632" class="old-link">Feature request: Dark mode</text>
+  <text x="400" y="632" class="old-text-small">by dev_user, 2 hours ago</text>
+
+  <!-- Requests Section -->
+  <rect x="610" y="510" width="570" height="30" class="old-table-header"/>
+  <rect x="610" y="510" width="570" height="180" class="old-border"/>
+  <text x="620" y="530" class="old-title">Recent Requests</text>
+
+  <rect x="610" y="540" width="570" height="25" class="old-table-row"/>
+  <text x="620" y="557" class="old-link">Artist - Rare Album (1992) [FLAC]</text>
+  <text x="1000" y="557" class="old-yellow">5,000 BP</text>
+
+  <rect x="610" y="565" width="570" height="25" class="old-table-row-alt"/>
+  <text x="620" y="582" class="old-link">Band - Live Recording (2020)</text>
+  <text x="1000" y="582" class="old-yellow">2,500 BP</text>
+
+  <rect x="610" y="590" width="570" height="25" class="old-table-row"/>
+  <text x="620" y="607" class="old-link">Various - Soundtrack OST</text>
+  <text x="1000" y="607" class="old-yellow">1,000 BP</text>
+
+  <rect x="610" y="615" width="570" height="25" class="old-table-row-alt"/>
+  <text x="620" y="632" class="old-link">Producer - Instrumental Album</text>
+  <text x="1000" y="632" class="old-yellow">3,000 BP</text>
+
+  <!-- Footer -->
+  <rect x="20" y="700" width="1160" height="40" class="old-header"/>
+  <rect x="20" y="700" width="1160" height="40" class="old-border"/>
+  <text x="600" y="725" text-anchor="middle" class="old-text-small">Gazelle Tracker © 2026 | Powered by Gazelle | Load: 0.0234s | Queries: 12</text>
+</svg>
